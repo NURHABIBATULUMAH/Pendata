@@ -1,11 +1,11 @@
-# INTRODUCTION MY SELF
+# ABOUT ME
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
+ Nama : Nurhabibatul Umah
 
-Check out the content pages bundled with this sample book to see more.
+ Nim : 240411100169
+ 
+ Email : nurhabibatulumah@gmail.com
 
-```{tableofcontents}
-```
+-----
+
+**Hallo, saya habiba**. Mahasiswa Teknik Informatika Universitas Trunodjoyo Madura Semester 4 yang sedang belajar Mata Kuliah Penambangan Data.
