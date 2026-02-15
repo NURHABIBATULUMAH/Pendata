@@ -24,12 +24,13 @@
 
  **1. Business Understanding**
 
-    a. Menentukan tujuan bisnis
+a. Menentukan tujuan bisnis
         
-        Tahaapan ini dilakukan untuk memahami secara menyeluruh, dari perspektif bisnis, apa yang benar-benar ingin dicapai oleh pelanggan. Selain itu pada tahapan ini analisa perlu dilakukan untuk mengungkap faktor-faktor penting, yang dapat mempengaruhi hasil proyek data mining.
-        
-    b. Membuat rencana proyek
-    c. Menilai situasi dan kondisi 
+Tahaapan ini dilakukan untuk memahami secara menyeluruh, dari perspektif bisnis, apa yang benar-benar ingin dicapai oleh pelanggan. Selain itu pada tahapan ini analisa perlu dilakukan untuk mengungkap faktor-faktor penting, yang dapat mempengaruhi hasil proyek data mining.
+
+b. Membuat rencana proyek
+
+c. Menilai situasi dan kondisi 
 
  **Output dari Business Understanding:**
  
