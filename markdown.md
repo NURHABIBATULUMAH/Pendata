@@ -1,55 +1,25 @@
-# Materi 1
+# Pengantar Data Mining
 
-<!-- Whether you write your book's content in Jupyter Notebooks (`.ipynb`) or
-in regular markdown files (`.md`), you'll write in the same flavor of markdown
-called **MyST Markdown**.
-This is a simple file to help you get started and show off some syntax.
+### Apa itu data mining?
 
-## What is MyST?
+ **Data mining** merupakan merupakan subjek yang melibatkan berbagai disiplin bidang yang bertujuan bagaimana mendapatkan pengetahuan/informasi dari tumpukan data.
 
-MyST stands for "Markedly Structured Text". It
-is a slight variation on a flavor of markdown called "CommonMark" markdown,
-with small syntax extensions to allow you to write **roles** and **directives**
-in the Sphinx ecosystem.
+ Jika dianalogikan seperti penambangan secara konvesional misalkan menimbang emas yang didapatkan dari tumpukan tanah dan pasir. 
+ 
+ Dalam kontek **penambangan data** adalah bagaimana mendapatkan informasi yang berharga untuk pijakan pengambilan keputusan atau tujuan tertentu.
 
-For more about MyST, see [the MyST Markdown Overview](https://jupyterbook.org/content/myst.html).
+ Dalama proses data mining melibatkan teknik **statistik**, **matematika**, **kecerdasan buatan**, **machine learning** untuk mengekstraksi dan mengidentifikasi informasi yang bermanfaat dan pengetahuan yang terkait dari berbagai database besar. Terdapat beberapa istilah lain yang memiliki makna sama dengan data mining, yaitu **Knowledge discovery in databases (KDD), ekstraksi pengetahuan (knowledge extraction), Analisa data/pola (data/pattern analysis), kecerdasan bisnis (business intelligence) dan data archaeology dan data dredging (Larose, 2005)**.
 
-## Sample Roles and Directives
+ ### Keunggulan Data Mining
+ 1. Dapat memberikan pemahaman data yang lebih lengkap dengan menemukan pola yang sebelumnya tidak terlihat 
 
-Roles and directives are two of the most powerful tools in Jupyter Book. They
-are like functions, but written in a markup language. They both
-serve a similar purpose, but **roles are written in one line**, whereas
-**directives span many lines**. They both accept different kinds of inputs,
-and what they do with those inputs depends on the specific role or directive
-that is being called.
+ 2. Membuat model untuk memprediksi sehingga memungkinkan untuk membuat keputusan yang lebih baik.
 
-Here is a "note" directive:
+ ### Proses Data Mining
+ Dalam data mining proses tahapan yang dilakukan sebagai Proses standar lintas industri untuk penambangan data yang dihasilkan oleh konsorsium , yang dikenal sebagai CRISP-DM, adalah model proses standar terbuka yang menggambarkan pendekatan umum yang digunakan oleh para ahli penambangan data. 
 
-```{note}
-Here is a note
-```
-
-It will be rendered in a special box when you build your book.
-
-Here is an inline directive to refer to a document: {doc}`markdown-notebooks`.
+ ![Foto Saya](data_mining.png)
 
 
-## Citations
 
-You can also cite references that are stored in a `bibtex` file. For example,
-the following syntax: `` {cite}`holdgraf_evidence_2014` `` will render like
-this: {cite}`holdgraf_evidence_2014`.
 
-Moreover, you can insert a bibliography into your page with this syntax:
-The `{bibliography}` directive must be used for all the `{cite}` roles to
-render properly.
-For example, if the references for your book are stored in `references.bib`,
-then the bibliography is inserted with:
-
-```{bibliography}
-```
-
-## Learn more
-
-This is just a simple starter to get you started.
-You can learn a lot more at [jupyterbook.org](https://jupyterbook.org). -->
