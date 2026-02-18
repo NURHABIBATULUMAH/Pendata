@@ -33,6 +33,8 @@ b. Membuat rencana proyek
 c. Menilai situasi dan kondisi 
 
  **Output dari Business Understanding:**
+
+1. 
  
 
 
