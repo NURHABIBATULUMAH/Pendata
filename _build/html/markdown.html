@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'markdown';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Materi 2" href="notebooks.html" />
+    <link rel="next" title="Memahami Data" href="notebooks.html" />
     <link rel="prev" title="About Me" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -181,7 +181,7 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Pengantar Data Mining</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Materi 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Memahami Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Materi 3</a></li>
 </ul>
 
@@ -381,6 +381,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apa-itu-data-mining">Apa itu data mining?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keunggulan-data-mining">Keunggulan Data Mining</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proses-data-mining">Proses Data Mining</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#atribut-dimensi-fitur-variable">Atribut: (dimensi, fitur, variable)</a></li>
 </ul>
             </nav>
         </div>
@@ -418,10 +419,46 @@ document.write(`
 <p>Tahaapan ini dilakukan untuk memahami secara menyeluruh, dari perspektif bisnis, apa yang benar-benar ingin dicapai oleh pelanggan. Selain itu pada tahapan ini analisa perlu dilakukan untuk mengungkap faktor-faktor penting, yang dapat mempengaruhi hasil proyek data mining.</p>
 <p>b. Membuat rencana proyek</p>
 <p>c. Menilai situasi dan kondisi</p>
-<p><strong>Output dari Business Understanding:</strong></p>
+<p><strong>2. Data Understanding</strong>
+Diawali dengan proses mengumpulkan data, sudah mempunyai datanya. Sudah tau berapa kolom, berapa baris.</p>
+<p>Mengetahui ada noice atau tidak di data understanding. Jika sudah diketahui masuk ke data prosesing.</p>
+<p>Langkah awal yaitu mengidentifikasi data :
+a. Mengetahui data yang kosong/out layer
+b. Mengetahui data yang duplicate</p>
+<p>kolom : atribut/fitur/dimensi
+independet mempengaruhi dependent
+selection fitur : mengurangi fitur/dimensi yang independent dan tidak mempengaruhi dependent</p>
+<p>Komponen Utama Memahami Data:</p>
 <ol class="arabic simple">
-<li></li>
+<li><p>Pengumpulan data awal</p></li>
+<li><p>Deskripsi data</p></li>
+<li><p>Explorasi data analasis (EDA) : membuat visualisasi (grafik, histogram, scatter plot), mencari pola, trend
+Korelasi bisa dilihat dari gambar, jika cenderung mengumpul ke atas pasti di atas 0.5</p></li>
+<li><p>Kualitas Data</p></li>
 </ol>
+</section>
+<section id="atribut-dimensi-fitur-variable">
+<h2>Atribut: (dimensi, fitur, variable)<a class="headerlink" href="#atribut-dimensi-fitur-variable" title="Link to this heading">#</a></h2>
+<p>Tipe:</p>
+<ol class="arabic simple">
+<li><p>Nominal/Kategorical - Nama, ID</p></li>
+<li><p>Ordinal/Fitur tingkatan - Peringkat</p></li>
+<li><p>Biner/Mengandung 2 nilai 0 dan 1 - JK
+a. Simetris : Kesetaraan, Jenis kelamin
+b. Asymetris : Untuk iya butuh penekanan, seperti medis positiv HIV karna positif butuh penekanan</p></li>
+<li><p>Numerik/Nilai ukuran dari proses pengukuran - Size Baju, IPK</p></li>
+</ol>
+<p>Atribut:</p>
+<ul class="simple">
+<li><p>Continue : desimal (tinggi badan, Berat Badan)</p></li>
+<li><p>Diskret : bisa dihitung (Jumlah mahasiswa)</p></li>
+</ul>
+<p>N : Seluruh (jumlah sample)
+n : merujuk spesifik</p>
+<p>mean, median, modus</p>
+<p>jika di tengah : syimmetric
+kiri : positive
+kanan : negative</p>
 </section>
 </section>
 
@@ -469,7 +506,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Materi 2</p>
+        <p class="prev-next-title">Memahami Data</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -492,6 +529,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apa-itu-data-mining">Apa itu data mining?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keunggulan-data-mining">Keunggulan Data Mining</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proses-data-mining">Proses Data Mining</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#atribut-dimensi-fitur-variable">Atribut: (dimensi, fitur, variable)</a></li>
 </ul>
   </nav></div>
 
