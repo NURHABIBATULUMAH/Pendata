@@ -57,8 +57,6 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'data_iris';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -384,25 +382,12 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Data Iris Flower</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data-iris">Eksplorasi Data Iris</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-describe-data-iris">Statistik Describe Data Iris</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-rata-rata">Mean (Rata - Rata)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#median-nilai-tengah">Median (Nilai Tengah)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modus-mode-nilai-sering-muncul">Modus/Mode (Nilai Sering Muncul)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rentang-range-quartil-and-rentang-interquartile">Rentang (Range), Quartil, and Rentang Interquartile</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#range">Range</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kuartil-quartile">Kuartil (Quartile)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#interkuartil-interquartile">Interkuartil (Interquartile)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-describe-data-iris">Statistik Describe Data Iris</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi">Visualisasi</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram-data-iris">Histogram Data Iris</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plot-data-iris">Scatter Plot Data Iris</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variansi-dan-standar-deviasi">Variansi dan Standar Deviasi</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#variansi">Variansi</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#standar-deviasi">Standar Deviasi</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skewness-kemencengan">Skewness (Kemencengan)</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi">Visualisasi</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
@@ -790,210 +775,23 @@ Variansi          0.69
 </tbody>
 </table>
 </div>
-<section id="mean-rata-rata">
-<h3>Mean (Rata - Rata)<a class="headerlink" href="#mean-rata-rata" title="Link to this heading">#</a></h3>
-<p>Mean atau rata-rata merupakan ukuran pemusatan data yang diperoleh dengan menjumlahkan seluruh nilai dalam suatu data kemudian dibagi dengan banyak data. Mean digunakan untuk mengetahui nilai tengah secara umum dari keseluruhan data.</p>
-<p>Berikut rumus untuk menghitung mean secara umum:</p>
-<div class="math notranslate nohighlight">
-\[
-\bar{x} = \frac{\sum_{i=1}^{n} x_i}{n}
-\]</div>
-<p>Keterangan :</p>
-<p><span class="math notranslate nohighlight">\(
-\begin{aligned}
-\bar{x} &amp;= \text{Mean (rata-rata)} \\
-x_i &amp;= \text{Nilai data ke-i} \\
-n &amp;= \text{Jumlah data} \\
-\sum &amp;= \text{Simbol penjumlahan}
-\end{aligned}
-\)</span></p>
-<p>Pada dataset Iris Flower, nilai mean digunakan untuk mengetahui rata-rata dari masing-masing atribut numerik seperti <em>sepal_length</em>, <em>sepal_width</em>, <em>petal_length</em>, dan <em>petal_width</em>.</p>
-</section>
-<section id="median-nilai-tengah">
-<h3>Median (Nilai Tengah)<a class="headerlink" href="#median-nilai-tengah" title="Link to this heading">#</a></h3>
-<p>Median merupakan ukuran pemusatan data yang menunjukkan nilai tengah dari suatu data setelah data diurutkan dari yang terkecil hingga terbesar. Median digunakan ketika ingin mengetahui nilai tengah yang tidak terlalu dipengaruhi oleh nilai ekstrem (outlier).</p>
-<p>Jika jumlah data ganjil, maka median adalah nilai tepat di tengah.
-Jika jumlah data genap, maka median adalah rata-rata dari dua nilai tengah.</p>
-<p><strong>Median Untuk Data Tunggal</strong></p>
-<p>Rumus Median Untuk <span class="math notranslate nohighlight">\(N\)</span> Ganjil :</p>
-<div class="math notranslate nohighlight">
-\[
-Me = x_{\frac{N+1}{2}}
-\]</div>
-<p>Rumus Median Untuk <span class="math notranslate nohighlight">\(N\)</span> Genap :</p>
-<div class="math notranslate nohighlight">
-\[
-Me = \frac{x_{\frac{N}{2}} + x_{\frac{N}{2}+1}}{2}
-\]</div>
-<p>Keterangan :</p>
-<p><span class="math notranslate nohighlight">\(
-\begin{aligned}
-Me &amp;= \text{Median} \\
-x &amp;= \text{Data yang telah diurutkan} \\
-N &amp;= \text{Jumlah data}
-\end{aligned}
-\)</span></p>
-<p><strong>Median Untuk Data Berkelompok</strong></p>
-<div class="math notranslate nohighlight">
-\[
-Me = x_{ij} + \left( \frac{\frac{n}{2} - f_{kij}}{f_i} \right) p
-\]</div>
-<p>Keterangan :</p>
-<p><span class="math notranslate nohighlight">\(
-\begin{aligned}
-Me &amp;= \text{Median} \\
-x_{ij} &amp;= \text{Batas bawah kelas median} \\
-n &amp;= \text{Jumlah data} \\
-f_{kij} &amp;= \text{Frekuensi kumulatif sebelum kelas median} \\
-f_i &amp;= \text{Frekuensi pada kelas median} \\
-p &amp;= \text{Panjang interval kelas}
-\end{aligned}
-\)</span></p>
-<p>Pada dataset Iris Flower, median digunakan untuk mengetahui nilai tengah dari masing-masing atribut numerik setelah data diurutkan, sehingga dapat memberikan gambaran pusat data yang lebih stabil dibandingkan mean ketika terdapat nilai ekstrem (outlier).</p>
-</section>
-<section id="modus-mode-nilai-sering-muncul">
-<h3>Modus/Mode (Nilai Sering Muncul)<a class="headerlink" href="#modus-mode-nilai-sering-muncul" title="Link to this heading">#</a></h3>
-<p>Modus adalah nilai yang paling sering muncul dalam suatu kumpulan data. Modus digunakan untuk mengetahui nilai yang memiliki frekuensi tertinggi dalam suatu distribusi data.</p>
-<p>Pada data numerik, modus menunjukkan nilai yang paling banyak muncul. Sedangkan pada data kategorikal (seperti atribut species pada dataset Iris), modus menunjukkan kategori yang paling dominan.</p>
-<p>Suatu data dapat memiliki:</p>
-<ul class="simple">
-<li><p>Satu modus (unimodal)</p></li>
-<li><p>Dua modus (bimodal)</p></li>
-<li><p>Lebih dari dua modus (multimodal)</p></li>
-<li><p>Atau tidak memiliki modus jika semua nilai muncul dengan frekuensi yang sama.</p></li>
-</ul>
-<p>Rumus Modus data tunggal :</p>
-<div class="math notranslate nohighlight">
-\[
-Mo = \text{Nilai dengan frekuensi tertinggi}
-\]</div>
-<p>Pada data numerik unimodal yang cukup miring (asimetris), terdapat hubungan empiris antara mean, median, dan modus:</p>
-<div class="math notranslate nohighlight">
-\[
-\text{Mean} - \text{Modus} \approx 3(\text{Mean} - \text{Median})
-\]</div>
-<p>Ini menyiratkan bahwa mode untuk kurva frekuensi unimodal yang cukup miring dapat dengan mudah didekati jika nilai rata-rata dan median diketahui.</p>
-</section>
-<section id="rentang-range-quartil-and-rentang-interquartile">
-<h3>Rentang (Range), Quartil, and Rentang Interquartile<a class="headerlink" href="#rentang-range-quartil-and-rentang-interquartile" title="Link to this heading">#</a></h3>
-<section id="range">
-<h4>Range<a class="headerlink" href="#range" title="Link to this heading">#</a></h4>
-<p>Rentang (Range) merupakan ukuran penyebaran data yang menunjukkan selisih antara nilai maksimum dan nilai minimum dalam suatu dataset. Rentang memberikan gambaran seberapa luas variasi data secara keseluruhan.</p>
-<p>Rentang adalah selisih antara nilai terbesar (maks ()) dan terkecil (min ()).</p>
-<div class="math notranslate nohighlight">
-\[
-R = X_{max} - X_{min}
-\]</div>
-<p>Keterangan :</p>
-<p><span class="math notranslate nohighlight">\(
-\begin{aligned}
-R &amp;= \text{Rentang (Range)} \\
-X_{max} &amp;= \text{Nilai maksimum} \\
-X_{min} &amp;= \text{Nilai minimum}
-\end{aligned}
-\)</span></p>
-</section>
-<section id="kuartil-quartile">
-<h4>Kuartil (Quartile)<a class="headerlink" href="#kuartil-quartile" title="Link to this heading">#</a></h4>
-<p>Kuartil adalah ukuran statistik yang membagi data yang telah diurutkan menjadi empat bagian yang sama besar. Kuartil digunakan untuk melihat distribusi dan penyebaran data secara lebih detail.</p>
-<p>Terdapat tiga kuartil utama:</p>
-<ul class="simple">
-<li><p>Q1 (Kuartil 1 / Lower Quartile) → 25% data berada di bawah nilai ini</p></li>
-<li><p>Q2 (Kuartil 2 / Median) → 50% data berada di bawah nilai ini</p></li>
-<li><p>Q3 (Kuartil 3 / Upper Quartile) → 75% data berada di bawah nilai ini</p></li>
-</ul>
-</section>
-<section id="interkuartil-interquartile">
-<h4>Interkuartil (Interquartile)<a class="headerlink" href="#interkuartil-interquartile" title="Link to this heading">#</a></h4>
-<p>Rentang Interkuartil (IQR) adalah ukuran penyebaran data yang menunjukkan selisih antara kuartil ketiga dan kuartil pertama. IQR menggambarkan penyebaran 50% data tengah dan sering digunakan untuk mendeteksi outlier.</p>
-<p>Rumus Interquartile:</p>
-<div class="math notranslate nohighlight">
-\[
-IQR = Q_3 - Q_1
-\]</div>
-<p>Data dikatakan outlier jika :</p>
-<div class="math notranslate nohighlight">
-\[
-X &lt; Q_1 - 1.5(IQR)
-\]</div>
-<div class="math notranslate nohighlight">
-\[atau\]</div>
-<div class="math notranslate nohighlight">
-\[
-X &gt; Q_3 + 1.5(IQR)
-\]</div>
-<p>Pada dataset Iris Flower, rentang digunakan untuk mengetahui selisih nilai maksimum dan minimum dari setiap atribut numerik. Kuartil membantu memahami distribusi data dalam empat bagian, sedangkan IQR digunakan untuk mengukur penyebaran data tengah serta mendeteksi adanya outlier.</p>
-</section>
-</section>
-<section id="variansi-dan-standar-deviasi">
-<h3>Variansi dan Standar Deviasi<a class="headerlink" href="#variansi-dan-standar-deviasi" title="Link to this heading">#</a></h3>
-<p>Variansi dan standar deviasi adalah ukuran penyebaran data yang menunjukkan sejauh mana nilai-nilai dalam dataset menyebar dari nilai rata-rata.</p>
-<ul class="simple">
-<li><p>Standar Deviasi yang rendah berarti bahwa pengamatan data cenderung sangat dekat dengan rata-rata</p></li>
-<li><p>Standar Deviasi yang tinggi menunjukkan data tersebar di sejumlah nilai-nilai besar.</p></li>
-</ul>
-<section id="variansi">
-<h4>Variansi<a class="headerlink" href="#variansi" title="Link to this heading">#</a></h4>
-<p>Untuk atribut numerik <span class="math notranslate nohighlight">\(X\)</span> dengan <span class="math notranslate nohighlight">\(N\)</span> pengamatan <span class="math notranslate nohighlight">\(x_1, x_2,...,x_N,\)</span> variansi populasi <span class="math notranslate nohighlight">\((𝜎^2)\)</span> dirumuskan sebagai berikut :</p>
-<div class="math notranslate nohighlight">
-\[
-\sigma^2 = \frac{1}{N} \sum_{i=1}^{N} (x_i - \bar{x})^2 = \left( \frac{1}{N} \sum_{i=1}^{N} x_i^2 \right) - \bar{x}^2
-\]</div>
-</section>
-<section id="standar-deviasi">
-<h4>Standar Deviasi<a class="headerlink" href="#standar-deviasi" title="Link to this heading">#</a></h4>
-<p>Standar deviasi <span class="math notranslate nohighlight">\((𝜎)\)</span> adalah akar kuadrat dari variansi.
-Sifat dasar dari standar deviasi sebagai ukuran penyebaran data adalah sebagai berikut:</p>
-<ul class="simple">
-<li><p>Ukuran <span class="math notranslate nohighlight">\(σ\)</span> mengeukur sebaran disekitar rata-rata dan harus dipertimbangkan bila rata-rata dipilih sebagai ukuran pusat data</p></li>
-<li><p><span class="math notranslate nohighlight">\(σ = 0\)</span> hanya jika tidak ada penyebaran data, hanya terjadi ketika semua pengamatan memiliki nilai sama, Jika tidak maka <span class="math notranslate nohighlight">\(σ &gt; 0\)</span>.</p></li>
-</ul>
-<p>Pada dataset Iris Flower, variansi dan standar deviasi digunakan untuk mengukur sebaran nilai pada atribut numerik (sepal_length, sepal_width, petal_length, petal_width). Nilai standar deviasi yang rendah menunjukkan bahwa data terkonsentrasi di sekitar mean, sedangkan nilai tinggi menunjukkan variasi data yang lebih besar.</p>
-</section>
-<section id="skewness-kemencengan">
-<h4>Skewness (Kemencengan)<a class="headerlink" href="#skewness-kemencengan" title="Link to this heading">#</a></h4>
-<p>Skewness (kemencengan) adalah ukuran derajat distorsi dari distribusi data dibandingkan dengan kurva normal simetris. Skewness digunakan untuk mengetahui apakah distribusi data miring ke kanan, ke kiri, atau simetris.</p>
-<ul class="simple">
-<li><p>Skewness = 0 → distribusi simetris (normal)</p></li>
-<li><p>Skewness &gt; 0 → distribusi miring ke kanan (ekor di kanan lebih panjang)</p></li>
-<li><p>Skewness &lt; 0 → distribusi miring ke kiri (ekor di kiri lebih panjang)</p></li>
-</ul>
-<p>Untuk menghitung derajat distorisi dapat menggunakan Koefisien Kemencengan Pearson yang diperoleh dengan menggunakan nilai selisih rata-rata dengan modus dibagi simpangan baku. Koefisien Kemencengan Pearson dirumuskan sebagai berikut</p>
-<div class="math notranslate nohighlight">
-\[
-sk = \frac{\bar{X} - Mo}{s}
-\]</div>
-<p>dengan</p>
-<div class="math notranslate nohighlight">
-\[
-\bar{X} - Mo \approx 3 (\bar{X} - Me)
-\]</div>
-<p>maka</p>
-<div class="math notranslate nohighlight">
-\[
-sk \approx \frac{3(\bar{X} - Me)}{s}
-\]</div>
-<p><span class="math notranslate nohighlight">\(
-\text{Keterangan:} \\
-\begin{aligned}
-sk &amp; = \text{Koefisien kemencengan (skewness)} \\
-\bar{X} &amp; = \text{Mean (rata-rata)} \\
-Me &amp; = \text{Median (nilai tengah)} \\
-Mo &amp; = \text{Modus (nilai paling sering muncul)} \\
-s &amp; = \text{Standar deviasi} \\
-\bar{X} - Mo &amp; \approx 3 (\bar{X} - Me) \quad \text{(hubungan empiris Pearson)}
-\end{aligned}
-\)</span></p>
-</section>
-</section>
+<p>Dataset Iris Flower juga dapat divisualisasikan menggunakan tools feature statistics pada aplikasi orange, sehingga dapat diketahui berapa nilai mean, median, modus, dan lain sebagainya.</p>
+<p><img alt="Foto Saya" src="_images/feature-1.png" /></p>
+<p><img alt="Foto Saya" src="_images/feature-2.png" /></p>
 </section>
 <section id="visualisasi">
 <h2>Visualisasi<a class="headerlink" href="#visualisasi" title="Link to this heading">#</a></h2>
-<p><strong>Berikut merupakan visualisasi feature statistik dari data iris flower</strong></p>
-<p><img alt="Foto Saya" src="_images/feature-iris.png" /></p>
-<p><img alt="Foto Saya" src="_images/def-feature-iris.png" /></p>
-<p><strong>Berikut merupakan visualisasi scatter plot dari data iris flower</strong></p>
+<section id="histogram-data-iris">
+<h3>Histogram Data Iris<a class="headerlink" href="#histogram-data-iris" title="Link to this heading">#</a></h3>
+<p>Histogram adalah grafik yang digunakan untuk menampilkan distribusi frekuensi data numerik dengan cara membagi data ke dalam beberapa interval (disebut bin atau kelas).</p>
+<p><img alt="Foto Saya" src="_images/histogram-iris.png" /></p>
+</section>
+<section id="scatter-plot-data-iris">
+<h3>Scatter Plot Data Iris<a class="headerlink" href="#scatter-plot-data-iris" title="Link to this heading">#</a></h3>
+<p>Scatter Plot (Diagram Sebar) adalah grafik yang digunakan untuk melihat hubungan antara dua data angka.
+Grafik ini menampilkan titik-titik yang mewakili pasangan nilai dari dua variabel. Dari pola titik tersebut, kita bisa melihat apakah kedua variabel memiliki hubungan (misalnya naik bersama, turun, atau tidak berhubungan). Pada data IRIS, scatter plot bisa digunakan untuk melihat hubungan antara panjang sepal dan panjang petal.</p>
 <p><img alt="Foto Saya" src="_images/scatter-plot.png" /></p>
+</section>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="id1">
@@ -1066,25 +864,12 @@ s &amp; = \text{Standar deviasi} \\
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Data Iris Flower</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data-iris">Eksplorasi Data Iris</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-describe-data-iris">Statistik Describe Data Iris</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-rata-rata">Mean (Rata - Rata)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#median-nilai-tengah">Median (Nilai Tengah)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modus-mode-nilai-sering-muncul">Modus/Mode (Nilai Sering Muncul)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rentang-range-quartil-and-rentang-interquartile">Rentang (Range), Quartil, and Rentang Interquartile</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#range">Range</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kuartil-quartile">Kuartil (Quartile)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#interkuartil-interquartile">Interkuartil (Interquartile)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-describe-data-iris">Statistik Describe Data Iris</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi">Visualisasi</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram-data-iris">Histogram Data Iris</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plot-data-iris">Scatter Plot Data Iris</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variansi-dan-standar-deviasi">Variansi dan Standar Deviasi</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#variansi">Variansi</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#standar-deviasi">Standar Deviasi</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skewness-kemencengan">Skewness (Kemencengan)</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi">Visualisasi</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
