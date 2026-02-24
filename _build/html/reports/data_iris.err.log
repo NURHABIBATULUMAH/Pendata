@@ -1,0 +1,43 @@
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\.pyenv\pyenv-win\versions\3.12.10\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\Users\LENOVO\.pyenv\pyenv-win\versions\3.12.10\Lib\site-packages\nbclient\client.py", line 1323, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\.pyenv\pyenv-win\versions\3.12.10\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\.pyenv\pyenv-win\versions\3.12.10\Lib\asyncio\base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\LENOVO\.pyenv\pyenv-win\versions\3.12.10\Lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\LENOVO\.pyenv\pyenv-win\versions\3.12.10\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\LENOVO\.pyenv\pyenv-win\versions\3.12.10\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+===========================================================================
+Jenis Statistika               Nilai      Keterangan
+===========================================================================
+Jumlah Data (n)                150        Total seluruh data yang dianalisis
+Rata-rata (Mean)               5.84       Nilai rata-rata sebagai pusat data
+Median (Q2)                    5.80       Nilai tengah setelah data diurutkan
+Modus (Mode)                   5.0        Nilai yang paling sering muncul
+Nilai Minimum                  4.30       Nilai terkecil dalam dataset
+Nilai Maksimum                 7.90       Nilai terbesar dalam dataset
+Kuartil 1 (Q1)                 5.10       25% data berada di bawah nilai ini
+Kuartil 3 (Q3)                 6.40       75% data berada di bawah nilai ini
+Standar Deviasi                0.83       Mengukur tingkat penyebaran data
+Variansi                       0.69       Kuadrat dari standar deviasi
+===========================================================================
+------------------
+
+
+  [36mCell[39m[36m [39m[32mIn[8][39m[32m, line 1[39m
+[31m    [39m[31m===========================================================================[39m
+    ^
+[31mSyntaxError[39m[31m:[39m invalid syntax
+
+

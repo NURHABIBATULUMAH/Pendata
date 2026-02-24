@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -384,7 +384,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Data Iris Flower</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data-iris">Eksplorasi Data Iris</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-deskriptif-data-iris">Statistik Deskriptif Data Iris</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-describe-data-iris">Statistik Describe Data Iris</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-rata-rata">Mean (Rata - Rata)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#median-nilai-tengah">Median (Nilai Tengah)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modus-mode-nilai-sering-muncul">Modus/Mode (Nilai Sering Muncul)</a></li>
@@ -686,8 +686,8 @@ dtype: int64
 </div></div></div>
 </div>
 </section>
-<section id="statistik-deskriptif-data-iris">
-<h2>Statistik Deskriptif Data Iris<a class="headerlink" href="#statistik-deskriptif-data-iris" title="Link to this heading">#</a></h2>
+<section id="statistik-describe-data-iris">
+<h2>Statistik Describe Data Iris<a class="headerlink" href="#statistik-describe-data-iris" title="Link to this heading">#</a></h2>
 <p><strong>Ukuran Kecenderungan Terpusat</strong></p>
 <p>Pada bagian statistik deskriptif ini dilakukan perhitungan nilai untuk mengetahui ukuran pemusatan data pada masing - masing atribut dalam dataset, yaitu:</p>
 <ol class="arabic simple">
@@ -738,6 +738,58 @@ Variansi          0.69
 </div>
 </div>
 <p>Implementasi code di atas digunakan untuk menghitung ukuran statistik deskriptif pada atribut <em>sepal_length</em> yang meliputi, jumlah data, mean (rata - rata), nilai minimal, Q1, Q2 (median), Q3, nilai max, kemencengan (skewness), Modus, standar deviasi, dan variansi.</p>
+<p><strong>Penjelasan</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Jenis Statistika</p></th>
+<th class="head"><p>Nilai</p></th>
+<th class="head"><p>Keterangan</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Jumlah Data (n)</p></td>
+<td><p>150</p></td>
+<td><p>Total seluruh data yang dianalisis</p></td>
+</tr>
+<tr class="row-odd"><td><p>Rata-rata (Mean)</p></td>
+<td><p>5.84</p></td>
+<td><p>Nilai rata-rata sebagai pusat data</p></td>
+</tr>
+<tr class="row-even"><td><p>Median (Q2)</p></td>
+<td><p>5.80</p></td>
+<td><p>Nilai tengah setelah data diurutkan</p></td>
+</tr>
+<tr class="row-odd"><td><p>Modus (Mode)</p></td>
+<td><p>5.0</p></td>
+<td><p>Nilai yang paling sering muncul</p></td>
+</tr>
+<tr class="row-even"><td><p>Nilai Minimum</p></td>
+<td><p>4.30</p></td>
+<td><p>Nilai terkecil dalam dataset</p></td>
+</tr>
+<tr class="row-odd"><td><p>Nilai Maksimum</p></td>
+<td><p>7.90</p></td>
+<td><p>Nilai terbesar dalam dataset</p></td>
+</tr>
+<tr class="row-even"><td><p>Kuartil 1 (Q1)</p></td>
+<td><p>5.10</p></td>
+<td><p>25% data berada di bawah nilai ini</p></td>
+</tr>
+<tr class="row-odd"><td><p>Kuartil 3 (Q3)</p></td>
+<td><p>6.40</p></td>
+<td><p>75% data berada di bawah nilai ini</p></td>
+</tr>
+<tr class="row-even"><td><p>Standar Deviasi</p></td>
+<td><p>0.83</p></td>
+<td><p>Mengukur tingkat penyebaran data</p></td>
+</tr>
+<tr class="row-odd"><td><p>Variansi</p></td>
+<td><p>0.69</p></td>
+<td><p>Kuadrat dari standar deviasi</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <section id="mean-rata-rata">
 <h3>Mean (Rata - Rata)<a class="headerlink" href="#mean-rata-rata" title="Link to this heading">#</a></h3>
 <p>Mean atau rata-rata merupakan ukuran pemusatan data yang diperoleh dengan menjumlahkan seluruh nilai dalam suatu data kemudian dibagi dengan banyak data. Mean digunakan untuk mengetahui nilai tengah secara umum dari keseluruhan data.</p>
@@ -941,7 +993,7 @@ s &amp; = \text{Standar deviasi} \\
 <p><img alt="Foto Saya" src="_images/feature-iris.png" /></p>
 <p><img alt="Foto Saya" src="_images/def-feature-iris.png" /></p>
 <p><strong>Berikut merupakan visualisasi scatter plot dari data iris flower</strong></p>
-<p><img alt="Foto Saya" src="_images/scatter-plot-iris.png" /></p>
+<p><img alt="Foto Saya" src="_images/scatter-plot.png" /></p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="id1">
@@ -1014,7 +1066,7 @@ s &amp; = \text{Standar deviasi} \\
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Data Iris Flower</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data-iris">Eksplorasi Data Iris</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-deskriptif-data-iris">Statistik Deskriptif Data Iris</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-describe-data-iris">Statistik Describe Data Iris</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-rata-rata">Mean (Rata - Rata)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#median-nilai-tengah">Median (Nilai Tengah)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modus-mode-nilai-sering-muncul">Modus/Mode (Nilai Sering Muncul)</a></li>
