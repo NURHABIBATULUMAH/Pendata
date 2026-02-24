@@ -186,8 +186,6 @@
 <li class="toctree-l1"><a class="reference internal" href="notebooks.html">Memahami Data</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Data Iris Flower</a></li>
 
-
-
 <li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Materi 3</a></li>
 </ul>
 
@@ -385,31 +383,28 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Data Iris Flower</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data-iris">Eksplorasi Data Iris</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#berikut-merupakan-lima-data-pertama-untuk-melihat-struktur-dan-format-data-iris-flower-secara-umum">Berikut merupakan lima data pertama untuk melihat struktur dan format data iris flower secara umum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data-iris">Eksplorasi Data Iris</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-deskriptif-data-iris">Statistik Deskriptif Data Iris</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-rata-rata">Mean (Rata - Rata)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#median-nilai-tengah">Median (Nilai Tengah)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modus-mode-nilai-sering-muncul">Modus/Mode (Nilai Sering Muncul)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rentang-range-quartil-and-rentang-interquartile">Rentang (Range), Quartil, and Rentang Interquartile</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#range">Range</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kuartil-quartile">Kuartil (Quartile)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#interkuartil-interquartile">Interkuartil (Interquartile)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variansi-dan-standar-deviasi">Variansi dan Standar Deviasi</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#variansi">Variansi</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#standar-deviasi">Standar Deviasi</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skewness-kemencengan">Skewness (Kemencengan)</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-deskriptif-data-iris">Statistik Deskriptif Data Iris</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-rata-rata">Mean (Rata - Rata)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#median-nilai-tengah">Median (Nilai Tengah)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modus-mode-nilai-sering-muncul">Modus/Mode (Nilai Sering Muncul)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rentang-range-quartil-and-rentang-interquartile">Rentang (Range), Quartil, and Rentang Interquartile</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#range">Range</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kuartil-quartile">Kuartil (Quartile)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interkuartil-interquartile">Interkuartil (Interquartile)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi">Visualisasi</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variansi-dan-standar-deviasi">Variansi dan Standar Deviasi</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variansi">Variansi</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standar-deviasi">Standar Deviasi</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skewness-kemencengan">Skewness (Kemencengan)</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi">Visualisasi</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
 </ul>
 
@@ -456,8 +451,7 @@ document.write(`
 </ul>
 </li>
 </ul>
-<section id="berikut-merupakan-lima-data-pertama-untuk-melihat-struktur-dan-format-data-iris-flower-secara-umum">
-<h3>Berikut merupakan lima data pertama untuk melihat struktur dan format data iris flower secara umum<a class="headerlink" href="#berikut-merupakan-lima-data-pertama-untuk-melihat-struktur-dan-format-data-iris-flower-secara-umum" title="Link to this heading">#</a></h3>
+<p><strong>Berikut merupakan lima data pertama untuk melihat struktur dan format data iris flower secara umum</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -468,17 +462,75 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;IRIS.csv&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>petal_length</th>
+      <th>petal_width</th>
+      <th>species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4.9</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5.0</td>
+      <td>3.6</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p><strong>Dimensi Dataset</strong></p>
 <p>Dataset ini memiliki 150 baris dan 5 kolom</p>
@@ -503,7 +555,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.DataFrame&#39;&gt;
 RangeIndex: 150 entries, 0 to 149
 Data columns (total 5 columns):
  #   Column        Non-Null Count  Dtype  
@@ -512,9 +564,9 @@ Data columns (total 5 columns):
  1   sepal_width   150 non-null    float64
  2   petal_length  150 non-null    float64
  3   petal_width   150 non-null    float64
- 4   species       150 non-null    object 
-dtypes: float64(4), object(1)
-memory usage: 6.0+ KB
+ 4   species       150 non-null    str    
+dtypes: float64(4), str(1)
+memory usage: 6.0 KB
 </pre></div>
 </div>
 </div>
@@ -528,51 +580,15 @@ memory usage: 6.0+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>0</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>sepal_length</th>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>sepal_width</th>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>petal_length</th>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>petal_width</th>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>species</th>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</div><br><label><b>dtype:</b> int64</label></div></div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sepal_length    0
+sepal_width     0
+petal_length    0
+petal_width     0
+species         0
+dtype: int64
+</pre></div>
+</div>
+</div>
 </div>
 <p>Berdasarkan pengecekan missing value, tidak ditemukan data kosong pada dataset. Tetapi berdasarkan analisis menggunakan aplikasi orange, terdapat 15 data yang terindikasi sebagai outliers. <strong>Outlier</strong> merupakan data aneh dari dataset yang ada.</p>
 <p><strong>Gambaran Statistik Awal</strong></p>
@@ -584,9 +600,7 @@ memory usage: 6.0+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">
-  <div id="df-966f0082-68aa-4680-b749-5a08f854aaa7" class="colab-df-container">
-    <div>
+<div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -669,96 +683,11 @@ memory usage: 6.0+ KB
     </tr>
   </tbody>
 </table>
-</div>
-    <div class="colab-df-buttons">
-
-  <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-966f0082-68aa-4680-b749-5a08f854aaa7')"
-            title="Convert this dataframe to an interactive table."
-            style="display:none;">
-
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
-    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
-  </svg>
-    </button>
-
-  <style>
-    .colab-df-container {
-      display:flex;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    .colab-df-buttons div {
-      margin-bottom: 4px;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-    <script>
-      const buttonEl =
-        document.querySelector('#df-966f0082-68aa-4680-b749-5a08f854aaa7 button.colab-df-convert');
-      buttonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-      async function convertToInteractive(key) {
-        const element = document.querySelector('#df-966f0082-68aa-4680-b749-5a08f854aaa7');
-        const dataTable =
-          await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                    [key], {});
-        if (!dataTable) return;
-
-        const docLinkHtml = 'Like what you see? Visit the ' +
-          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-          + ' to learn more about interactive tables.';
-        element.innerHTML = '';
-        dataTable['output_type'] = 'display_data';
-        await google.colab.output.renderOutput(dataTable, element);
-        const docLink = document.createElement('div');
-        docLink.innerHTML = docLinkHtml;
-        element.appendChild(docLink);
-      }
-    </script>
-  </div>
-
-
-    </div>
-  </div>
-</div></div>
+</div></div></div>
 </div>
 </section>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="statistik-deskriptif-data-iris">
-<h1>Statistik Deskriptif Data Iris<a class="headerlink" href="#statistik-deskriptif-data-iris" title="Link to this heading">#</a></h1>
+<section id="statistik-deskriptif-data-iris">
+<h2>Statistik Deskriptif Data Iris<a class="headerlink" href="#statistik-deskriptif-data-iris" title="Link to this heading">#</a></h2>
 <p><strong>Ukuran Kecenderungan Terpusat</strong></p>
 <p>Pada bagian statistik deskriptif ini dilakukan perhitungan nilai untuk mengetahui ukuran pemusatan data pada masing - masing atribut dalam dataset, yaitu:</p>
 <ol class="arabic simple">
@@ -792,25 +721,21 @@ memory usage: 6.0+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>jumlah data   150
-rata-rata    5.843333333333334
-nila minimal  4.3
-Q1        5.1
-Q2           5.8
-Q3           6.4
-Nilai Max    7.9
-kemencengan 0.31
-Nilai modus 5.0 dengan jumlah 10
-kemencengan           0.314911
-Standar Deviasi    0.83
-Variansi          0.69
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;IRIS.csv&quot;</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;jumlah data  &quot;</span><span class="p">,</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;sepal_length&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;scipy&#39;
 </pre></div>
 </div>
 </div>
 </div>
 <p>Implementasi code di atas digunakan untuk menghitung ukuran statistik deskriptif pada atribut <em>sepal_length</em> yang meliputi, jumlah data, mean (rata - rata), nilai minimal, Q1, Q2 (median), Q3, nilai max, kemencengan (skewness), Modus, standar deviasi, dan variansi.</p>
 <section id="mean-rata-rata">
-<h2>Mean (Rata - Rata)<a class="headerlink" href="#mean-rata-rata" title="Link to this heading">#</a></h2>
+<h3>Mean (Rata - Rata)<a class="headerlink" href="#mean-rata-rata" title="Link to this heading">#</a></h3>
 <p>Mean atau rata-rata merupakan ukuran pemusatan data yang diperoleh dengan menjumlahkan seluruh nilai dalam suatu data kemudian dibagi dengan banyak data. Mean digunakan untuk mengetahui nilai tengah secara umum dari keseluruhan data.</p>
 <p>Berikut rumus untuk menghitung mean secara umum:</p>
 <div class="math notranslate nohighlight">
@@ -829,7 +754,7 @@ n &amp;= \text{Jumlah data} \\
 <p>Pada dataset Iris Flower, nilai mean digunakan untuk mengetahui rata-rata dari masing-masing atribut numerik seperti <em>sepal_length</em>, <em>sepal_width</em>, <em>petal_length</em>, dan <em>petal_width</em>.</p>
 </section>
 <section id="median-nilai-tengah">
-<h2>Median (Nilai Tengah)<a class="headerlink" href="#median-nilai-tengah" title="Link to this heading">#</a></h2>
+<h3>Median (Nilai Tengah)<a class="headerlink" href="#median-nilai-tengah" title="Link to this heading">#</a></h3>
 <p>Median merupakan ukuran pemusatan data yang menunjukkan nilai tengah dari suatu data setelah data diurutkan dari yang terkecil hingga terbesar. Median digunakan ketika ingin mengetahui nilai tengah yang tidak terlalu dipengaruhi oleh nilai ekstrem (outlier).</p>
 <p>Jika jumlah data ganjil, maka median adalah nilai tepat di tengah.
 Jika jumlah data genap, maka median adalah rata-rata dari dua nilai tengah.</p>
@@ -871,7 +796,7 @@ p &amp;= \text{Panjang interval kelas}
 <p>Pada dataset Iris Flower, median digunakan untuk mengetahui nilai tengah dari masing-masing atribut numerik setelah data diurutkan, sehingga dapat memberikan gambaran pusat data yang lebih stabil dibandingkan mean ketika terdapat nilai ekstrem (outlier).</p>
 </section>
 <section id="modus-mode-nilai-sering-muncul">
-<h2>Modus/Mode (Nilai Sering Muncul)<a class="headerlink" href="#modus-mode-nilai-sering-muncul" title="Link to this heading">#</a></h2>
+<h3>Modus/Mode (Nilai Sering Muncul)<a class="headerlink" href="#modus-mode-nilai-sering-muncul" title="Link to this heading">#</a></h3>
 <p>Modus adalah nilai yang paling sering muncul dalam suatu kumpulan data. Modus digunakan untuk mengetahui nilai yang memiliki frekuensi tertinggi dalam suatu distribusi data.</p>
 <p>Pada data numerik, modus menunjukkan nilai yang paling banyak muncul. Sedangkan pada data kategorikal (seperti atribut species pada dataset Iris), modus menunjukkan kategori yang paling dominan.</p>
 <p>Suatu data dapat memiliki:</p>
@@ -894,9 +819,9 @@ Mo = \text{Nilai dengan frekuensi tertinggi}
 <p>Ini menyiratkan bahwa mode untuk kurva frekuensi unimodal yang cukup miring dapat dengan mudah didekati jika nilai rata-rata dan median diketahui.</p>
 </section>
 <section id="rentang-range-quartil-and-rentang-interquartile">
-<h2>Rentang (Range), Quartil, and Rentang Interquartile<a class="headerlink" href="#rentang-range-quartil-and-rentang-interquartile" title="Link to this heading">#</a></h2>
+<h3>Rentang (Range), Quartil, and Rentang Interquartile<a class="headerlink" href="#rentang-range-quartil-and-rentang-interquartile" title="Link to this heading">#</a></h3>
 <section id="range">
-<h3>Range<a class="headerlink" href="#range" title="Link to this heading">#</a></h3>
+<h4>Range<a class="headerlink" href="#range" title="Link to this heading">#</a></h4>
 <p>Rentang (Range) merupakan ukuran penyebaran data yang menunjukkan selisih antara nilai maksimum dan nilai minimum dalam suatu dataset. Rentang memberikan gambaran seberapa luas variasi data secara keseluruhan.</p>
 <p>Rentang adalah selisih antara nilai terbesar (maks ()) dan terkecil (min ()).</p>
 <div class="math notranslate nohighlight">
@@ -913,7 +838,7 @@ X_{min} &amp;= \text{Nilai minimum}
 \)</span></p>
 </section>
 <section id="kuartil-quartile">
-<h3>Kuartil (Quartile)<a class="headerlink" href="#kuartil-quartile" title="Link to this heading">#</a></h3>
+<h4>Kuartil (Quartile)<a class="headerlink" href="#kuartil-quartile" title="Link to this heading">#</a></h4>
 <p>Kuartil adalah ukuran statistik yang membagi data yang telah diurutkan menjadi empat bagian yang sama besar. Kuartil digunakan untuk melihat distribusi dan penyebaran data secara lebih detail.</p>
 <p>Terdapat tiga kuartil utama:</p>
 <ul class="simple">
@@ -923,7 +848,7 @@ X_{min} &amp;= \text{Nilai minimum}
 </ul>
 </section>
 <section id="interkuartil-interquartile">
-<h3>Interkuartil (Interquartile)<a class="headerlink" href="#interkuartil-interquartile" title="Link to this heading">#</a></h3>
+<h4>Interkuartil (Interquartile)<a class="headerlink" href="#interkuartil-interquartile" title="Link to this heading">#</a></h4>
 <p>Rentang Interkuartil (IQR) adalah ukuran penyebaran data yang menunjukkan selisih antara kuartil ketiga dan kuartil pertama. IQR menggambarkan penyebaran 50% data tengah dan sering digunakan untuk mendeteksi outlier.</p>
 <p>Rumus Interquartile:</p>
 <div class="math notranslate nohighlight">
@@ -945,14 +870,14 @@ X &gt; Q_3 + 1.5(IQR)
 </section>
 </section>
 <section id="variansi-dan-standar-deviasi">
-<h2>Variansi dan Standar Deviasi<a class="headerlink" href="#variansi-dan-standar-deviasi" title="Link to this heading">#</a></h2>
+<h3>Variansi dan Standar Deviasi<a class="headerlink" href="#variansi-dan-standar-deviasi" title="Link to this heading">#</a></h3>
 <p>Variansi dan standar deviasi adalah ukuran penyebaran data yang menunjukkan sejauh mana nilai-nilai dalam dataset menyebar dari nilai rata-rata.</p>
 <ul class="simple">
 <li><p>Standar Deviasi yang rendah berarti bahwa pengamatan data cenderung sangat dekat dengan rata-rata</p></li>
 <li><p>Standar Deviasi yang tinggi menunjukkan data tersebar di sejumlah nilai-nilai besar.</p></li>
 </ul>
 <section id="variansi">
-<h3>Variansi<a class="headerlink" href="#variansi" title="Link to this heading">#</a></h3>
+<h4>Variansi<a class="headerlink" href="#variansi" title="Link to this heading">#</a></h4>
 <p>Untuk atribut numerik <span class="math notranslate nohighlight">\(X\)</span> dengan <span class="math notranslate nohighlight">\(N\)</span> pengamatan <span class="math notranslate nohighlight">\(x_1, x_2,...,x_N,\)</span> variansi populasi <span class="math notranslate nohighlight">\((𝜎^2)\)</span> dirumuskan sebagai berikut :</p>
 <div class="math notranslate nohighlight">
 \[
@@ -960,7 +885,7 @@ X &gt; Q_3 + 1.5(IQR)
 \]</div>
 </section>
 <section id="standar-deviasi">
-<h3>Standar Deviasi<a class="headerlink" href="#standar-deviasi" title="Link to this heading">#</a></h3>
+<h4>Standar Deviasi<a class="headerlink" href="#standar-deviasi" title="Link to this heading">#</a></h4>
 <p>Standar deviasi <span class="math notranslate nohighlight">\((𝜎)\)</span> adalah akar kuadrat dari variansi.
 Sifat dasar dari standar deviasi sebagai ukuran penyebaran data adalah sebagai berikut:</p>
 <ul class="simple">
@@ -970,7 +895,7 @@ Sifat dasar dari standar deviasi sebagai ukuran penyebaran data adalah sebagai b
 <p>Pada dataset Iris Flower, variansi dan standar deviasi digunakan untuk mengukur sebaran nilai pada atribut numerik (sepal_length, sepal_width, petal_length, petal_width). Nilai standar deviasi yang rendah menunjukkan bahwa data terkonsentrasi di sekitar mean, sedangkan nilai tinggi menunjukkan variasi data yang lebih besar.</p>
 </section>
 <section id="skewness-kemencengan">
-<h3>Skewness (Kemencengan)<a class="headerlink" href="#skewness-kemencengan" title="Link to this heading">#</a></h3>
+<h4>Skewness (Kemencengan)<a class="headerlink" href="#skewness-kemencengan" title="Link to this heading">#</a></h4>
 <p>Skewness (kemencengan) adalah ukuran derajat distorsi dari distribusi data dibandingkan dengan kurva normal simetris. Skewness digunakan untuk mengetahui apakah distribusi data miring ke kanan, ke kiri, atau simetris.</p>
 <ul class="simple">
 <li><p>Skewness = 0 → distribusi simetris (normal)</p></li>
@@ -1006,8 +931,9 @@ s &amp; = \text{Standar deviasi} \\
 </section>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="visualisasi">
-<h1>Visualisasi<a class="headerlink" href="#visualisasi" title="Link to this heading">#</a></h1>
+<section id="visualisasi">
+<h2>Visualisasi<a class="headerlink" href="#visualisasi" title="Link to this heading">#</a></h2>
+</section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1><a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
@@ -1078,31 +1004,28 @@ s &amp; = \text{Standar deviasi} \\
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Data Iris Flower</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data-iris">Eksplorasi Data Iris</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#berikut-merupakan-lima-data-pertama-untuk-melihat-struktur-dan-format-data-iris-flower-secara-umum">Berikut merupakan lima data pertama untuk melihat struktur dan format data iris flower secara umum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data-iris">Eksplorasi Data Iris</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-deskriptif-data-iris">Statistik Deskriptif Data Iris</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-rata-rata">Mean (Rata - Rata)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#median-nilai-tengah">Median (Nilai Tengah)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modus-mode-nilai-sering-muncul">Modus/Mode (Nilai Sering Muncul)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rentang-range-quartil-and-rentang-interquartile">Rentang (Range), Quartil, and Rentang Interquartile</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#range">Range</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kuartil-quartile">Kuartil (Quartile)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#interkuartil-interquartile">Interkuartil (Interquartile)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variansi-dan-standar-deviasi">Variansi dan Standar Deviasi</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#variansi">Variansi</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#standar-deviasi">Standar Deviasi</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#skewness-kemencengan">Skewness (Kemencengan)</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-deskriptif-data-iris">Statistik Deskriptif Data Iris</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-rata-rata">Mean (Rata - Rata)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#median-nilai-tengah">Median (Nilai Tengah)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modus-mode-nilai-sering-muncul">Modus/Mode (Nilai Sering Muncul)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rentang-range-quartil-and-rentang-interquartile">Rentang (Range), Quartil, and Rentang Interquartile</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#range">Range</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kuartil-quartile">Kuartil (Quartile)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interkuartil-interquartile">Interkuartil (Interquartile)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi">Visualisasi</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variansi-dan-standar-deviasi">Variansi dan Standar Deviasi</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variansi">Variansi</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standar-deviasi">Standar Deviasi</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skewness-kemencengan">Skewness (Kemencengan)</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi">Visualisasi</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
 </ul>
 

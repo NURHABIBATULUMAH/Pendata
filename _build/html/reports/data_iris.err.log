@@ -18,20 +18,31 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import pandas as pd
+from scipy import stats
+df=pd.read_csv("IRIS.csv", usecols=[0])
 
-df = pd.read_csv("IRIS.csv")
-df.head()
-
+print("jumlah data  ",df['sepal_length'].count())
+print("rata-rata   ",df['sepal_length'].mean())
+print("nila minimal ",df['sepal_length'].min())
+print("Q1       ",df['sepal_length'].quantile(0.25))
+print("Q2          ",df['sepal_length'].quantile(0.5))
+print("Q3          ",df['sepal_length'].quantile(0.75))
+print("Nilai Max   ",df['sepal_length'].max())
+print("kemencengan","{0:.2f}".format(round(df['sepal_length'].skew(),2)))
+mode=stats.mode(df)
+print("Nilai modus {} dengan jumlah {}".format(mode.mode[0], mode.count[0]))
+print("kemencengan          " ,"{0:.6f}".format(round(df['sepal_length'].skew(),6)))
+print("Standar Deviasi   ","{0:.2f}".format(round(df['sepal_length'].std(),2)))
+print("Variansi         ","{0:.2f}".format(round(df['sepal_length'].var(),2)))
 ------------------
 
 
 [31m---------------------------------------------------------------------------[39m
 [31mModuleNotFoundError[39m                       Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[1][39m[32m, line 1[39m
-[32m----> [39m[32m1[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mpandas[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01mpd[39;00m
-[32m      3[39m df = pd.read_csv([33m"[39m[33mIRIS.csv[39m[33m"[39m)
-[32m      4[39m df.head()
+[36mCell[39m[36m [39m[32mIn[6][39m[32m, line 1[39m
+[32m----> [39m[32m1[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mscipy[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m stats
+[32m      2[39m df=pd.read_csv([33m"[39m[33mIRIS.csv[39m[33m"[39m, usecols=[[32m0[39m])
+[32m      4[39m [38;5;28mprint[39m([33m"[39m[33mjumlah data  [39m[33m"[39m,df[[33m'[39m[33msepal_length[39m[33m'[39m].count())
 
-[31mModuleNotFoundError[39m: No module named 'pandas'
+[31mModuleNotFoundError[39m: No module named 'scipy'
 
