@@ -4,7 +4,8 @@
 format: jb-book
 root: intro
 chapters:
-- file: markdown
-- file: notebooks
+- file: pengantar
+- file: memahami-data
 - file: data_iris
-- file: markdown-notebooks
+  sections:
+  - file: mengukur-jarak
