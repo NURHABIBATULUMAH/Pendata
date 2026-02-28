@@ -35,3 +35,6 @@ di normalisasi akan mendapatkan data baru yang bertipe data numerik
 Cara mengukur jarak bertipe nominal/categorical:
 p = jumlah fitur
 m = banyak yang sama
+
+## Mengukur Jarak Dataset Iris Flower
+
