@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Materi 3 &#8212; Profile Nurhabibatul Umah</title>
+    <title>Mengukur Jarak &#8212; Profile Nurhabibatul Umah</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'markdown-notebooks';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Data Iris Flower" href="data_iris.html" />
+    <link rel="prev" title="Data Understanding Iris Flower" href="data_iris.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -181,9 +181,10 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="markdown.html">Pengantar Data Mining</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks.html">Memahami Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="data_iris.html">Data Iris Flower</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_iris.html">Data Understanding Iris Flower</a></li>
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Materi 3</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Mengukur Jarak</a></li>
 </ul>
 
     </div>
@@ -367,7 +368,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Materi 3</h1>
+    <h1>Mengukur Jarak</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -381,45 +382,35 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="materi-3">
-<h1>Materi 3<a class="headerlink" href="#materi-3" title="Link to this heading">#</a></h1>
-<!-- Jupyter Book also lets you write text-based notebooks using MyST Markdown.
-See [the Notebooks with MyST Markdown documentation](https://jupyterbook.org/file-types/myst-notebooks.html) for more detailed instructions.
-This page shows off a notebook written in MyST Markdown.
-
-## An example cell
-
-With MyST Markdown, you can define code cells with a directive like so:
-
-```{code-cell}
-print(2 + 2)
-```
-
-When your book is built, the contents of any `{code-cell}` blocks will be
-executed with your default Jupyter kernel, and their outputs will be displayed
-in-line with the rest of your content.
-
-```{seealso}
-Jupyter Book uses [Jupytext](https://jupytext.readthedocs.io/en/latest/) to convert text-based files to notebooks, and can support [many other text-based notebook files](https://jupyterbook.org/file-types/jupytext.html).
-```
-
-## Create a notebook with MyST Markdown
-
-MyST Markdown notebooks are defined by two things:
-
-1. YAML metadata that is needed to understand if / how it should convert text files to notebooks (including information about the kernel needed).
-   See the YAML at the top of this page for example.
-2. The presence of `{code-cell}` directives, which will be executed with your book.
-
-That's all that is needed to get started!
-
-## Quickly add YAML metadata for MyST Notebooks
-
-If you have a markdown file and you'd like to quickly add YAML metadata to it, so that Jupyter Book will treat it as a MyST Markdown Notebook, run the following command:
-
-```
-jupyter-book myst init path/to/markdownfile.md
-``` --></section>
+  <section class="tex2jax_ignore mathjax_ignore" id="mengukur-jarak">
+<h1>Mengukur Jarak<a class="headerlink" href="#mengukur-jarak" title="Link to this heading">#</a></h1>
+<p>Objek dikatakan sama jika selisih 0, dikatakan mirip jika selisih mendekati 0</p>
+<p>Membandingkan setiap fitur, dihitung selisihnya dan yang paling sedikit itu yang dikatakan mirip.
+Cara mengetahui kemiripann data yaitu : Mengurangkan setiap fitur kemudian di jumlahkan</p>
+<p>Euclidean Distance:
+rumusnya sama dengan tadi, tapi di pangkatkan setiap pengurangan fitur kemudian di jumlahkan dan di akarkan</p>
+<p>Similarity:</p>
+<ul class="simple">
+<li><p>mengukur kesamaan dua objek</p></li>
+<li><p>tinggi nilainya bila benda yng lebih mirip</p></li>
+</ul>
+<p>Dissimilarity:</p>
+<p>Data Matrix and Dissimilarity Matrix</p>
+<ul class="simple">
+<li><p>Data Matrix</p></li>
+<li><p>Dissimilarity Matrix (jarak matrix)</p></li>
+</ul>
+<p>Cara mengukur jarak bertipe biner: - JACARD
+simetris dan asimetris</p>
+<p>Cara mengukur jarak bertipe ordinal:</p>
+<ul class="simple">
+<li><p>ada rumusnya
+di normalisasi akan mendapatkan data baru yang bertipe data numerik</p></li>
+</ul>
+<p>Cara mengukur jarak bertipe nominal/categorical:
+p = jumlah fitur
+m = banyak yang sama</p>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -457,7 +448,7 @@ jupyter-book myst init path/to/markdownfile.md
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Data Iris Flower</p>
+        <p class="prev-next-title">Data Understanding Iris Flower</p>
       </div>
     </a>
 </div>

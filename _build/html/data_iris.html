@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Data Iris Flower &#8212; Profile Nurhabibatul Umah</title>
+    <title>Data Understanding Iris Flower &#8212; Profile Nurhabibatul Umah</title>
   
   
   
@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'data_iris';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Materi 3" href="markdown-notebooks.html" />
+    <link rel="next" title="Mengukur Jarak" href="markdown-notebooks.html" />
     <link rel="prev" title="Memahami Data" href="notebooks.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -182,9 +182,10 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="markdown.html">Pengantar Data Mining</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks.html">Memahami Data</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Data Iris Flower</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Data Understanding Iris Flower</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Materi 3</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Mengukur Jarak</a></li>
 </ul>
 
     </div>
@@ -370,7 +371,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Data Iris Flower</h1>
+    <h1>Data Understanding Iris Flower</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -380,7 +381,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Data Iris Flower</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Data Understanding Iris Flower</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#diselesaikan-lagi-lihat-catatan">DISELESAIKAN LAGI, LIHAT CATATAN</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data-iris">Eksplorasi Data Iris</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#describe-data-iris">Describe Data Iris</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data-iris">Visualisasi Data Iris</a><ul class="nav section-nav flex-column">
@@ -403,8 +405,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="data-iris-flower">
-<h1>Data Iris Flower<a class="headerlink" href="#data-iris-flower" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="data-understanding-iris-flower">
+<h1>Data Understanding Iris Flower<a class="headerlink" href="#data-understanding-iris-flower" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="diselesaikan-lagi-lihat-catatan">
+<h1>DISELESAIKAN LAGI, LIHAT CATATAN<a class="headerlink" href="#diselesaikan-lagi-lihat-catatan" title="Link to this heading">#</a></h1>
 <section id="eksplorasi-data-iris">
 <h2>Eksplorasi Data Iris<a class="headerlink" href="#eksplorasi-data-iris" title="Link to this heading">#</a></h2>
 <p>Dataset Iris Flower merupakan dataset multivariate yang diperkenalkan oleh ahli statistika dan biologi inggris, Ronald Fisher, pada tahun 1936. Dataset bunga Iris ini sangat terkenal di dunia Machine Learning yang digunakan untuk klasifikasi. Dataset Iris Flower ini didapatkan dari kaggle, berikut link kaggle dari data: <a class="reference external" href="https://www.kaggle.com/datasets/arshid/iris-flower-dataset">https://www.kaggle.com/datasets/arshid/iris-flower-dataset</a></p>
@@ -426,17 +431,19 @@ document.write(`
 <ol class="arabic simple">
 <li><p>spesies</p></li>
 </ol>
-<p>Pada atribut species ini memiliki 3 kategori, yaitu :</p>
+<p>Pada atribut species ini memiliki 3 kategori, Jumlah setiap spesies sebanyak 50 setiap kategorinya :</p>
 <ol class="arabic simple">
 <li><p>iris-setosa</p></li>
 <li><p>iris-versicolor</p></li>
 <li><p>iris-virginica.</p></li>
 </ol>
-<p>Jumlah setiap spesies sebanyak 50 setiap spesies.</p>
 </li>
 </ul>
 </li>
 </ul>
+<ol class="arabic simple">
+<li><p>Cara kolekting data, menarik data dari database untuk di orange/knime</p></li>
+</ol>
 <p><strong>Berikut merupakan lima data pertama untuk melihat struktur dan format data iris flower secara umum</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -577,6 +584,9 @@ dtype: int64
 </div>
 </div>
 <p>Berdasarkan pengecekan missing value, tidak ditemukan data kosong pada dataset. Tetapi berdasarkan analisis menggunakan aplikasi orange, terdapat 15 data yang terindikasi sebagai outliers. <strong>Outlier</strong> merupakan data aneh dari dataset yang ada.</p>
+<p><strong>Deteksi Outliers</strong></p>
+<p>Pada Dataset Iris terdapat 15 data yang terindikasi outliers. Yaitu data aneh yang ada pada dataset Iris Flower</p>
+<p><img alt="Foto Saya" src="_images/outliers.png" /></p>
 <p><strong>Gambaran Statistik Awal</strong></p>
 <p>Untuk mengetahui karakteristik numerik dari masing-masing atribut,  maka dilakukan perhitungan statistik deskriptif menggunakan fungsi describe()</p>
 <div class="cell docutils container">
@@ -779,6 +789,9 @@ Variansi          0.69
 <p>Dataset Iris Flower juga dapat divisualisasikan menggunakan tools feature statistics pada aplikasi orange, sehingga dapat diketahui berapa nilai mean, median, modus, dan lain sebagainya.</p>
 <p><img alt="Foto Saya" src="_images/feature-1.png" /></p>
 <p><img alt="Foto Saya" src="_images/feature-2.png" /></p>
+<p><strong>Statistik Deskriptif Setiap Fitur Terhadap Class</strong></p>
+<p>rata - rata setiap atribut di masing masing class/spesies</p>
+<p><img alt="Foto Saya" src="_images/mean-species.png" /></p>
 </section>
 <section id="visualisasi-data-iris">
 <h2>Visualisasi Data Iris<a class="headerlink" href="#visualisasi-data-iris" title="Link to this heading">#</a></h2>
@@ -843,7 +856,7 @@ Grafik ini menampilkan titik-titik yang mewakili pasangan nilai dari dua variabe
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Materi 3</p>
+        <p class="prev-next-title">Mengukur Jarak</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -863,7 +876,8 @@ Grafik ini menampilkan titik-titik yang mewakili pasangan nilai dari dua variabe
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Data Iris Flower</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Data Understanding Iris Flower</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#diselesaikan-lagi-lihat-catatan">DISELESAIKAN LAGI, LIHAT CATATAN</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data-iris">Eksplorasi Data Iris</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#describe-data-iris">Describe Data Iris</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data-iris">Visualisasi Data Iris</a><ul class="nav section-nav flex-column">

@@ -1,53 +1,37 @@
----
-jupytext:
-  formats: md:myst
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.11.5
-kernelspec:
-  display_name: Python 3
-  language: python
-  name: python3
----
+# Mengukur Jarak
 
-# Materi 3
+Objek dikatakan sama jika selisih 0, dikatakan mirip jika selisih mendekati 0
 
-<!-- Jupyter Book also lets you write text-based notebooks using MyST Markdown.
-See [the Notebooks with MyST Markdown documentation](https://jupyterbook.org/file-types/myst-notebooks.html) for more detailed instructions.
-This page shows off a notebook written in MyST Markdown.
+Membandingkan setiap fitur, dihitung selisihnya dan yang paling sedikit itu yang dikatakan mirip.
+Cara mengetahui kemiripann data yaitu : Mengurangkan setiap fitur kemudian di jumlahkan
 
-## An example cell
+Euclidean Distance:
+rumusnya sama dengan tadi, tapi di pangkatkan setiap pengurangan fitur kemudian di jumlahkan dan di akarkan
 
-With MyST Markdown, you can define code cells with a directive like so:
 
-```{code-cell}
-print(2 + 2)
-```
+Similarity:
+- mengukur kesamaan dua objek
+- tinggi nilainya bila benda yng lebih mirip
 
-When your book is built, the contents of any `{code-cell}` blocks will be
-executed with your default Jupyter kernel, and their outputs will be displayed
-in-line with the rest of your content.
+Dissimilarity:
 
-```{seealso}
-Jupyter Book uses [Jupytext](https://jupytext.readthedocs.io/en/latest/) to convert text-based files to notebooks, and can support [many other text-based notebook files](https://jupyterbook.org/file-types/jupytext.html).
-```
 
-## Create a notebook with MyST Markdown
+Data Matrix and Dissimilarity Matrix
 
-MyST Markdown notebooks are defined by two things:
+- Data Matrix
 
-1. YAML metadata that is needed to understand if / how it should convert text files to notebooks (including information about the kernel needed).
-   See the YAML at the top of this page for example.
-2. The presence of `{code-cell}` directives, which will be executed with your book.
+- Dissimilarity Matrix (jarak matrix)
 
-That's all that is needed to get started!
 
-## Quickly add YAML metadata for MyST Notebooks
 
-If you have a markdown file and you'd like to quickly add YAML metadata to it, so that Jupyter Book will treat it as a MyST Markdown Notebook, run the following command:
+Cara mengukur jarak bertipe biner: - JACARD
+simetris dan asimetris
 
-```
-jupyter-book myst init path/to/markdownfile.md
-``` -->
+Cara mengukur jarak bertipe ordinal:
+- ada rumusnya
+di normalisasi akan mendapatkan data baru yang bertipe data numerik
+
+
+Cara mengukur jarak bertipe nominal/categorical:
+p = jumlah fitur
+m = banyak yang sama
