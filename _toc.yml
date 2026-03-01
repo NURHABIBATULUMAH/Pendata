@@ -9,3 +9,4 @@ chapters:
 - file: data_iris
   sections:
    - file: mengukur-jarak
+   - file: titanic-jarak
