@@ -7,6 +7,5 @@ chapters:
   - file: pengantar
   - file: memahami-data
   - file: data_iris
-    sections:
-      - file: mengukur-jarak
-      - file: titanic-jarak
+  - file: mengukur-jarak
+  - file: titanic-jarak
