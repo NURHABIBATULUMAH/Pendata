@@ -1,4 +1,4 @@
-# Implementasi Mengukur Jarak Menggunakan Dataset dengan Tipe Data Campuran (Titanic)
+## Implementasi Mengukur Jarak Menggunakan Dataset dengan Tipe Data Campuran (Titanic)
 
 ## Data Understanding
 

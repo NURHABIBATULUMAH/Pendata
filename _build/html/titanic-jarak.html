@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -380,15 +380,17 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-understanding">Data Understanding</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penanganan-missing-value">Penanganan Missing Value</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#seleksi-atribut-untuk-perhitungan-jarak">Seleksi Atribut untuk Perhitungan Jarak</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformasi-data">Transformasi Data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Implementasi Mengukur Jarak Menggunakan Dataset dengan Tipe Data Campuran (Titanic)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-understanding">Data Understanding</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penanganan-missing-value">Penanganan Missing Value</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seleksi-atribut-untuk-perhitungan-jarak">Seleksi Atribut untuk Perhitungan Jarak</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformasi-data">Transformasi Data</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-jarak">Perhitungan Jarak</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-menggunakan-orange">Implementasi menggunakan Orange</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-jarak">Perhitungan Jarak</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-menggunakan-orange">Implementasi menggunakan Orange</a></li>
 </ul>
+
             </nav>
         </div>
     </div>
@@ -399,10 +401,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="implementasi-mengukur-jarak-menggunakan-dataset-dengan-tipe-data-campuran-titanic">
+  <section id="implementasi-mengukur-jarak-menggunakan-dataset-dengan-tipe-data-campuran-titanic">
 <h1>Implementasi Mengukur Jarak Menggunakan Dataset dengan Tipe Data Campuran (Titanic)<a class="headerlink" href="#implementasi-mengukur-jarak-menggunakan-dataset-dengan-tipe-data-campuran-titanic" title="Link to this heading">#</a></h1>
+</section>
 <section id="data-understanding">
-<h2>Data Understanding<a class="headerlink" href="#data-understanding" title="Link to this heading">#</a></h2>
+<h1>Data Understanding<a class="headerlink" href="#data-understanding" title="Link to this heading">#</a></h1>
 <p>Dataset Titanic merupakan dataset yang berisi informasi mengenai penumpang kapal RMS Titanic yang tenggelam pada tanggal 15 April 1912 setelah menabrak gunung es di Samudra Atlantik Utara. Dataset ini sering digunakan dalam bidang data mining dan machine learning untuk permasalahan klasifikasi, khususnya dalam memprediksi keselamatan penumpang.</p>
 <p>Dataset yang digunakan dalam penelitian ini diperoleh dari platform Kaggle. Jumlah Dataset training Titanic ini adalah 891 data dan 12 atribut. Setaip baris merepresentasikan satu penumpang kala Titanic, sedangkan setiap kolom merepresentasikan atribut karakteristik dari penumpang tersebut.</p>
 <p>Tujuan dataset ini adalah untuk memprediksi apakah seorang penumpang selamat (survived = 1) atau tidak selamat (survived = 0).</p>
@@ -485,7 +488,7 @@ document.write(`
 <li><p>Embarked</p></li>
 </ul>
 <section id="penanganan-missing-value">
-<h3>Penanganan Missing Value<a class="headerlink" href="#penanganan-missing-value" title="Link to this heading">#</a></h3>
+<h2>Penanganan Missing Value<a class="headerlink" href="#penanganan-missing-value" title="Link to this heading">#</a></h2>
 <p>Berdasarkan hasil tahap data understanding, ditemukan bahwa dataset Titanic mengandung beberapa atribut yang memiliki nilai kosong (missing value). Keberadaan missing value dapat mempengaruhi proses analisis, terutama dalam perhitungan jarak antar data, karena metode distance seperti Euclidean atau Manhattan tidak dapat memproses nilai kosong (NaN). Oleh karena itu, diperlukan tahapan penanganan missing value sebelum dilakukan transformasi dan perhitungan jarak. Berikut adalah atribut yang teridentifikas memiliki
 missing value:</p>
 <ol class="arabic simple">
@@ -505,7 +508,7 @@ missing value:</p>
 <p>Karena missing value pada atribut ini sangat tinggi, maka atribut Cabin dihapus dari dataset dan tidak digunakan dalam proses analisis selanjutnya.</p>
 </section>
 <section id="seleksi-atribut-untuk-perhitungan-jarak">
-<h3>Seleksi Atribut untuk Perhitungan Jarak<a class="headerlink" href="#seleksi-atribut-untuk-perhitungan-jarak" title="Link to this heading">#</a></h3>
+<h2>Seleksi Atribut untuk Perhitungan Jarak<a class="headerlink" href="#seleksi-atribut-untuk-perhitungan-jarak" title="Link to this heading">#</a></h2>
 <p>Seleksi atribut ini bertujuan untuk menentukan atribut - atribut yang relevan dan akan digunakan dalam proses perhitungan jarak antar data.</p>
 <p><strong>Atribut Yang Digunakan</strong></p>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -579,7 +582,7 @@ missing value:</p>
 </div>
 </section>
 <section id="transformasi-data">
-<h3>Transformasi Data<a class="headerlink" href="#transformasi-data" title="Link to this heading">#</a></h3>
+<h2>Transformasi Data<a class="headerlink" href="#transformasi-data" title="Link to this heading">#</a></h2>
 <p>Transformasi ini bertujuan untuk mengubah seluruh atribut ke dalam bentuk numerik dan memiliki skala yang sebanding agar dapat digunakan dalam perhitungan jarak menggunakan metode Euclidean Distance.</p>
 <p>Transformasi data terdiri dari dua tahap utama, yaitu encoding dan normalisasi.</p>
 <p><strong>Encoding Data Kategorical</strong></p>
@@ -619,7 +622,7 @@ x'_i = \frac{x_i - x_{\min}}{x_{\max} - x_{\min}}
 </section>
 </section>
 <section id="perhitungan-jarak">
-<h2>Perhitungan Jarak<a class="headerlink" href="#perhitungan-jarak" title="Link to this heading">#</a></h2>
+<h1>Perhitungan Jarak<a class="headerlink" href="#perhitungan-jarak" title="Link to this heading">#</a></h1>
 <p>Setelah semua nilai atribut sudah berada pada rentang 0 sampai 1 maka siap digunakan dalam proses mengukur jarak. Normalisasi diperlukan agar atribut dengan skala besar tidak mendominasi atribut lain dalam proses pengukuran kedekatan data.</p>
 <p>Setelah proses normalisasi selesai, langkah berikutnya adalah menghitung jarak antar data menggunakan metode Euclidean Distance. Metode ini mengukur jarak dua titik dalam ruang multidimensi berdasarkan akar dari jumlah kuadrat selisih tiap atribut.</p>
 <p>Rumus Euclidean Distance dinyatakan sebagai berikut:</p>
@@ -673,10 +676,9 @@ d(3,1) &amp; d(3,2) &amp; 0
 <p>Hal ini menunjukkan bahwa jarak bersifat simetris dan jarak suatu data terhadap dirinya sendiri bernilai nol.</p>
 </section>
 <section id="implementasi-menggunakan-orange">
-<h2>Implementasi menggunakan Orange<a class="headerlink" href="#implementasi-menggunakan-orange" title="Link to this heading">#</a></h2>
+<h1>Implementasi menggunakan Orange<a class="headerlink" href="#implementasi-menggunakan-orange" title="Link to this heading">#</a></h1>
 <p>Setelah perhitungan manual dilakukan, maka akan dilakukan pengimplementasian menggunakan orange untuk mengetahui hasil secara komputasional. Pada pengimplementasian orange ini mendapatkan matriks berukuran <span class="math notranslate nohighlight">\(891 \times 891\)</span>.</p>
 <p><img alt="Foto Saya" src="_images/titanic-picture.png" /></p>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -734,15 +736,17 @@ d(3,1) &amp; d(3,2) &amp; 0
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-understanding">Data Understanding</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penanganan-missing-value">Penanganan Missing Value</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#seleksi-atribut-untuk-perhitungan-jarak">Seleksi Atribut untuk Perhitungan Jarak</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformasi-data">Transformasi Data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Implementasi Mengukur Jarak Menggunakan Dataset dengan Tipe Data Campuran (Titanic)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-understanding">Data Understanding</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penanganan-missing-value">Penanganan Missing Value</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seleksi-atribut-untuk-perhitungan-jarak">Seleksi Atribut untuk Perhitungan Jarak</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformasi-data">Transformasi Data</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-jarak">Perhitungan Jarak</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-menggunakan-orange">Implementasi menggunakan Orange</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-jarak">Perhitungan Jarak</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-menggunakan-orange">Implementasi menggunakan Orange</a></li>
 </ul>
+
   </nav></div>
 
 </div></div>
