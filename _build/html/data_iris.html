@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -382,7 +382,10 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Data Understanding</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data-iris">Eksplorasi Data Iris</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data-iris">Eksplorasi Data Iris</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-kolekting-data-dari-postgresql-ke-orange">Cara Kolekting Data dari Postgresql ke Orange</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#describe-data-iris">Describe Data Iris</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data-iris">Visualisasi Data Iris</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram-data-iris">Histogram Data Iris</a></li>
@@ -437,9 +440,61 @@ document.write(`
 </ul>
 </li>
 </ul>
+<section id="cara-kolekting-data-dari-postgresql-ke-orange">
+<h3>Cara Kolekting Data dari Postgresql ke Orange<a class="headerlink" href="#cara-kolekting-data-dari-postgresql-ke-orange" title="Link to this heading">#</a></h3>
+<p>Untuk menghubungkan PostgreSQL ke orange  yaitu melalui beberapa tahapan:</p>
 <ol class="arabic simple">
-<li><p>Cara kolekting data, menarik data dari database untuk di orange/knime</p></li>
+<li><p>Install PostgreSQL</p></li>
 </ol>
+<p>Berikan username dan password, dan pastikan server berstatus running.</p>
+<ol class="arabic simple" start="2">
+<li><p>Install Driver PostgreSQL di Python</p></li>
+</ol>
+<p>Untuk terhubung dengan orange memerlukan driver tambahan.</p>
+<p>Buka cmd</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>psycopg2-binary
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Pastikan Database sudah ada</p></li>
+</ol>
+<p>Setelah install postgreSQL buat database kemudian isi dengan data yang akan di hubungkan dengan orange.</p>
+<ol class="arabic simple" start="4">
+<li><p>Buka Orange</p></li>
+</ol>
+<p>Masuk ke widget <strong>SQL Table</strong></p>
+<p>Drag widget <strong>SQL Table</strong> ke workspace, kemudian klik dua kali, lalu isi:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Isi</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Backend</p></td>
+<td><p>PostgreSQL</p></td>
+</tr>
+<tr class="row-odd"><td><p>Host</p></td>
+<td><p>localhost</p></td>
+</tr>
+<tr class="row-even"><td><p>Port</p></td>
+<td><p>5432</p></td>
+</tr>
+<tr class="row-odd"><td><p>Database</p></td>
+<td><p>nama database</p></td>
+</tr>
+<tr class="row-even"><td><p>User</p></td>
+<td><p>postgres</p></td>
+</tr>
+<tr class="row-odd"><td><p>Password</p></td>
+<td><p>(password kamu)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Klik <strong>Connect</strong></p>
+<p>Jika berhasil akan memilih tabel, pilih tabel yang akan digunakan kemudian klik <strong>OK</strong></p>
+<p>Maka, orange sudah terhubung dengan postgre. Jadi jika ingin menggunakan data yang ada pada database sudah bisa dilakukan.</p>
 <p><strong>Berikut merupakan lima data pertama untuk melihat struktur dan format data iris flower secara umum</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -678,6 +733,7 @@ dtype: int64
 </div></div></div>
 </div>
 </section>
+</section>
 <section id="describe-data-iris">
 <h2>Describe Data Iris<a class="headerlink" href="#describe-data-iris" title="Link to this heading">#</a></h2>
 <p><strong>Ukuran Kecenderungan Terpusat</strong></p>
@@ -873,7 +929,10 @@ Grafik ini menampilkan titik-titik yang mewakili pasangan nilai dari dua variabe
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Data Understanding</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data-iris">Eksplorasi Data Iris</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data-iris">Eksplorasi Data Iris</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-kolekting-data-dari-postgresql-ke-orange">Cara Kolekting Data dari Postgresql ke Orange</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#describe-data-iris">Describe Data Iris</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data-iris">Visualisasi Data Iris</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram-data-iris">Histogram Data Iris</a></li>
