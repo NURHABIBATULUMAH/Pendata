@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Mengukur Jarak Tipe Data Numerik Pada Dataset Iris Flower &#8212; Profile Nurhabibatul Umah</title>
+    <title>Mengukur Jarak Tipe Data Numerik &#8212; Profile Nurhabibatul Umah</title>
   
   
   
@@ -371,7 +371,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Mengukur Jarak Tipe Data Numerik Pada Dataset Iris Flower</h1>
+    <h1>Mengukur Jarak Tipe Data Numerik</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -381,12 +381,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Mengukur Jarak Tipe Data Numerik Pada Dataset Iris Flower</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-mengukur-jarak-menggunakan-euclidean-distance-pada-dataset-iris-flower">Implementasi Mengukur Jarak Menggunakan Euclidean Distance Pada Dataset Iris Flower</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-mengukur-jarak-menggunakan-manhattan-distance-pada-dataset-iris-flower">Implementasi Mengukur Jarak Menggunakan Manhattan Distance Pada Dataset Iris Flower</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-mengukur-jarak-menggunakan-minkowski-distance-pada-dataset-iris-flower">Implementasi Mengukur Jarak Menggunakan Minkowski Distance Pada Dataset Iris Flower</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-menggunakan-euclidean-distance">Implementasi Menggunakan Euclidean Distance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pembentukan-matriks-jarak">Pembentukan Matriks Jarak</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-menggunakan-manhattan-distance">Implementasi Menggunakan Manhattan Distance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Pembentukan Matriks Jarak</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-menggunakan-minkowski-distance">Implementasi Menggunakan Minkowski Distance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Pembentukan Matriks Jarak</a></li>
+</ul>
+</li>
+</ul>
             </nav>
         </div>
     </div>
@@ -432,12 +439,11 @@ di normalisasi akan mendapatkan data baru yang bertipe data numerik
 Cara mengukur jarak bertipe nominal/categorical:
 p = jumlah fitur
 m = banyak yang sama -->
-<section id="mengukur-jarak-tipe-data-numerik-pada-dataset-iris-flower">
-<h1>Mengukur Jarak Tipe Data Numerik Pada Dataset Iris Flower<a class="headerlink" href="#mengukur-jarak-tipe-data-numerik-pada-dataset-iris-flower" title="Link to this heading">#</a></h1>
+<section id="mengukur-jarak-tipe-data-numerik">
+<h1>Mengukur Jarak Tipe Data Numerik<a class="headerlink" href="#mengukur-jarak-tipe-data-numerik" title="Link to this heading">#</a></h1>
 <p>Mengukur jarak adalah komponen utama dalam algoritma clustering berbasis jarak. Pada Dataset Iris ini atribut/fitur bertipe data numerik, jadi jarak bisa diukur menggunakan Manhattan Distance, Euclidean Distance, Minkwoski Distance.</p>
-</section>
-<section id="implementasi-mengukur-jarak-menggunakan-euclidean-distance-pada-dataset-iris-flower">
-<h1>Implementasi Mengukur Jarak Menggunakan Euclidean Distance Pada Dataset Iris Flower<a class="headerlink" href="#implementasi-mengukur-jarak-menggunakan-euclidean-distance-pada-dataset-iris-flower" title="Link to this heading">#</a></h1>
+<section id="implementasi-menggunakan-euclidean-distance">
+<h2>Implementasi Menggunakan Euclidean Distance<a class="headerlink" href="#implementasi-menggunakan-euclidean-distance" title="Link to this heading">#</a></h2>
 <p>Euclidean Distance digunakan untuk mengukur jarak tipe data numerik dan paling umum di pakai. Dataset Iris yang akan diukur menggunakan Euclidean Distance ini terdiri dari 150 data bunga, 4 atribut numerik yaitu sepal_length, sepal_width, petal_length, petal_width.</p>
 <p>Setiap atribut direpresentasikan sebagai vektor berdimensi 4:</p>
 <div class="math notranslate nohighlight">
@@ -504,7 +510,8 @@ d(x_1,x_2) =
 \]</div>
 <p>Penjelasan :</p>
 <p>Hasil perhitungan menunjukkan bahwa jarak antara data pertama dan data kedua sekitar 0.538. Nilai ini menunjukkan tingkat kemiripan kedua sampel, yaitu dimana semakin kecil nilai jarak maka semakin tingkat kemiripan tinggi.</p>
-<p><strong>Pembentukan Matriks Jarak</strong></p>
+<section id="pembentukan-matriks-jarak">
+<h3>Pembentukan Matriks Jarak<a class="headerlink" href="#pembentukan-matriks-jarak" title="Link to this heading">#</a></h3>
 <p>Setelah menghitung jarak antar pasangan data menggunakan Euclidean Distance, langkah berikutnya adalah menyusun nilai - nilai tersebut ke dalam suatu matriks jarak (distance matrix).</p>
 <p>Secara umum, jika terdapat <span class="math notranslate nohighlight">\(n\)</span> data, maka matriks jarak
 yang terbentuk berukuran:</p>
@@ -565,8 +572,9 @@ Semakin kecil nilai pada matriks, maka semakin mirip kedua data tersebut.
 Berikut implementasi dari orange yang menghasilkan matriks jarak lengkap berukuran <span class="math notranslate nohighlight">\(150 \times 150\)</span>.</p>
 <p><img alt="Foto Saya" src="_images/euclidean.png" /></p>
 </section>
-<section id="implementasi-mengukur-jarak-menggunakan-manhattan-distance-pada-dataset-iris-flower">
-<h1>Implementasi Mengukur Jarak Menggunakan Manhattan Distance Pada Dataset Iris Flower<a class="headerlink" href="#implementasi-mengukur-jarak-menggunakan-manhattan-distance-pada-dataset-iris-flower" title="Link to this heading">#</a></h1>
+</section>
+<section id="implementasi-menggunakan-manhattan-distance">
+<h2>Implementasi Menggunakan Manhattan Distance<a class="headerlink" href="#implementasi-menggunakan-manhattan-distance" title="Link to this heading">#</a></h2>
 <p>Manhattan Distance merupakan metode pengukuran jarak yang menghitung jumlah elisih absolut antar atribut pada dua data.</p>
 <p>Rumus Manhattan Distance :</p>
 <div class="math notranslate nohighlight">
@@ -639,7 +647,8 @@ d(x_1,x_3) = 0.6
 \[
 d(x_2,x_3) = 0.5
 \]</div>
-<p>Maka matriks jarak Manhattan yang terbentuk adalah:</p>
+<section id="id1">
+<h3>Pembentukan Matriks Jarak<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 D =
@@ -659,8 +668,9 @@ akan dihitung secara otomatis menggunakan orange,
 sehingga terbentuk matriks jarak berukuran <span class="math notranslate nohighlight">\(150 \times 150\)</span>.</p>
 <p><img alt="Foto Saya" src="_images/euclidean.png" /></p>
 </section>
-<section id="implementasi-mengukur-jarak-menggunakan-minkowski-distance-pada-dataset-iris-flower">
-<h1>Implementasi Mengukur Jarak Menggunakan Minkowski Distance Pada Dataset Iris Flower<a class="headerlink" href="#implementasi-mengukur-jarak-menggunakan-minkowski-distance-pada-dataset-iris-flower" title="Link to this heading">#</a></h1>
+</section>
+<section id="implementasi-menggunakan-minkowski-distance">
+<h2>Implementasi Menggunakan Minkowski Distance<a class="headerlink" href="#implementasi-menggunakan-minkowski-distance" title="Link to this heading">#</a></h2>
 <p>Minkowski Distance merupakan generalisasi dari Euclidean Distance
 dan Manhattan Distance. Metode ini menggunakan parameter <span class="math notranslate nohighlight">\(p\)</span>
 untuk menentukan jenis jarak yang dihasilkan.</p>
@@ -753,7 +763,8 @@ d(x_1,x_2) =
 \]</div>
 <p>Hasil tersebut menunjukkan bahwa jarak Minkowski
 dengan <span class="math notranslate nohighlight">\(p=3\)</span> antara dua data tersebut adalah sekitar 0.509.</p>
-<p>\subsection*{Pembentukan Matriks Jarak}</p>
+<section id="id2">
+<h3>Pembentukan Matriks Jarak<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>Seperti metode sebelumnya, nilai Minkowski Distance
 disusun dalam bentuk matriks jarak.</p>
 <p>Jika terdapat <span class="math notranslate nohighlight">\(n\)</span> data, maka ukuran matriks jaraknya adalah:</p>
@@ -797,6 +808,8 @@ akan memberikan pengaruh yang lebih signifikan terhadap nilai jarak.</p>
 seluruh pasangan data akan dihitung secara otomatis
 untuk membentuk matriks jarak berukuran <span class="math notranslate nohighlight">\(150 \times 150\)</span>.</p>
 <p><img alt="Foto Saya" src="_images/minkowski.png" /></p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -863,12 +876,19 @@ untuk membentuk matriks jarak berukuran <span class="math notranslate nohighligh
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Mengukur Jarak Tipe Data Numerik Pada Dataset Iris Flower</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-mengukur-jarak-menggunakan-euclidean-distance-pada-dataset-iris-flower">Implementasi Mengukur Jarak Menggunakan Euclidean Distance Pada Dataset Iris Flower</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-mengukur-jarak-menggunakan-manhattan-distance-pada-dataset-iris-flower">Implementasi Mengukur Jarak Menggunakan Manhattan Distance Pada Dataset Iris Flower</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-mengukur-jarak-menggunakan-minkowski-distance-pada-dataset-iris-flower">Implementasi Mengukur Jarak Menggunakan Minkowski Distance Pada Dataset Iris Flower</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-menggunakan-euclidean-distance">Implementasi Menggunakan Euclidean Distance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pembentukan-matriks-jarak">Pembentukan Matriks Jarak</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-menggunakan-manhattan-distance">Implementasi Menggunakan Manhattan Distance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Pembentukan Matriks Jarak</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-menggunakan-minkowski-distance">Implementasi Menggunakan Minkowski Distance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Pembentukan Matriks Jarak</a></li>
+</ul>
+</li>
+</ul>
   </nav></div>
 
 </div></div>

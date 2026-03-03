@@ -1,6 +1,6 @@
-## Implementasi Mengukur Jarak Menggunakan Dataset dengan Tipe Data Campuran (Titanic)
+## Mengukur Jarak Tipe Data Campuran
 
-## Data Understanding
+### Data Understanding
 
 Dataset Titanic merupakan dataset yang berisi informasi mengenai penumpang kapal RMS Titanic yang tenggelam pada tanggal 15 April 1912 setelah menabrak gunung es di Samudra Atlantik Utara. Dataset ini sering digunakan dalam bidang data mining dan machine learning untuk permasalahan klasifikasi, khususnya dalam memprediksi keselamatan penumpang.
 
@@ -10,7 +10,7 @@ Tujuan dataset ini adalah untuk memprediksi apakah seorang penumpang selamat (su
 
 Dalam pembelajaran matakuliah Penambangan Data ini, dataset digunakan untuk menganalisis pengukuran jarak antar data yang memiliki  tipe data campuran (numerik, kategorical, ordinal, dan biner).
 
-**Deskripsi Atribut**
+#### Deskripsi Atribut
 
 Berikut merupakan atribut/fitur yang terdapat dalam dataset Titanic:
 
@@ -31,7 +31,7 @@ Berikut merupakan atribut/fitur yang terdapat dalam dataset Titanic:
 | 12 | Embarked    | Pelabuhan keberangkatan (C = Cherbourg, Q = Queenstown, S = Southampton) |
 
 
-**Karakteristik Dataset**
+#### Karakteristik Dataset
 
 Dataset memiliki tipe data yang campuran, yaitu :
 
@@ -42,7 +42,7 @@ Dataset memiliki tipe data yang campuran, yaitu :
 - Teks (Name, Ticket, Cabin)
 
 
-**Missing Value**
+#### Missing Value dan Penanganan Missing Value
 
 Pada dataset Titanic ini terdapat missing value, terutama pada atribut:
 - Age 
@@ -50,25 +50,23 @@ Pada dataset Titanic ini terdapat missing value, terutama pada atribut:
 - Embarked
 
 
-### Penanganan Missing Value
-
 Berdasarkan hasil tahap data understanding, ditemukan bahwa dataset Titanic mengandung beberapa atribut yang memiliki nilai kosong (missing value). Keberadaan missing value dapat mempengaruhi proses analisis, terutama dalam perhitungan jarak antar data, karena metode distance seperti Euclidean atau Manhattan tidak dapat memproses nilai kosong (NaN). Oleh karena itu, diperlukan tahapan penanganan missing value sebelum dilakukan transformasi dan perhitungan jarak. Berikut adalah atribut yang teridentifikas memiliki 
 missing value:
 
-1. Age
+**1. Age**
 
 Atribut age bertipe data numerik dan menunjukkan usia penumpang. Pada dataset Titanic ini ditemukan beberapa  data yang tidak memiliki nilai usia. 
 
 Karena atribut ini bersifat numerik dan nantinya akan digunakan, maka missing value pada atribut age ini akan ditangani menggunakan metode imputasi median. Jadi, seluruh nilai kosong pada atribut age akan digantikan dengan nilai median dari atribut tersebut.
 
-2. Embarked
+**2. Embarked**
 
 Atribut Embarked merupakan atribut kategorical yang menunjukkan pelabuhan keberangkatan penumpang (C ,Q, atau S). Pada dataset Titanic terdapat beberapa data yang memiliki nilai kosong.
 
 Karena atribut ini bersifat kategorikal, maka missing value ditangani menggunakan metode imputasi modus, yaitu menggantikan nilai kosong dengan kategori yang paling sering muncul dalam dataset.
 
 
-3. Cabin
+**3. Cabin**
 
 Atribut Cabin menunjukkan nomor kabin penumpang. Namun, atribut ini memiliki jumlah missing value yang sangat besar.
 
@@ -78,7 +76,7 @@ Karena missing value pada atribut ini sangat tinggi, maka atribut Cabin dihapus 
 
 Seleksi atribut ini bertujuan untuk menentukan atribut - atribut yang relevan dan akan digunakan dalam proses perhitungan jarak antar data.
 
-**Atribut Yang Digunakan**
+#### Atribut Yang Digunakan
 
 | No | Atribut  | Tipe Data | Alasan Penggunaan                                          |
 | -- | -------- | --------- | ---------------------------------------------------------- |
@@ -89,7 +87,7 @@ Seleksi atribut ini bertujuan untuk menentukan atribut - atribut yang relevan da
 | 5  | Embarked | Nominal   | Menunjukkan pelabuhan keberangkatan                        |
 
 
-**Atribut Yang Tidak Digunakan**
+#### Atribut Yang Tidak Digunakan
 
 | No | Atribut     | Alasan Tidak Digunakan                                                 |
 | -- | ----------- | ---------------------------------------------------------------------- |
@@ -106,23 +104,47 @@ Transformasi ini bertujuan untuk mengubah seluruh atribut ke dalam bentuk numeri
 
 Transformasi data terdiri dari dua tahap utama, yaitu encoding dan normalisasi.
 
-**Encoding Data Kategorical**
+#### Encoding Data Kategorical
 
 Encoding dilakukan untuk mengubah atribut yang bertipe kategorikal menjadi numerik.
 
-- Sex (Biner) : Pada atribut Sex nilainya yaitu male dan female, ini diganti menjadi biner 0 dan 1 yang dimana male = 0 dan female = 1. Atribut ini menggunakan binary encoding karena hanya memiliki dua kategori.
+**Sex (Biner) :**
+ 
+ Pada atribut Sex nilainya yaitu male dan female, ini diganti menjadi biner 0 dan 1 yang dimana male = 0 dan female = 1. Atribut ini menggunakan binary encoding karena hanya memiliki dua kategori.
 
-- Embarked (Nominal) : Nilai asli pada atribut Embarked ini adalah S, C, Q kemudian di ganti menjadi nilai numerik 0, 1, 2. S = 0, C = 1, Q = 2.
+ **male : 0**
 
-- Pclass (Ordinal) : Atribut Pclass tidak diubah karena sudah berbentuk numerik (1, 2, 3) dan memiliki tingkatan yang jelas (ordinal).
+ **female : 1**
 
-**Normalisasi Data Numerik**
+**Embarked (Nominal) :** 
+
+Nilai asli pada atribut Embarked ini adalah S, C, Q kemudian di ganti menjadi nilai numerik 0, 1, 2. S = 0, C = 1, Q = 2.
+
+**S : 0**
+
+**C : 1**
+
+**Q : 2**
+
+
+**Pclass (Ordinal) :**
+
+ Atribut Pclass tidak diubah karena sudah berbentuk numerik (1, 2, 3) dan memiliki tingkatan yang jelas (ordinal).
+
+ **1 : 1**
+
+ **1 : 1**
+
+ **1 : 1**
+
+
+#### Normalisasi Data Numerik
 
 Setelah semua atribut berbentuk numerik, dilakukan normalisasi agar setiap atribut memiliki rentang nilai yang sebanding. Hal ini penting karena perbedaan skala antar atribut dapat menyebabkan dominasi atribut tertentu dalam perhitungan jarak.
 
 Pada dataset Titanic, atribut seperti Fare memiliki rentang nilai yang jauh lebih besar dibandingkan Age atau Pclass. Jika tidak dinormalisasi, atribut dengan nilai besar akan memberikan pengaruh yang lebih dominan dalam perhitungan Euclidean Distance.
 
-**Metode Normalisasi Min-Max Normalization**
+### Metode Normalisasi Min-Max Normalization
 
 Metode yang digunakan adalah Min-Max Normalization, yaitu metode yang mengubah nilai data ke dalam rentang 0 sampai 1.
 
@@ -142,9 +164,11 @@ $x_{\max}$ : Nilai max pada atribut tersebut
 
 $x'_i$ : Hasil Normalisasi
 
-**Contoh perhitungan normalisasi :**
+#### Contoh perhitungan normalisasi :
 
-Misalnya terdapat data usia dengan nilai minimum 22 dan maksimum 38. Jika salah satu data memiliki nilai usia 22, maka proses normalisasinya adalah:
+Misalnya terdapat data usia dengan nilai minimum 22 dan maksimum 38. 
+
+Jika salah satu data memiliki nilai usia 22, maka :
 
 $$x' = \frac{22 - 22}{38 - 22}$$
 
@@ -158,7 +182,7 @@ $$x' = \frac{16}{16} = 1$$
 
 Dengan demikian, seluruh nilai atribut akan berada pada rentang 0 sampai 1 sehingga siap digunakan dalam perhitungan jarak.
 
-## Perhitungan Jarak
+### Perhitungan Jarak
 
 Setelah semua nilai atribut sudah berada pada rentang 0 sampai 1 maka siap digunakan dalam proses mengukur jarak. Normalisasi diperlukan agar atribut dengan skala besar tidak mendominasi atribut lain dalam proses pengukuran kedekatan data.
 
@@ -176,7 +200,7 @@ x_{ik} & = \text{nilai atribut ke-}k \text{ pada data ke-}i \\
 x_{jk} & = \text{nilai atribut ke-}k \text{ pada data ke-}j
 \end{aligned}$
 
-**Contoh perhitungan manual**
+#### Contoh perhitungan manual
 
 Untuk perhitungan manual digunakan dua data sampel dari dataset Titanic yang telah melalui proses :
 
@@ -224,7 +248,7 @@ $$d(i,i) = 0$$
 Hal ini menunjukkan bahwa jarak bersifat simetris dan jarak suatu data terhadap dirinya sendiri bernilai nol.
 
 
-## Implementasi menggunakan Orange
+### Implementasi menggunakan Orange
 
 Setelah perhitungan manual dilakukan, maka akan dilakukan pengimplementasian menggunakan orange untuk mengetahui hasil secara komputasional. Pada pengimplementasian orange ini mendapatkan matriks berukuran $891 \times 891$.
 

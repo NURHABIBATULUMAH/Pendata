@@ -48,11 +48,11 @@ Cara mengukur jarak bertipe nominal/categorical:
 p = jumlah fitur
 m = banyak yang sama -->
 
-## Mengukur Jarak Tipe Data Numerik Pada Dataset Iris Flower
+## Mengukur Jarak Tipe Data Numerik
 
 Mengukur jarak adalah komponen utama dalam algoritma clustering berbasis jarak. Pada Dataset Iris ini atribut/fitur bertipe data numerik, jadi jarak bisa diukur menggunakan Manhattan Distance, Euclidean Distance, Minkwoski Distance. 
 
-## Implementasi Mengukur Jarak Menggunakan Euclidean Distance Pada Dataset Iris Flower
+### Implementasi Menggunakan Euclidean Distance
 
 Euclidean Distance digunakan untuk mengukur jarak tipe data numerik dan paling umum di pakai. Dataset Iris yang akan diukur menggunakan Euclidean Distance ini terdiri dari 150 data bunga, 4 atribut numerik yaitu sepal_length, sepal_width, petal_length, petal_width.
 
@@ -130,7 +130,7 @@ Penjelasan :
 
 Hasil perhitungan menunjukkan bahwa jarak antara data pertama dan data kedua sekitar 0.538. Nilai ini menunjukkan tingkat kemiripan kedua sampel, yaitu dimana semakin kecil nilai jarak maka semakin tingkat kemiripan tinggi.
 
-**Pembentukan Matriks Jarak**
+#### Pembentukan Matriks Jarak
 
 Setelah menghitung jarak antar pasangan data menggunakan Euclidean Distance, langkah berikutnya adalah menyusun nilai - nilai tersebut ke dalam suatu matriks jarak (distance matrix).
 
@@ -204,7 +204,7 @@ Berikut implementasi dari orange yang menghasilkan matriks jarak lengkap berukur
 ![Foto Saya](img/euclidean.png)
 
 
-## Implementasi Mengukur Jarak Menggunakan Manhattan Distance Pada Dataset Iris Flower
+### Implementasi Menggunakan Manhattan Distance
 
 Manhattan Distance merupakan metode pengukuran jarak yang menghitung jumlah elisih absolut antar atribut pada dua data.
 
@@ -291,7 +291,7 @@ $$
 d(x_2,x_3) = 0.5
 $$
 
-Maka matriks jarak Manhattan yang terbentuk adalah:
+#### Pembentukan Matriks Jarak
 
 $$
 D =
@@ -316,7 +316,7 @@ sehingga terbentuk matriks jarak berukuran $150 \times 150$.
 ![Foto Saya](img/euclidean.png)
 
 
-## Implementasi Mengukur Jarak Menggunakan Minkowski Distance Pada Dataset Iris Flower
+### Implementasi Menggunakan Minkowski Distance
 
 Minkowski Distance merupakan generalisasi dari Euclidean Distance
 dan Manhattan Distance. Metode ini menggunakan parameter $p$
@@ -428,7 +428,7 @@ $$
 Hasil tersebut menunjukkan bahwa jarak Minkowski
 dengan $p=3$ antara dua data tersebut adalah sekitar 0.509.
 
-\subsection*{Pembentukan Matriks Jarak}
+#### Pembentukan Matriks Jarak
 
 Seperti metode sebelumnya, nilai Minkowski Distance
 disusun dalam bentuk matriks jarak.
