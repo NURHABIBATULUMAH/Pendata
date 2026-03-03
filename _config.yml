@@ -31,3 +31,5 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+  show_navbar_depth: 3
+  home_page_in_toc: true

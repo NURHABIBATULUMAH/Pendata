@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -62,8 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'mengukur-jarak';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Implementasi Mengukur Jarak Menggunakan Dataset dengan Tipe Data Campuran (Titanic)" href="titanic-jarak.html" />
-    <link rel="prev" title="Data Understanding Iris Flower" href="data_iris.html" />
+    <link rel="next" title="Mengukur Jarak Tipe Data Campuran" href="titanic-jarak.html" />
+    <link rel="prev" title="Data Understanding" href="data_iris.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -184,8 +184,10 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="pengantar.html">Pengantar Data Mining</a></li>
 <li class="toctree-l1"><a class="reference internal" href="memahami-data.html">Memahami Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="data_iris.html">Data Understanding Iris Flower</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_iris.html">Data Understanding</a></li>
 
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Mengukur Jarak Tipe Data Numerik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="titanic-jarak.html">Mengukur Jarak Tipe Data Campuran</a></li>
 </ul>
 
     </div>
@@ -404,42 +406,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <!-- Objek dikatakan sama jika selisih 0, dikatakan mirip jika selisih mendekati 0
-
-Membandingkan setiap fitur, dihitung selisihnya dan yang paling sedikit itu yang dikatakan mirip.
-Cara mengetahui kemiripann data yaitu : Mengurangkan setiap fitur kemudian di jumlahkan
-
-Euclidean Distance:
-rumusnya sama dengan tadi, tapi di pangkatkan setiap pengurangan fitur kemudian di jumlahkan dan di akarkan
-
-
-Similarity:
-- mengukur kesamaan dua objek
-- tinggi nilainya bila benda yng lebih mirip
-
-Dissimilarity:
-
-
-Data Matrix and Dissimilarity Matrix
-
-- Data Matrix
-
-- Dissimilarity Matrix (jarak matrix)
-
-
-
-Cara mengukur jarak bertipe biner: - JACARD
-simetris dan asimetris
-
-Cara mengukur jarak bertipe ordinal:
-- ada rumusnya
-di normalisasi akan mendapatkan data baru yang bertipe data numerik
-
-
-Cara mengukur jarak bertipe nominal/categorical:
-p = jumlah fitur
-m = banyak yang sama -->
-<section id="mengukur-jarak-tipe-data-numerik">
+  <section class="tex2jax_ignore mathjax_ignore" id="mengukur-jarak-tipe-data-numerik">
 <h1>Mengukur Jarak Tipe Data Numerik<a class="headerlink" href="#mengukur-jarak-tipe-data-numerik" title="Link to this heading">#</a></h1>
 <p>Mengukur jarak adalah komponen utama dalam algoritma clustering berbasis jarak. Pada Dataset Iris ini atribut/fitur bertipe data numerik, jadi jarak bisa diukur menggunakan Manhattan Distance, Euclidean Distance, Minkwoski Distance.</p>
 <section id="implementasi-menggunakan-euclidean-distance">
@@ -848,7 +815,7 @@ untuk membentuk matriks jarak berukuran <span class="math notranslate nohighligh
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Data Understanding Iris Flower</p>
+        <p class="prev-next-title">Data Understanding</p>
       </div>
     </a>
     <a class="right-next"
@@ -856,7 +823,7 @@ untuk membentuk matriks jarak berukuran <span class="math notranslate nohighligh
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Implementasi Mengukur Jarak Menggunakan Dataset dengan Tipe Data Campuran (Titanic)</p>
+        <p class="prev-next-title">Mengukur Jarak Tipe Data Campuran</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
