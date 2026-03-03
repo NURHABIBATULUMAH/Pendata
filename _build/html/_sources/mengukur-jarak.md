@@ -1,3 +1,16 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.11.5
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
 
 <!-- Objek dikatakan sama jika selisih 0, dikatakan mirip jika selisih mendekati 0
 
@@ -35,7 +48,7 @@ Cara mengukur jarak bertipe nominal/categorical:
 p = jumlah fitur
 m = banyak yang sama -->
 
-# Mengukur Jarak Tipe Data Numerik Pada Dataset Iris Flower
+## Mengukur Jarak Tipe Data Numerik Pada Dataset Iris Flower
 
 Mengukur jarak adalah komponen utama dalam algoritma clustering berbasis jarak. Pada Dataset Iris ini atribut/fitur bertipe data numerik, jadi jarak bisa diukur menggunakan Manhattan Distance, Euclidean Distance, Minkwoski Distance. 
 

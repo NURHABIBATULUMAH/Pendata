@@ -4,9 +4,9 @@
 format: jb-book
 root: intro
 chapters:
-- file: pengantar
-- file: memahami-data
-- file: data_iris
-  sections:
-  - file: mengukur-jarak
-  - file: titanic-jarak
+  - file: pengantar
+  - file: memahami-data
+  - file: data_iris
+    sections:
+      - file: mengukur-jarak
+      - file: titanic-jarak
