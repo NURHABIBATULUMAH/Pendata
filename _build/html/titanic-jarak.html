@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -606,18 +606,20 @@ missing value:</p>
 <p>Encoding dilakukan untuk mengubah atribut yang bertipe kategorikal menjadi numerik.</p>
 <p><strong>Sex (Biner) :</strong></p>
 <p>Pada atribut Sex nilainya yaitu male dan female, ini diganti menjadi biner 0 dan 1 yang dimana male = 0 dan female = 1. Atribut ini menggunakan binary encoding karena hanya memiliki dua kategori.</p>
+<p><strong>Konversi Numerik:</strong></p>
 <p><strong>male : 0</strong></p>
 <p><strong>female : 1</strong></p>
 <p><strong>Embarked (Nominal) :</strong></p>
 <p>Nilai asli pada atribut Embarked ini adalah S, C, Q kemudian di ganti menjadi nilai numerik 0, 1, 2. S = 0, C = 1, Q = 2.</p>
+<p><strong>Konversi Numerik:</strong></p>
 <p><strong>S : 0</strong></p>
 <p><strong>C : 1</strong></p>
 <p><strong>Q : 2</strong></p>
 <p><strong>Pclass (Ordinal) :</strong></p>
 <p>Atribut Pclass tidak diubah karena sudah berbentuk numerik (1, 2, 3) dan memiliki tingkatan yang jelas (ordinal).</p>
 <p><strong>1 : 1</strong></p>
-<p><strong>1 : 1</strong></p>
-<p><strong>1 : 1</strong></p>
+<p><strong>2 : 2</strong></p>
+<p><strong>3 : 3</strong></p>
 </section>
 <section id="normalisasi-data-numerik">
 <h3>Normalisasi Data Numerik<a class="headerlink" href="#normalisasi-data-numerik" title="Link to this heading">#</a></h3>
@@ -629,29 +631,50 @@ missing value:</p>
 <h2>Metode Normalisasi Min-Max Normalization<a class="headerlink" href="#metode-normalisasi-min-max-normalization" title="Link to this heading">#</a></h2>
 <p>Metode yang digunakan adalah Min-Max Normalization, yaitu metode yang mengubah nilai data ke dalam rentang 0 sampai 1.</p>
 <p>Rumus normalisasi Min-Max adalah sebagai berikut:</p>
+<!-- $$
+x'_i = \frac{x_i - x_{\min}}{x_{\max} - x_{\min}}
+$$ -->
 <div class="math notranslate nohighlight">
 \[
-x'_i = \frac{x_i - x_{\min}}{x_{\max} - x_{\min}}
+z = \frac{r - 1}{M - 1}
 \]</div>
-<p>Keterangan :</p>
-<p><span class="math notranslate nohighlight">\(x_i\)</span> : Nilai asli data</p>
-<p><span class="math notranslate nohighlight">\(x_{\min}\)</span> : Nilai min pada atribut tersebut</p>
-<p><span class="math notranslate nohighlight">\(x_{\max}\)</span> : Nilai max pada atribut tersebut</p>
-<p><span class="math notranslate nohighlight">\(x'_i\)</span> : Hasil Normalisasi</p>
+<!-- Keterangan :
+
+$x_i$ : Nilai asli data
+
+$x_{\min}$ : Nilai min pada atribut tersebut
+
+$x_{\max}$ : Nilai max pada atribut tersebut
+
+$x'_i$ : Hasil Normalisasi -->
 <section id="contoh-perhitungan-normalisasi">
 <h3>Contoh perhitungan normalisasi :<a class="headerlink" href="#contoh-perhitungan-normalisasi" title="Link to this heading">#</a></h3>
-<p>Misalnya terdapat data usia dengan nilai minimum 22 dan maksimum 38.</p>
-<p>Jika salah satu data memiliki nilai usia 22, maka :</p>
+<p>Karena M = 3</p>
+<p>Pclass 1 :</p>
 <div class="math notranslate nohighlight">
-\[x' = \frac{22 - 22}{38 - 22}\]</div>
+\[
+z = \frac{1 - 1}{3 - 1} = \frac{0}{2} = 0
+\]</div>
+<p>Pclass 2 :</p>
 <div class="math notranslate nohighlight">
-\[x' = \frac{0}{16} = 0\]</div>
-<p>Jika nilai usia adalah 38, maka :</p>
-<div class="math notranslate nohighlight">
-\[x' = \frac{38 - 22}{38 - 22}\]</div>
-<div class="math notranslate nohighlight">
-\[x' = \frac{16}{16} = 1\]</div>
-<p>Dengan demikian, seluruh nilai atribut akan berada pada rentang 0 sampai 1 sehingga siap digunakan dalam perhitungan jarak.</p>
+\[
+z = \frac{2 - 1}{3 - 1} = \frac{1}{2} = 0.5
+\]</div>
+<!-- Misalnya terdapat data usia dengan nilai minimum 22 dan maksimum 38. 
+
+Jika salah satu data memiliki nilai usia 22, maka :
+
+$$x' = \frac{22 - 22}{38 - 22}$$
+
+$$x' = \frac{0}{16} = 0$$
+
+Jika nilai usia adalah 38, maka :
+
+$$x' = \frac{38 - 22}{38 - 22}$$
+
+$$x' = \frac{16}{16} = 1$$
+
+Dengan demikian, seluruh nilai atribut akan berada pada rentang 0 sampai 1 sehingga siap digunakan dalam perhitungan jarak. -->
 </section>
 </section>
 <section id="perhitungan-jarak">

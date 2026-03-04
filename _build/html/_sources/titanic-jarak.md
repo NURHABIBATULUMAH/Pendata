@@ -112,6 +112,8 @@ Encoding dilakukan untuk mengubah atribut yang bertipe kategorikal menjadi numer
  
  Pada atribut Sex nilainya yaitu male dan female, ini diganti menjadi biner 0 dan 1 yang dimana male = 0 dan female = 1. Atribut ini menggunakan binary encoding karena hanya memiliki dua kategori.
 
+**Konversi Numerik:**
+
  **male : 0**
 
  **female : 1**
@@ -119,6 +121,8 @@ Encoding dilakukan untuk mengubah atribut yang bertipe kategorikal menjadi numer
 **Embarked (Nominal) :** 
 
 Nilai asli pada atribut Embarked ini adalah S, C, Q kemudian di ganti menjadi nilai numerik 0, 1, 2. S = 0, C = 1, Q = 2.
+
+**Konversi Numerik:**
 
 **S : 0**
 
@@ -133,9 +137,9 @@ Nilai asli pada atribut Embarked ini adalah S, C, Q kemudian di ganti menjadi ni
 
  **1 : 1**
 
- **1 : 1**
+ **2 : 2**
 
- **1 : 1**
+ **3 : 3**
 
 
 #### Normalisasi Data Numerik
@@ -150,11 +154,15 @@ Metode yang digunakan adalah Min-Max Normalization, yaitu metode yang mengubah n
 
 Rumus normalisasi Min-Max adalah sebagai berikut:
 
-$$
+<!-- $$
 x'_i = \frac{x_i - x_{\min}}{x_{\max} - x_{\min}}
+$$ -->
+
+$$
+z = \frac{r - 1}{M - 1}
 $$
 
-Keterangan :
+<!-- Keterangan :
 
 $x_i$ : Nilai asli data
 
@@ -162,11 +170,26 @@ $x_{\min}$ : Nilai min pada atribut tersebut
 
 $x_{\max}$ : Nilai max pada atribut tersebut
 
-$x'_i$ : Hasil Normalisasi
+$x'_i$ : Hasil Normalisasi -->
 
 #### Contoh perhitungan normalisasi :
 
-Misalnya terdapat data usia dengan nilai minimum 22 dan maksimum 38. 
+Karena M = 3
+
+Pclass 1 :
+
+$$
+z = \frac{1 - 1}{3 - 1} = \frac{0}{2} = 0
+$$
+
+Pclass 2 :
+
+$$
+z = \frac{2 - 1}{3 - 1} = \frac{1}{2} = 0.5
+$$
+
+
+<!-- Misalnya terdapat data usia dengan nilai minimum 22 dan maksimum 38. 
 
 Jika salah satu data memiliki nilai usia 22, maka :
 
@@ -180,7 +203,7 @@ $$x' = \frac{38 - 22}{38 - 22}$$
 
 $$x' = \frac{16}{16} = 1$$
 
-Dengan demikian, seluruh nilai atribut akan berada pada rentang 0 sampai 1 sehingga siap digunakan dalam perhitungan jarak.
+Dengan demikian, seluruh nilai atribut akan berada pada rentang 0 sampai 1 sehingga siap digunakan dalam perhitungan jarak. -->
 
 ### Perhitungan Jarak
 
