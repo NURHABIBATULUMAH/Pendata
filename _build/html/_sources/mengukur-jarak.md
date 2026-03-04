@@ -263,7 +263,7 @@ Dalam implementasi sebenarnya, seluruh pasangan data
 akan dihitung secara otomatis menggunakan orange,
 sehingga terbentuk matriks jarak berukuran $150 \times 150$.
 
-![Foto Saya](img/euclidean.png)
+![Foto Saya](img/manhattan.png)
 
 
 ### Implementasi Menggunakan Minkowski Distance
