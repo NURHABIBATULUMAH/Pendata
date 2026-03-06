@@ -35,12 +35,12 @@ Berikut merupakan atribut/fitur yang terdapat dalam dataset Titanic:
 
 Dataset memiliki tipe data yang campuran, yaitu :
 
-- Numerik (Age, Fare, SibSp, Parch)
-- Kategorical (Sex, Embarked)
-- Ordinal (Pclass)
-- Biner (Survived)
-- Teks (Name, Ticket, Cabin)
-
+| No | Jenis Atribut | Daftar Atribut |
+|---|---|---|
+| 1 | Numerik | Age, Fare, SibSp, Parch |
+| 2 | Kategorikal | Name, Ticket, Cabin, Sex, Embarked |
+| 3 | Ordinal | Pclass |
+| 4 | Biner | Survived |
 
 #### Missing Value dan Penanganan Missing Value
 
@@ -104,60 +104,139 @@ Transformasi ini bertujuan untuk mengubah seluruh atribut ke dalam bentuk numeri
 
 Transformasi data terdiri dari dua tahap utama, yaitu encoding dan normalisasi.
 
-#### Encoding Data Kategorical
+#### Sex (Biner)
 
-Encoding dilakukan untuk mengubah atribut yang bertipe kategorikal menjadi numerik.
+Atribut **Sex** memiliki dua kategori:
+- male = 0
+- female = 1
 
-**Sex (Biner) :**
- 
- Pada atribut Sex nilainya yaitu male dan female, ini diganti menjadi biner 0 dan 1 yang dimana male = 0 dan female = 1. Atribut ini menggunakan binary encoding karena hanya memiliki dua kategori.
+Karena hanya memiliki dua nilai, maka digunakan **binary encoding**.
 
-**Konversi Numerik:**
+---
 
- **male : 0**
+##### Perhitungan Dissimilarity (Euclidean Distance)
 
- **female : 1**
+Karena sudah berbentuk numerik (0 dan 1), maka dapat langsung dihitung menggunakan Euclidean Distance.
 
-**Embarked (Nominal) :** 
+Rumus Euclidean Distance:
 
-Nilai asli pada atribut Embarked ini adalah S, C, Q kemudian di ganti menjadi nilai numerik 0, 1, 2. S = 0, C = 1, Q = 2.
+$$
+d(i,j) = \sqrt{(x_i - x_j)^2}
+$$
 
-**Konversi Numerik:**
+---
 
-**S : 0**
+Contoh:
 
-**C : 1**
+| Objek | Sex |
+|--------|------|
+| A | 1 (female) |
+| B | 0 (male) |
 
-**Q : 2**
+Perhitungan:
+
+$$
+d(A,B) = \sqrt{(1 - 0)^2}
+$$
+
+$$
+d(A,B) = \sqrt{1}
+$$
+
+$$
+d(A,B) = 1
+$$
+
+Artinya: berbeda.
 
 
-**Pclass (Ordinal) :**
+#### Embarked (Nominal) :
+
+Atribut **Embarked** pada dataset Titanic bersifat **nominal**, 
+karena tidak memiliki urutan.
+
+Kategori:
+- S = Southampton
+- C = Cherbourg
+- Q = Queenstown
+
+Jumlah kategori = 3
+
+---
+
+##### Rumus Dissimilarity Nominal
+
+$$
+d(i,j) = \frac{p - m}{p}
+$$
+
+Dimana:
+- $p$ = jumlah atribut nominal
+- $m$ = jumlah atribut yang sama antara objek $i$ dan $j$
+
+Karena hanya ada 1 atribut (Embarked), maka:
+
+$$
+p = 1
+$$
+
+Contoh jika $p = 1$ dan nilai berbeda:
+
+$$
+d = \frac{1 - 0}{1}
+$$
+
+$$
+d = 1
+$$
+
+
+#### Pclass (Ordinal) :
 
  Atribut Pclass tidak diubah karena sudah berbentuk numerik (1, 2, 3) dan memiliki tingkatan yang jelas (ordinal).
 
- **1 : 1**
 
- **2 : 2**
+ Rumus normalisasi:
 
- **3 : 3**
+$$
+z = \frac{r - 1}{M - 1}
+$$
+
+Dimana:
+- $r$ = ranking
+- $M$ = jumlah kategori
+
+Contoh jika $M = 3$ dan $r = 2$:
+
+$$
+z = \frac{2 - 1}{3 - 1}
+$$
+
+$$
+z = \frac{1}{2}
+$$
+
+$$
+z = 0.5
+$$
 
 
-#### Normalisasi Data Numerik
+<!-- #### Normalisasi Data Numerik
 
 Setelah semua atribut berbentuk numerik, dilakukan normalisasi agar setiap atribut memiliki rentang nilai yang sebanding. Hal ini penting karena perbedaan skala antar atribut dapat menyebabkan dominasi atribut tertentu dalam perhitungan jarak.
 
 Pada dataset Titanic, atribut seperti Fare memiliki rentang nilai yang jauh lebih besar dibandingkan Age atau Pclass. Jika tidak dinormalisasi, atribut dengan nilai besar akan memberikan pengaruh yang lebih dominan dalam perhitungan Euclidean Distance.
 
-### Metode Normalisasi Min-Max Normalization
+### Normalisasi Pclass
 
-Metode yang digunakan adalah Min-Max Normalization, yaitu metode yang mengubah nilai data ke dalam rentang 0 sampai 1.
+<!-- Metode yang digunakan adalah Min-Max Normalization, yaitu metode yang mengubah nilai data ke dalam rentang 0 sampai 1.
 
-Rumus normalisasi Min-Max adalah sebagai berikut:
+Rumus normalisasi Min-Max adalah sebagai berikut: -->
 
 <!-- $$
 x'_i = \frac{x_i - x_{\min}}{x_{\max} - x_{\min}}
 $$ -->
-
+<!-- 
 $$
 z = \frac{r - 1}{M - 1}
 $$
@@ -186,7 +265,7 @@ Pclass 2 :
 
 $$
 z = \frac{2 - 1}{3 - 1} = \frac{1}{2} = 0.5
-$$
+$$ --> -->
 
 
 <!-- Misalnya terdapat data usia dengan nilai minimum 22 dan maksimum 38. 
