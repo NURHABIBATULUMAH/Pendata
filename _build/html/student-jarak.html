@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Data Understanding &#8212; Profile Nurhabibatul Umah</title>
+    <title>Dataset Student Performance &#8212; Profile Nurhabibatul Umah</title>
   
   
   
@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'student-jarak';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Mengukur Jarak Tipe Data Campuran" href="titanic-jarak.html" />
+    <link rel="prev" title="Mengukur Jarak Tipe Data Numerik" href="mengukur-jarak.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -186,8 +186,7 @@
 <li class="toctree-l1"><a class="reference internal" href="data_iris.html">Data Understanding</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="mengukur-jarak.html">Mengukur Jarak Tipe Data Numerik</a></li>
-<li class="toctree-l1"><a class="reference internal" href="titanic-jarak.html">Mengukur Jarak Tipe Data Campuran</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Data Understanding</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Dataset Student Performance</a></li>
 </ul>
 
     </div>
@@ -373,7 +372,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Data Understanding</h1>
+    <h1>Dataset Student Performance</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -397,6 +396,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-jarak">Perhitungan Jarak</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-orange">Implementasi Orange</a></li>
 </ul>
 </li>
 </ul>
@@ -410,8 +410,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="data-understanding">
-<h1>Data Understanding<a class="headerlink" href="#data-understanding" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="dataset-student-performance">
+<h1>Dataset Student Performance<a class="headerlink" href="#dataset-student-performance" title="Link to this heading">#</a></h1>
 <p>Dataset yang digunakan dalam perhitungan jarak adalah Student Alcohol Consumption Dataset yang berisi informasi mengenai karakteristik siswa serta faktor-faktor yang mempengaruhi performa akademik mereka. Dataset ini digunakan untuk menganalisis perilaku belajar dan prestasi siswa.</p>
 <p>Dataset ini memiliki berbagai atribut yang menggambarkan kondisi demografis, dukungan keluarga, serta kebiasaan belajar siswa. Namun, tidak semua atribut digunakan dalam perhitungan jarak ini. Untuk mempermudah proses analisis dan perhitungan jarak antar data, hanya beberapa atribut yang dipilih sebagai representasi dari beberapa tipe data.</p>
 <p>Atribut yang digunakan dalam penelitian ini terdiri dari atribut numerik, ordinal, kategorikal, dan biner. Pemilihan atribut ini bertujuan untuk menunjukkan bagaimana metode perhitungan jarak dapat diterapkan pada data dengan tipe atribut yang berbeda.</p>
@@ -1068,6 +1068,14 @@ d(1,2) = 1.62
 \]</div>
 <p>Hasil akhir jarak Euclidean antara data 1 dan data 2 adalah sekitar <span class="math notranslate nohighlight">\(1.62\)</span></p>
 </section>
+<section id="implementasi-orange">
+<h3>Implementasi Orange<a class="headerlink" href="#implementasi-orange" title="Link to this heading">#</a></h3>
+<p>Setelah dilakukannya perhitungan manual untuk menghitung jarak dari dataset Student Performance dari data 1 dan data 2, maka berikut implementasi dari orangenya.</p>
+<p><img alt="Foto Saya" src="_images/orange.png" /></p>
+<p>Matriks Jaraknya diperoleh:</p>
+<p><img alt="Foto Saya" src="_images/student-jarak.png" /></p>
+<p>Pada orange untuk matriks <span class="math notranslate nohighlight">\(d(1,2)\)</span> diperoleh <span class="math notranslate nohighlight">\(1.617\)</span> tetapi pada perhitungan manual kemarin mendapatkan nilai <span class="math notranslate nohighlight">\(1.62\)</span> ini dikarenakan pada orange untuk atribut <strong>studytime</strong> yang bertipe data ordinal terhitung sebagai tipe data numerik, jadi dihitung normalisasi menggunakan z-score.</p>
+</section>
 </section>
 </section>
 
@@ -1102,12 +1110,12 @@ d(1,2) = 1.62
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="titanic-jarak.html"
+       href="mengukur-jarak.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Mengukur Jarak Tipe Data Campuran</p>
+        <p class="prev-next-title">Mengukur Jarak Tipe Data Numerik</p>
       </div>
     </a>
 </div>
@@ -1140,6 +1148,7 @@ d(1,2) = 1.62
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-jarak">Perhitungan Jarak</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-orange">Implementasi Orange</a></li>
 </ul>
 </li>
 </ul>

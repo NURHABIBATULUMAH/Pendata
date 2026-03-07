@@ -1,4 +1,4 @@
-# Data Understanding
+# Dataset Student Performance
 
 Dataset yang digunakan dalam perhitungan jarak adalah Student Alcohol Consumption Dataset yang berisi informasi mengenai karakteristik siswa serta faktor-faktor yang mempengaruhi performa akademik mereka. Dataset ini digunakan untuk menganalisis perilaku belajar dan prestasi siswa.
 
@@ -552,3 +552,15 @@ d(1,2) = 1.62
 $$
 
 Hasil akhir jarak Euclidean antara data 1 dan data 2 adalah sekitar $1.62$
+
+### Implementasi Orange
+
+Setelah dilakukannya perhitungan manual untuk menghitung jarak dari dataset Student Performance dari data 1 dan data 2, maka berikut implementasi dari orangenya.
+
+![Foto Saya](img/orange.png)
+
+Matriks Jaraknya diperoleh:
+
+![Foto Saya](img/student-jarak.png)
+
+Pada orange untuk matriks $d(1,2)$ diperoleh $1.617$ tetapi pada perhitungan manual kemarin mendapatkan nilai $1.62$ ini dikarenakan pada orange untuk atribut **studytime** yang bertipe data ordinal terhitung sebagai tipe data numerik, jadi dihitung normalisasi menggunakan z-score.
