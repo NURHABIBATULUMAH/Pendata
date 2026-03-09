@@ -59,25 +59,7 @@ $\sigma = \sqrt{\frac{1}{n}\sum_{i=1}^{n}(x_i-\mu)^2}$
 
 Dari perhitungan standart deviasi yang telah dilakukan pada atribut age, mendapatkan nilai $1.27$
 
-#### G3
-
-Normalisasi G3 menggunakan z-score, sebagai berikut:
-
-**Mean**
-
-$\mu = \frac{1}{n}\sum_{i=1}^{n} x_i$
-
-Dari perhitungan yang telah dilakukan pada atribut G3 yang memiliki jumlah data 395 diperoleh mean $10.42$
-
-**Standart Deviasi**
-
-$\sigma = \sqrt{\frac{1}{n}\sum_{i=1}^{n}(x_i-\mu)^2}$
-
-Dari perhitungan standart deviasi yang telah dilakukan pada atribut age, mendapatkan nilai $4.58$
-
-Setelah diperoleh nilai mean dan standart deviasi pada atribut age dan G3, langkah selanjutnya akan dilakukan normalisasi pada beberapa data age dan G3 menggunakan metode z-score.
-
-**Contoh Normalisasi atribut age:**
+#### Normalisasi atribut age:
 
 **Data 1**
 
@@ -111,23 +93,38 @@ $$z = \frac{0.3}{1.27}$$
 
 $$z = 0.23$$
 
-**Data 3**
+#### Perhitungan Jarak Atribut age
 
-$x_3 = 15$
+$$d(x,y) = \sqrt{(x_1 - y_1)^2 +(x_i - y_i)^2}$$
 
-$\mu = 16.70$
+$$d(1,2) = \sqrt{(1.02 - 0.23)^2}$$
 
-$\sigma = 1.27$
+$$d(1,2) = \sqrt{(0.79)^2}$$
 
-$$z = \frac{x-\mu}{\sigma}$$
+$$d(1,2) = \sqrt{0.6241}$$
 
-$$z = \frac{15-16.7}{1.27}$$
+$$d(1,2) = {0.79}$$
 
-$$z = \frac{-1.7}{1.27}$$
+#### G3
 
-$$z = -1.33$$
+Normalisasi G3 menggunakan z-score, sebagai berikut:
 
-**Contoh Normalisasi atribut G3:**
+**Mean**
+
+$\mu = \frac{1}{n}\sum_{i=1}^{n} x_i$
+
+Dari perhitungan yang telah dilakukan pada atribut G3 yang memiliki jumlah data 395 diperoleh mean $10.42$
+
+**Standart Deviasi**
+
+$\sigma = \sqrt{\frac{1}{n}\sum_{i=1}^{n}(x_i-\mu)^2}$
+
+Dari perhitungan standart deviasi yang telah dilakukan pada atribut age, mendapatkan nilai $4.58$
+
+Setelah diperoleh nilai mean dan standart deviasi pada atribut age dan G3, langkah selanjutnya akan dilakukan normalisasi pada beberapa data age dan G3 menggunakan metode z-score.
+
+
+#### Normalisasi atribut G3:
 
 **Data 1**
 
@@ -161,30 +158,22 @@ $$z = \frac{-4.42}{4.58}$$
 
 $$z = -0.96$$
 
-**Data 3**
+#### Perhitungan Jarak Atribut G3
 
-$x_3 = 10$
+$$d(x,y) = \sqrt{(x_1 - y_1)^2 +(x_i - y_i)^2}$$
 
-$\mu = 10.42$
+$$d(1,2) = \sqrt{((-0.96) - (-0.96))^2}$$
 
-$\sigma = 4.58$
+$$d(1,2) = \sqrt{(0)^2}$$
 
-$$z = \frac{x-\mu}{\sigma}$$
+$$d(1,2) = {0}$$
 
-$$z = \frac{10 - 10.42}{4.58}$$
-
-$$z = \frac{0.42}{4.58}$$
-
-$$z = -0.09$$
-
-**Hasil Normalisasi :**
+#### Hasil Normalisasi :
 
 | Data   | Age | Z-score Age | G3 | Z-score G3 |
 | ------ | --- | ----------- | -- | ---------- |
 | Data 1 | 18  | 1.02        | 6  | -0.96      |
 | Data 2 | 17  | 0.23        | 6  | -0.96      |
-| Data 3 | 15  | -1.33       | 10 | -0.09      |
-
 
 ### Data Ordinal
 
@@ -204,7 +193,7 @@ Untuk $r_{if}$ adalah menggantikan $x_{if}$ yaitu nilai atribut ke $f$ pada data
 
 Pada atribut **Studytime** ini memiliki 4 tingkatan, yaitu 1 - 4.
 
-**Contoh perhitungan**
+####  Perhitungan Atribut Ordinal
 
 Pada dataset Student Performance atribut Studytime untuk data ke 1 - data ke 3 memiliki nilai yang sama yaitu $2$, jadi untuk contoh perhitungan ini akan menggunakan data yang berbeda.
 
@@ -236,43 +225,22 @@ $$z_{2} = \frac{1}{3}$$
 
 $$z_{2} = 0.33$$
 
-**Data 3**
-
-$r_{4} =3$ 
-
-$M_{if} =4$ 
-
-$$z_{4} = \frac{r_{if}-1}{M_f-1}$$
-
-$$z_{4} = \frac{3-1}{4-1}$$
-
-$$z_{4} = \frac{2}{3}$$
-
-$$z_{4} = 0.66$$
-
-**Data 4**
-
-$r_{13} =1$ 
-
-$M_{if} =4$ 
-
-$$z_{13} = \frac{r_{if}-1}{M_f-1}$$
-
-$$z_{13} = \frac{1-1}{4-1}$$
-
-$$z_{13} = \frac{0}{3}$$
-
-$$z_{13} = 0$$
-
 **Hasil Perhitungan:**
 
 | Data   | (r_{if}) | (z_{if}) |
 | ------ | -------- | -------- |
 | Data 1 | 2        | 0.33     |
 | Data 2 | 2        | 0.33     |
-| Data 3 | 3        | 0.66     |
-| Data 4 | 1        | 0    |
 
+#### Perhitungan Jarak Atribut Ordinal
+
+$$d(x,y) = \sqrt{(x_1 - y_1)^2 +(x_i - y_i)^2}$$
+
+$$d(1,2) = \sqrt{(0.33 - 0.33)^2}$$
+
+$$d(1,2) = \sqrt{(0)^2}$$
+
+$$d(1,2) = {0}$$
 
 ### Data Kategorical
 
@@ -294,9 +262,9 @@ Karena kita hanya menggunakan 1 atribut yaitu school, maka $p = 1$.
 
 Untuk atribut school data ke 1 - data ke 349 memiliki kategori $GP$, jadi untuk memperhitungkan supaya hasilnya beda nanti juga akan memperhitungkan dengan data ke 350.
 
-**Contoh Perhitungan:**
+#### Perhitungan Atribut Kategorical:
 
-**Jarak Data 1 dan Data 2**
+#### Perhitungan Jarak Data 1 dan Data 2
 
 school sama (**GP = GP**)
 
@@ -312,45 +280,11 @@ $$d(1,2) = 0$$
 
 Artinya **tidak ada perbedaan**
 
-**Jarak Data 2 dan Data 350**
-
-school sama (**GP ≠ MS**)
-
-$m = 0$
-
-$p = 1$
-
-$$d(2,350) = \frac{1-0}{1}$$
-
-$$d(2,350) = \frac{1}{1}$$
-
-$$d(2,350) = 1$$
-
-Artinya **berbeda sepenuhnya**
-
-**Jarak Data 1 dan Data 350**
-
-school sama (**GP ≠ MS**)
-
-$m = 0$
-
-$p = 1$
-
-$$d(1,350) = \frac{1-0}{1}$$
-
-$$d(1,350) = \frac{1}{1}$$
-
-$$d(1,350) = 1$$
-
-Artinya **berbeda sepenuhnya**
-
 **Hasil Perhitungannya:**
 
 | Pasangan Data     | School  | Jarak (d) | Interpretasi        |
 | ----------------- | ------- | --------- | ------------------- |
 | Data 1 & Data 2   | GP = GP | (0)       | Tidak ada perbedaan |
-| Data 2 & Data 350 | GP ≠ MS | (1)       | Berbeda sepenuhnya  |
-| Data 1 & Data 350 | GP ≠ MS | (1)       | Berbeda sepenuhnya  |
 
 ### Data Biner
 
@@ -368,7 +302,7 @@ Untuk menghitung jarak menggunakan rumus symmetric dan asymmetric harus dirubah 
 
 Jarak untuk symmetric binary (perbedaan 0 sama pentingnya dengan 1) sedangkan Jarak untuk asymmetric binary (hanya 1 yang penting)
 
-#### Rumus perhitungan:
+**Rumus perhitungan:**
 
 ![Foto Saya](img/rumus-biner.png)
 
@@ -379,7 +313,7 @@ Jarak untuk symmetric binary (perbedaan 0 sama pentingnya dengan 1) sedangkan Ja
 | **s**   | data i =0 dan data j =1            |
 | **t**   | kedua data sama dan bernilai **0** |
 
-**Contoh Perhitungan**
+#### Perhitungan Atribut Biner
 
 **Data 1**
 
@@ -399,7 +333,7 @@ Di sini akan dibandingkan data ke 1 dengan data ke 2
 | Famsup   | asymmetric | 0      | 1      |
 | Internet | asymmetric | 0      | 1      |
 
-**Perhitungan Symmetris (sex)**
+#### Perhitungan Symmetris (sex)
 
 $$
 d_{\text{sym}}(i,j) = \frac{r+s}{q+r+s+t}
@@ -419,7 +353,7 @@ $$
 
 Jadi, jarak Symmetris pada data ke 1 dan data ke 2 = $0$
 
-**Perhitungan Asymmetris (famsup dan internet)**
+#### Perhitungan Asymmetris (famsup dan internet)
 
 $$
 d_{\text{asym}}(1,2) = \frac{r+s}{q+r+s}
@@ -439,65 +373,7 @@ $$
 
 Jadi, jarak Asymmetris pada data ke 1 dan data ke 2 = $1$
 
-**Data 2**
-
-Di sini akan dibandingkan data ke 1 dengan data ke 6
-
-| Atribut  | Data 1 | Data 6 |
-| -------- | ------ | ------ |
-| Sex      | F      | M      |
-| Famsup   | No    | Yes    |
-| Internet | No    | Yes     |
-
-**Data setelah konversi dengan encoding**
-
-| Atribut  | Tipe       | Data 1 | Data 6 |
-| -------- | ---------- | ------ | ------ |
-| Sex      | symmetric  | 1      | 0      |
-| Famsup   | asymmetric | 0      | 1      |
-| Internet | asymmetric | 0      | 1      |
-
-**Perhitungan Symmetris (sex)**
-
-$$
-d_{\text{sym}}(i,j) = \frac{r+s}{q+r+s+t}
-$$
-
-$$
-d_{\text{sym}}(1,6) = \frac{1+0}{0+1+0+0}
-$$
-
-$$
-d_{\text{sym}}(1,6) = \frac{1}{1}
-$$
-
-$$
-d_{\text{sym}}(1,6) = 1
-$$
-
-Jadi, jarak Symmetris pada data ke 1 dan data ke 6 = $1$
-
-**Perhitungan Asymmetris (famsup dan internet)**
-
-$$
-d_{\text{asym}}(1,6) = \frac{r+s}{q+r+s}
-$$
-
-$$
-d_{\text{asym}}(1,6) = \frac{0+2}{0+0+2}
-$$
-
-$$
-d_{\text{asym}}(1,6) = \frac{2}{2}
-$$
-
-$$
-d_{\text{asym}}(1,6) = 1
-$$
-
-Jadi, jarak Asymmetris pada data ke 1 dan data ke 6 = $1$
-
-### Perhitungan Jarak
+## Perhitungan Jarak
 
 Setelah seluruh atribut ditransformasikan ke dalam bentuk numerik, langkah selanjutnya adalah menghitung jarak antar data menggunakan Euclidean Distance. Metode ini digunakan untuk mengukur tingkat kemiripan antara dua objek berdasarkan seluruh atribut yang dimiliki.
 
@@ -553,7 +429,7 @@ $$
 
 Hasil akhir jarak Euclidean antara data 1 dan data 2 adalah sekitar $1.62$
 
-### Implementasi Orange
+## Implementasi Orange
 
 Setelah dilakukannya perhitungan manual untuk menghitung jarak dari dataset Student Performance dari data 1 dan data 2, maka berikut implementasi dari orangenya.
 
