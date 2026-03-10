@@ -177,7 +177,7 @@ $$d(1,2) = {0}$$
 
 ### Data Ordinal
 
-Atribut ordinal adalah atribut yang memiliki tingkatan atau urutan, sehingga nilainya dapat dibandingkan berdasarkan tingkatannya. Pada dataset Student Performance, atribut yang bersifat ordinal adalah **Studytime**, karena nilainya menunjukkan tingkatan waktu belajar.
+Atribut ordinal adalah atribut yang memiliki tingkatan atau urutan, sehingga nilainya dapat dibandingkan berdasarkan tingkatannya. Pada dataset Student Performance, atribut yang bersifat ordinal adalah **Studytime**.
 
 $$z_{if} = \frac{r_{if}-1}{M_f-1}$$
 
