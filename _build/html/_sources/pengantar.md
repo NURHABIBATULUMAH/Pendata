@@ -1,6 +1,6 @@
 # Pengantar Data Mining
 
-### Apa itu data mining?
+## Apa itu data mining?
 
  **Data mining** merupakan merupakan subjek yang melibatkan berbagai disiplin bidang yang bertujuan bagaimana mendapatkan pengetahuan/informasi dari tumpukan data.
 
@@ -55,7 +55,7 @@ Korelasi bisa dilihat dari gambar, jika cenderung mengumpul ke atas pasti di ata
 4. Kualitas Data
 
 
-### Atribut: (dimensi, fitur, variable)
+## Atribut: (dimensi, fitur, variable)
 Tipe:
 1. Nominal/Kategorical - Nama, ID
 2. Ordinal/Fitur tingkatan - Peringkat

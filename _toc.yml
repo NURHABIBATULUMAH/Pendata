@@ -3,6 +3,7 @@
 
 format: jb-book
 root: intro
+
 chapters:
 - file: pengantar
 - file: memahami-data
