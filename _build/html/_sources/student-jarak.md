@@ -1,10 +1,14 @@
 # Dataset Student Performance
 
-Dataset yang digunakan dalam perhitungan jarak adalah Student Alcohol Consumption Dataset yang berisi informasi mengenai karakteristik siswa serta faktor-faktor yang mempengaruhi performa akademik mereka. Dataset ini digunakan untuk menganalisis perilaku belajar dan prestasi siswa.
+Dataset yang digunakan dalam perhitungan jarak adalah Student Performance Dataset yang berisi informasi mengenai karakteristik siswa serta faktor-faktor yang mempengaruhi performa akademik mereka. Dataset ini digunakan untuk menganalisis perilaku belajar dan prestasi siswa.
 
 Dataset ini memiliki berbagai atribut yang menggambarkan kondisi demografis, dukungan keluarga, serta kebiasaan belajar siswa. Namun, tidak semua atribut digunakan dalam perhitungan jarak ini. Untuk mempermudah proses analisis dan perhitungan jarak antar data, hanya beberapa atribut yang dipilih sebagai representasi dari beberapa tipe data.
 
 Atribut yang digunakan dalam penelitian ini terdiri dari atribut numerik, ordinal, kategorikal, dan biner. Pemilihan atribut ini bertujuan untuk menunjukkan bagaimana metode perhitungan jarak dapat diterapkan pada data dengan tipe atribut yang berbeda.
+
+Link Kaggle dari Dataset ini:
+https://www.kaggle.com/datasets/uciml/student-alcohol-consumption
+
 
 ## Atribut Yang Digunakan
 
