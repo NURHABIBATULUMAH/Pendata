@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Pengantar Data Mining &#8212; Profile Nurhabibatul Umah</title>
+    <title>Pre Processing &#8212; Profile Nurhabibatul Umah</title>
   
   
   
@@ -57,11 +57,9 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'pengantar';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'knn';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Memahami Data" href="memahami-data.html" />
-    <link rel="prev" title="About Me" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -124,6 +122,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -179,8 +179,8 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Pengantar Data Mining</a></li>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="pengantar.html">Pengantar Data Mining</a></li>
 <li class="toctree-l1"><a class="reference internal" href="memahami-data.html">Memahami Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data_iris.html">Data Understanding</a></li>
 
@@ -257,7 +257,7 @@
       
       
       
-      <li><a href="https://github.com/nurhabibatulumah/Pendata/issues/new?title=Issue%20on%20page%20%2Fpengantar.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/nurhabibatulumah/Pendata/issues/new?title=Issue%20on%20page%20%2Fknn.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -287,7 +287,7 @@
       
       
       
-      <li><a href="_sources/pengantar.md" target="_blank"
+      <li><a href="_sources/knn.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -371,7 +371,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Pengantar Data Mining</h1>
+    <h1>Pre Processing</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -381,12 +381,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apa-itu-data-mining">Apa itu data mining?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keunggulan-data-mining">Keunggulan Data Mining</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proses-data-mining">Proses Data Mining</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi">Normalisasi</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#z-score">Z-Score</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#min-max">Min-Max</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decimal-scalling">Decimal Scalling</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#atribut-dimensi-fitur-variable">Atribut: (dimensi, fitur, variable)</a></li>
 </ul>
             </nav>
         </div>
@@ -398,72 +398,35 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="pengantar-data-mining">
-<h1>Pengantar Data Mining<a class="headerlink" href="#pengantar-data-mining" title="Link to this heading">#</a></h1>
-<section id="apa-itu-data-mining">
-<h2>Apa itu data mining?<a class="headerlink" href="#apa-itu-data-mining" title="Link to this heading">#</a></h2>
-<p><strong>Data mining</strong> merupakan merupakan subjek yang melibatkan berbagai disiplin bidang yang bertujuan bagaimana mendapatkan pengetahuan/informasi dari tumpukan data.</p>
-<p>Jika dianalogikan seperti penambangan secara konvesional misalkan menimbang emas yang didapatkan dari tumpukan tanah dan pasir.</p>
-<p>Dalam kontek <strong>penambangan data</strong> adalah bagaimana mendapatkan informasi yang berharga untuk pijakan pengambilan keputusan atau tujuan tertentu.</p>
-<p>Dalama proses data mining melibatkan teknik <strong>statistik</strong>, <strong>matematika</strong>, <strong>kecerdasan buatan</strong>, <strong>machine learning</strong> untuk mengekstraksi dan mengidentifikasi informasi yang bermanfaat dan pengetahuan yang terkait dari berbagai database besar. Terdapat beberapa istilah lain yang memiliki makna sama dengan data mining, yaitu <strong>Knowledge discovery in databases (KDD), ekstraksi pengetahuan (knowledge extraction), Analisa data/pola (data/pattern analysis), kecerdasan bisnis (business intelligence) dan data archaeology dan data dredging (Larose, 2005)</strong>.</p>
-<section id="keunggulan-data-mining">
-<h3>Keunggulan Data Mining<a class="headerlink" href="#keunggulan-data-mining" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>Dapat memberikan pemahaman data yang lebih lengkap dengan menemukan pola yang sebelumnya tidak terlihat</p></li>
-<li><p>Membuat model untuk memprediksi sehingga memungkinkan untuk membuat keputusan yang lebih baik.</p></li>
-</ol>
+  <p>knn : menghitung jarak
+untuk mengisi missing value,
+kemiripan fitur didasarkan pada class</p>
+<p>untuk menghitung jarak knn (mengisi missing value), data harus dalam bentuk normalisasi</p>
+<p>normalisasi dilakukan supaya jarak signifikan ini dilakukan di data understanding</p>
+<p>normalisasi bisa menggunakan z-score atau min max</p>
+<section class="tex2jax_ignore mathjax_ignore" id="pre-processing">
+<h1>Pre Processing<a class="headerlink" href="#pre-processing" title="Link to this heading">#</a></h1>
+<section id="normalisasi">
+<h2>Normalisasi<a class="headerlink" href="#normalisasi" title="Link to this heading">#</a></h2>
+<section id="z-score">
+<h3>Z-Score<a class="headerlink" href="#z-score" title="Link to this heading">#</a></h3>
 </section>
-<section id="proses-data-mining">
-<h3>Proses Data Mining<a class="headerlink" href="#proses-data-mining" title="Link to this heading">#</a></h3>
-<p>Dalam data mining proses tahapan yang dilakukan sebagai Proses standar lintas industri untuk penambangan data yang dihasilkan oleh konsorsium , yang dikenal sebagai CRISP-DM, adalah model proses standar terbuka yang menggambarkan pendekatan umum yang digunakan oleh para ahli penambangan data.</p>
-<p><img alt="Foto Saya" src="_images/data_mining.png" /></p>
-<p><strong>Penjelasan :</strong></p>
-<p><strong>1. Business Understanding</strong></p>
-<p>a. Menentukan tujuan bisnis</p>
-<p>Tahaapan ini dilakukan untuk memahami secara menyeluruh, dari perspektif bisnis, apa yang benar-benar ingin dicapai oleh pelanggan. Selain itu pada tahapan ini analisa perlu dilakukan untuk mengungkap faktor-faktor penting, yang dapat mempengaruhi hasil proyek data mining.</p>
-<p>b. Membuat rencana proyek</p>
-<p>c. Menilai situasi dan kondisi</p>
-<p><strong>2. Data Understanding</strong>
-Diawali dengan proses mengumpulkan data, sudah mempunyai datanya. Sudah tau berapa kolom, berapa baris.</p>
-<p>Mengetahui ada noice atau tidak di data understanding. Jika sudah diketahui masuk ke data prosesing.</p>
-<p>Langkah awal yaitu mengidentifikasi data :
-a. Mengetahui data yang kosong/out layer
-b. Mengetahui data yang duplicate</p>
-<p>kolom : atribut/fitur/dimensi
-independet mempengaruhi dependent
-selection fitur : mengurangi fitur/dimensi yang independent dan tidak mempengaruhi dependent</p>
-<p>Komponen Utama Memahami Data:</p>
-<ol class="arabic simple">
-<li><p>Pengumpulan data awal</p></li>
-<li><p>Deskripsi data</p></li>
-<li><p>Explorasi data analasis (EDA) : membuat visualisasi (grafik, histogram, scatter plot), mencari pola, trend
-Korelasi bisa dilihat dari gambar, jika cenderung mengumpul ke atas pasti di atas 0.5</p></li>
-<li><p>Kualitas Data</p></li>
-</ol>
+<section id="min-max">
+<h3>Min-Max<a class="headerlink" href="#min-max" title="Link to this heading">#</a></h3>
 </section>
+<section id="decimal-scalling">
+<h3>Decimal Scalling<a class="headerlink" href="#decimal-scalling" title="Link to this heading">#</a></h3>
+<p>X/10_pangkat jumlah nilai max</p>
+<p>nah, data hasil normalisasi ini digunakan untuk tahap selanjutnya.</p>
+<p>setelah di normalisasi, bisa mengisi missing value</p>
+<p>kemudiann bisa dilakukan modeling</p>
+<p>pada github bapak:</p>
+<p>pada simmiliarity jika jarak kecil, maka nilai si (kesamaan) menjadi besar</p>
+<p>1/si = jarak</p>
+<p>jadi si = 1/jarak</p>
+<p>yiH : Data ke i pada fitur ke H (data yang kosong)</p>
+<p>di taruh min max, tidak mau 0 dan 1, mau 2 dan 4, ada rumus di referensi nanti sekalian diberikan contoh</p>
 </section>
-<section id="atribut-dimensi-fitur-variable">
-<h2>Atribut: (dimensi, fitur, variable)<a class="headerlink" href="#atribut-dimensi-fitur-variable" title="Link to this heading">#</a></h2>
-<p>Tipe:</p>
-<ol class="arabic simple">
-<li><p>Nominal/Kategorical - Nama, ID</p></li>
-<li><p>Ordinal/Fitur tingkatan - Peringkat</p></li>
-<li><p>Biner/Mengandung 2 nilai 0 dan 1 - JK
-a. Simetris : Kesetaraan, Jenis kelamin
-b. Asymetris : Untuk iya butuh penekanan, seperti medis positiv HIV karna positif butuh penekanan</p></li>
-<li><p>Numerik/Nilai ukuran dari proses pengukuran - Size Baju, IPK</p></li>
-</ol>
-<p>Atribut:</p>
-<ul class="simple">
-<li><p>Continue : desimal (tinggi badan, Berat Badan)</p></li>
-<li><p>Diskret : bisa dihitung (Jumlah mahasiswa)</p></li>
-</ul>
-<p>N : Seluruh (jumlah sample)
-n : merujuk spesifik</p>
-<p>mean, median, modus</p>
-<p>jika di tengah : syimmetric
-kiri : positive
-kanan : negative</p>
 </section>
 </section>
 
@@ -497,24 +460,6 @@ kanan : negative</p>
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="intro.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">About Me</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="memahami-data.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Memahami Data</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -531,12 +476,12 @@ kanan : negative</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apa-itu-data-mining">Apa itu data mining?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keunggulan-data-mining">Keunggulan Data Mining</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proses-data-mining">Proses Data Mining</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi">Normalisasi</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#z-score">Z-Score</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#min-max">Min-Max</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decimal-scalling">Decimal Scalling</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#atribut-dimensi-fitur-variable">Atribut: (dimensi, fitur, variable)</a></li>
 </ul>
   </nav></div>
 

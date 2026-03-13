@@ -233,10 +233,10 @@ Pada dataset Titanic, atribut seperti Fare memiliki rentang nilai yang jauh lebi
 
 Rumus normalisasi Min-Max adalah sebagai berikut: -->
 
-<!-- $$
+$$
 x'_i = \frac{x_i - x_{\min}}{x_{\max} - x_{\min}}
-$$ -->
-<!-- 
+$$ 
+<
 $$
 z = \frac{r - 1}{M - 1}
 $$
