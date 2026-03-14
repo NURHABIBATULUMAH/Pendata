@@ -1367,92 +1367,141 @@ Jadi, akan diselesaikan dengan metode Normalisasi Min-Max rentang <span class="m
 <p>Data tersebut berjumlah 7 data dan memiliki 3 fitur. Tetapi pada Fitur <strong>JML</strong> data ke - 7 terdapat missing value. Ini adalah hal yang harus diselesaikan menggunakan metode <strong>WKNN</strong>.</p>
 <p>Langkah - Langkah Penyelesaian:</p>
 <p><strong>1. Normalisasi Data</strong></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Langkah pertama yang harus dilakukan untuk menyelesaikan missing value ini adalah menormalisasikan data supaya data berada di rentang $0 - 1$. Di sini normalisasi menggunakan $min-max$.
-
-Rumus Normalisasi :
-
-$$x&#39; = \frac{x_i - x_{min}}{x_{max} - x_{min}}$$
-
-Berikut hasil Normalisasi Data:
-
-| no | ipk_norm | po_norm | jml_norm |
-|----|----------|---------|----------|
-| 1  | 0        | 0       | 0        |
-| 2  | 0.5      | 0.5     | 1        |
-| 3  | 1        | 0       | 0        |
-| 4  | 0        | 0       | 1        |
-| 5  | 0.5      | 0.5     | 0        |
-| 6  | 1        | 1       | 1        |
-| 7  | 0        | 0.5     | ?        |
-
-Setelah dilakukan normalisasi, tahap selanjutnya adalah menghitung jarak dan kemiripan.
-</pre></div>
+<p>Langkah pertama yang harus dilakukan untuk menyelesaikan missing value ini adalah menormalisasikan data supaya data berada di rentang <span class="math notranslate nohighlight">\(0 - 1\)</span>. Di sini normalisasi menggunakan <span class="math notranslate nohighlight">\(min-max\)</span>.</p>
+<p>Rumus Normalisasi :</p>
+<div class="math notranslate nohighlight">
+\[x' = \frac{x_i - x_{min}}{x_{max} - x_{min}}\]</div>
+<p>Berikut hasil Normalisasi Data:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>no</p></th>
+<th class="head"><p>ipk_norm</p></th>
+<th class="head"><p>po_norm</p></th>
+<th class="head"><p>jml_norm</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>0.5</p></td>
+<td><p>0.5</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>0.5</p></td>
+<td><p>0.5</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>0</p></td>
+<td><p>0.5</p></td>
+<td><p>?</p></td>
+</tr>
+</tbody>
+</table>
 </div>
+<p>Setelah dilakukan normalisasi, tahap selanjutnya adalah menghitung jarak dan kemiripan.</p>
 <p><strong>2. Hitung Jarak dan Kemiripan</strong></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Pada data ini terdapat 2 fitur yang digunakan untuk perhitungan jarak untuk mengisi missing value. Fiturnya adalah **ipk** dan **po**. Kemudian di hitung kemiripan jarak dengan rumus kemiripan $s_i = \frac {1}{distance}$.
-
-Untuk menghitung distance menggunakan rumus variasi dari Jarak Euclidean:
-
-$$\frac{1}{s_i} = \sum_{h_i \in O_i \cap O_j} (y_{ih} - y_{jh})^2$$
-
-Keterangan :
-
-$y_i$ = data ke-i
-
-$y_j$ = data tetangga
-
-$O_i \cap O_j$ = atribut yang sama-sama tersedia
-
-$s_i$ = nilai kemiripan
-
-Berikut merupakan hasil setelah perhitungan distance dan simmilarity dari data yang telah di normalisasi:
-
-| $y_i$ | $(y_{i,ipk}-y_{j,ipk})^2$| $(y_{i,po}-y_{j,po})^2$| $\sum_h (y_{ih}-y_{jh})^2$| $s_i=\frac{1}{\sum}$ |
-| :---: | :---------------:        | :--------------:    | :----------------:| :------------------: |
-| $y_1$ | $(0 - 0)^2 = 0$          | $(0.5 - 0)^2 = 0.25$|        0.25       |          4.0         |
-| $y_2$ | $(0 - 0.5)^2 = 0.25$     |  $(0.5 - 0.5)^2 = 0$|        0.25       |          4.0         |
-| $y_3$ | $(0 - 1)^2 = 1$          | $(0.5 - 0)^2 = 0.25$|        1.25       |          0.8         |
-| $y_4$ | $(0 - 0)^2 = 0$          | $(0.5 - 0)^2 = 0.25$|        0.25       |          4.0         |
-| $y_5$ | $(0 - 0.5)^2 = 0.25$     | $(0.5 - 0.5)^2 = 0$ |        0.25       |          4.0         |
-| $y_6$ | $(0 - 1)^2 = 1$          | $(0.5 - 1)^2 = 0.25$|        1.25       |          0.8         |
-
-Setelah nilai simmilarity/kemiripan sudah didapatkan, langkah selanjutnya adalah menghitung estimasi menggunakan Weighted Average.
-</pre></div>
+<p>Pada data ini terdapat 2 fitur yang digunakan untuk perhitungan jarak untuk mengisi missing value. Fiturnya adalah <strong>ipk</strong> dan <strong>po</strong>. Kemudian di hitung kemiripan jarak dengan rumus kemiripan <span class="math notranslate nohighlight">\(s_i = \frac {1}{distance}\)</span>.</p>
+<p>Untuk menghitung distance menggunakan rumus variasi dari Jarak Euclidean:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{s_i} = \sum_{h_i \in O_i \cap O_j} (y_{ih} - y_{jh})^2\]</div>
+<p>Keterangan :</p>
+<p><span class="math notranslate nohighlight">\(y_i\)</span> = data ke-i</p>
+<p><span class="math notranslate nohighlight">\(y_j\)</span> = data tetangga</p>
+<p><span class="math notranslate nohighlight">\(O_i \cap O_j\)</span> = atribut yang sama-sama tersedia</p>
+<p><span class="math notranslate nohighlight">\(s_i\)</span> = nilai kemiripan</p>
+<p>Berikut merupakan hasil setelah perhitungan distance dan simmilarity dari data yang telah di normalisasi:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p><span class="math notranslate nohighlight">\(y_i\)</span></p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\((y_{i,ipk}-y_{j,ipk})^2\)</span></p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\((y_{i,po}-y_{j,po})^2\)</span></p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(\sum_h (y_{ih}-y_{jh})^2\)</span></p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(s_i=\frac{1}{\sum}\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(y_1\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\((0 - 0)^2 = 0\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\((0.5 - 0)^2 = 0.25\)</span></p></td>
+<td class="text-center"><p>0.25</p></td>
+<td class="text-center"><p>4.0</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><span class="math notranslate nohighlight">\(y_2\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\((0 - 0.5)^2 = 0.25\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\((0.5 - 0.5)^2 = 0\)</span></p></td>
+<td class="text-center"><p>0.25</p></td>
+<td class="text-center"><p>4.0</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(y_3\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\((0 - 1)^2 = 1\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\((0.5 - 0)^2 = 0.25\)</span></p></td>
+<td class="text-center"><p>1.25</p></td>
+<td class="text-center"><p>0.8</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><span class="math notranslate nohighlight">\(y_4\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\((0 - 0)^2 = 0\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\((0.5 - 0)^2 = 0.25\)</span></p></td>
+<td class="text-center"><p>0.25</p></td>
+<td class="text-center"><p>4.0</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(y_5\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\((0 - 0.5)^2 = 0.25\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\((0.5 - 0.5)^2 = 0\)</span></p></td>
+<td class="text-center"><p>0.25</p></td>
+<td class="text-center"><p>4.0</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><span class="math notranslate nohighlight">\(y_6\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\((0 - 1)^2 = 1\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\((0.5 - 1)^2 = 0.25\)</span></p></td>
+<td class="text-center"><p>1.25</p></td>
+<td class="text-center"><p>0.8</p></td>
+</tr>
+</tbody>
+</table>
 </div>
+<p>Setelah nilai simmilarity/kemiripan sudah didapatkan, langkah selanjutnya adalah menghitung estimasi menggunakan Weighted Average.</p>
 <p><strong>3. Hitung Estimasi Menggunakan Weighted Average</strong></p>
 <p>Untuk menghitung ini adalah dengan cara mengkalikan setiap atribut <strong>JML</strong> <span class="math notranslate nohighlight">\((y_i)\)</span> dengan <strong>Kemiripan</strong> <span class="math notranslate nohighlight">\((s_i)\)</span>, kemudian di bagi dengan Total Kemiripan.</p>
 <p>A. Pembilang <span class="math notranslate nohighlight">\(\sum (s_i * y_{ih})\)</span> :</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  $y_1 : 4.0 * 0 = 0$
-
-  $y_2 : 4.0 * 1 = 4$
-
-  $y_3 : 0.8 * 0 = 0$
-
-  $y_4 : 4.0 * 1 = 4$
-
-  $y_5 : 4.0 * 0 = 0$
-
-  $y_6 : 0.8 * 1 = 0.8$
-
-  Total Pembilang:
-
-    $0 + 4 + 0 + 4 + 0 + 0.8 = 8.8$
-</pre></div>
-</div>
+<p><span class="math notranslate nohighlight">\(y_1 : 4.0 * 0 = 0\)</span></p>
+<p><span class="math notranslate nohighlight">\(y_2 : 4.0 * 1 = 4\)</span></p>
+<p><span class="math notranslate nohighlight">\(y_3 : 0.8 * 0 = 0\)</span></p>
+<p><span class="math notranslate nohighlight">\(y_4 : 4.0 * 1 = 4\)</span></p>
+<p><span class="math notranslate nohighlight">\(y_5 : 4.0 * 0 = 0\)</span></p>
+<p><span class="math notranslate nohighlight">\(y_6 : 0.8 * 1 = 0.8\)</span></p>
+<p>Total Pembilang:</p>
+<p><span class="math notranslate nohighlight">\(0 + 4 + 0 + 4 + 0 + 0.8 = 8.8\)</span></p>
 <p>B. Penyebut <span class="math notranslate nohighlight">\((\sum s_i)\)</span></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    $4.0 + 4.0 + 0.8 + 4.0 + 4.0 + 0.8 = 17.6$
-</pre></div>
-</div>
+<p><span class="math notranslate nohighlight">\(4.0 + 4.0 + 0.8 + 4.0 + 4.0 + 0.8 = 17.6\)</span></p>
 <p><strong>4. Hasil Akhir</strong></p>
 <p>Setelah menghitung pembilang dan penyebut, langkah terakhir yaitu menghitung hasil akhir dengan rumus:</p>
 <p><span class="math notranslate nohighlight">\(y = \frac {Pembilang} {Penyebut}\)</span></p>
 <p><span class="math notranslate nohighlight">\(y = \frac {8.8} {17.6} = 0.5\)</span></p>
 <p><strong>Kesimpulan</strong></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Berdasarkan perhitungan menggunakan metode **Weighted K-Nearest Neighbor (WKNN)**, nilai estimasi untuk atribut **JML** pada data ke-7 yang sebelumnya memiliki missing value berhasil diperoleh melalui perhitungan **weighted average** dari nilai kemiripan setiap data tetangga.
-
-Hasil perhitungan menunjukkan bahwa nilai estimasi yang diperoleh adalah **0.5** pada skala data yang telah dinormalisasi. Nilai tersebut merupakan hasil dari pembagian antara total hasil perkalian similarity dengan nilai **JML** terhadap total nilai similarity.
-
-Dengan demikian, missing value pada fitur **JML** untuk data ke-7 dapat diisi dengan nilai estimasi **0.5** berdasarkan perhitungan menggunakan metode **WKNN**.
+<p>Berdasarkan perhitungan menggunakan metode <strong>Weighted K-Nearest Neighbor (WKNN)</strong>, nilai estimasi untuk atribut <strong>JML</strong> pada data ke-7 yang sebelumnya memiliki missing value berhasil diperoleh melalui perhitungan <strong>weighted average</strong> dari nilai kemiripan setiap data tetangga.</p>
+<p>Hasil perhitungan menunjukkan bahwa nilai estimasi yang diperoleh adalah <strong>0.5</strong> pada skala data yang telah dinormalisasi. Nilai tersebut merupakan hasil dari pembagian antara total hasil perkalian similarity dengan nilai <strong>JML</strong> terhadap total nilai similarity.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Dengan demikian, missing value pada fitur **JML** untuk data ke-7 dapat diisi dengan nilai estimasi **0.5** berdasarkan perhitungan menggunakan metode **WKNN**.
 </pre></div>
 </div>
 <div class="cell docutils container">
