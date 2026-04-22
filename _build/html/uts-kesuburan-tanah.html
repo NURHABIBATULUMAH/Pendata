@@ -1,0 +1,802 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>UTS-DATASET KLASIFIKASI KESUBURAN TANAH &#8212; Profile Nurhabibatul Umah</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'uts-kesuburan-tanah';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Normalisasi Data" href="missing-value-normalisasi.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.jpeg" class="logo__image only-light" alt="Profile Nurhabibatul Umah - Home"/>
+    <script>document.write(`<img src="_static/logo.jpeg" class="logo__image only-dark" alt="Profile Nurhabibatul Umah - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    About Me
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="pengantar.html">Pengantar Data Mining</a></li>
+<li class="toctree-l1"><a class="reference internal" href="memahami-data.html">Memahami Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_iris.html">Data Understanding</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="mengukur-jarak.html">Mengukur Jarak Tipe Data Numerik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="student-jarak.html">Dataset Student Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missing-value-normalisasi.html">Normalisasi Data</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">UTS-DATASET KLASIFIKASI KESUBURAN TANAH</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/nurhabibatulumah/Pendata" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/nurhabibatulumah/Pendata/issues/new?title=Issue%20on%20page%20%2Futs-kesuburan-tanah.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/uts-kesuburan-tanah.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>UTS-DATASET KLASIFIKASI KESUBURAN TANAH</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-kesuburan-tanah">Dataset Kesuburan Tanah</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atribut-yang-digunakan">Atribut Yang Digunakan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformasi-data-numerik-min-max">Transformasi Data Numerik (Min-Max)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-min-max">Rumus Min-Max</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-perhitungan-manual-data-1-vs-data-2">Contoh Perhitungan Manual (Data 1 vs Data 2)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformasi-data-kategorikal">Transformasi Data Kategorikal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-jarak-euclidean">Perhitungan Jarak Euclidean</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-euclidean">Rumus Euclidean</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-tabel-hasil-normalisasi">Contoh Tabel Hasil Normalisasi</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-jarak">Perhitungan Jarak</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-knime">Implementasi Knime</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#alur-kerja-workflow-node">Alur Kerja (Workflow) Node</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#detail-output-node-utama">Detail Output Node Utama</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#a-node-normalizer-min-max">A. Node Normalizer (Min-Max)</a><ul class="nav section-nav flex-column">
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Rumus Min-Max</a></li>
+</ul>
+</li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#b-node-knn">B. Node KNN</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#c-node-scorer-metrik-evaluasi">C. Node Scorer (Metrik Evaluasi)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="uts-dataset-klasifikasi-kesuburan-tanah">
+<h1>UTS-DATASET KLASIFIKASI KESUBURAN TANAH<a class="headerlink" href="#uts-dataset-klasifikasi-kesuburan-tanah" title="Link to this heading">#</a></h1>
+<section id="dataset-kesuburan-tanah">
+<h2>Dataset Kesuburan Tanah<a class="headerlink" href="#dataset-kesuburan-tanah" title="Link to this heading">#</a></h2>
+<p>Dataset ini berisi 2.000 sampel data tanah yang digunakan untuk mengklasifikasikan apakah kondisi tanah masuk dalam kategori Subur atau Tidak Subur berdasarkan 10 fitur agronomis. Analisis ini menggunakan algoritma K-Nearest Neighbors (KNN) untuk menentukan kelas tanah berdasarkan kedekatan jarak antar fitur.</p>
+<section id="atribut-yang-digunakan">
+<h3>Atribut Yang Digunakan<a class="headerlink" href="#atribut-yang-digunakan" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Atribut</p></th>
+<th class="head"><p>Tipe Data</p></th>
+<th class="head"><p>Keterangan</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>pH Tanah</p></td>
+<td><p>Numerik</p></td>
+<td><p>Skala keasaman tanah (0–14)</p></td>
+</tr>
+<tr class="row-odd"><td><p>N Total</p></td>
+<td><p>Numerik</p></td>
+<td><p>Kandungan Nitrogen dalam persen (%)</p></td>
+</tr>
+<tr class="row-even"><td><p>P Tersedia</p></td>
+<td><p>Numerik</p></td>
+<td><p>Kandungan Fosfor dalam ppm</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tekstur Tanah</p></td>
+<td><p>Kategorikal</p></td>
+<td><p>Lempung, Pasir, Debu, dll.</p></td>
+</tr>
+<tr class="row-even"><td><p>C-Organik</p></td>
+<td><p>Numerik</p></td>
+<td><p>Kandungan karbon organik (%)</p></td>
+</tr>
+<tr class="row-odd"><td><p>K Tersedia</p></td>
+<td><p>Numerik</p></td>
+<td><p>Kandungan Kalium dalam ppm</p></td>
+</tr>
+<tr class="row-even"><td><p>Kelembapan</p></td>
+<td><p>Numerik</p></td>
+<td><p>Tingkat kelembapan tanah (%)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Suhu Tanah</p></td>
+<td><p>Numerik</p></td>
+<td><p>Suhu tanah dalam derajat Celcius (°C)</p></td>
+</tr>
+<tr class="row-even"><td><p>Drainase</p></td>
+<td><p>Kategorikal</p></td>
+<td><p>Baik, Sedang, Buruk</p></td>
+</tr>
+<tr class="row-odd"><td><p>Kedalaman Tanah</p></td>
+<td><p>Numerik</p></td>
+<td><p>Kedalaman efektif tanah (cm)</p></td>
+</tr>
+<tr class="row-even"><td><p>Label</p></td>
+<td><p>Target</p></td>
+<td><p>Subur / Tidak Subur</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="transformasi-data-numerik-min-max">
+<h3>Transformasi Data Numerik (Min-Max)<a class="headerlink" href="#transformasi-data-numerik-min-max" title="Link to this heading">#</a></h3>
+<p>Sebelum menghitung jarak, data numerik harus disamakan skalanya menggunakan <strong>Min-Max Normalization</strong> agar berada pada rentang 0 sampai 1.</p>
+</section>
+<section id="rumus-min-max">
+<h3>Rumus Min-Max<a class="headerlink" href="#rumus-min-max" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+x_{new} = \frac{x - x_{min}}{x_{max} - x_{min}}
+\]</div>
+</section>
+<section id="contoh-perhitungan-manual-data-1-vs-data-2">
+<h3>Contoh Perhitungan Manual (Data 1 vs Data 2)<a class="headerlink" href="#contoh-perhitungan-manual-data-1-vs-data-2" title="Link to this heading">#</a></h3>
+<p>Atribut: <strong>pH Tanah</strong></p>
+<ul class="simple">
+<li><p>Data 1 (<span class="math notranslate nohighlight">\(x_1\)</span>) = 8.93</p></li>
+<li><p>Data 2 (<span class="math notranslate nohighlight">\(x_2\)</span>) = 6.24</p></li>
+<li><p>Nilai minimum (<span class="math notranslate nohighlight">\(x_{min}\)</span>) = 3.50</p></li>
+<li><p>Nilai maksimum (<span class="math notranslate nohighlight">\(x_{max}\)</span>) = 9.00</p></li>
+</ul>
+<p><strong>Normalisasi Data 1:</strong>
+$<span class="math notranslate nohighlight">\(
+z_1 = \frac{8.93 - 3.50}{9.00 - 3.50} = \frac{5.43}{5.50} = 0.987
+\)</span>$</p>
+<p><strong>Normalisasi Data 2:</strong>
+$<span class="math notranslate nohighlight">\(
+z_2 = \frac{6.24 - 3.50}{9.00 - 3.50} = \frac{2.74}{5.50} = 0.498
+\)</span>$</p>
+</section>
+<section id="transformasi-data-kategorikal">
+<h3>Transformasi Data Kategorikal<a class="headerlink" href="#transformasi-data-kategorikal" title="Link to this heading">#</a></h3>
+<p>Untuk atribut <strong>Tekstur Tanah</strong>, digunakan metode <strong>One-Hot Encoding (One to Many)</strong>.</p>
+<p>Karena algoritma KNN berbasis jarak numerik, maka data kategorikal diubah menjadi nilai biner (0 atau 1):</p>
+<ul class="simple">
+<li><p>Jika tekstur <strong>sama</strong> → jarak = 0</p></li>
+<li><p>Jika tekstur <strong>berbeda</strong> → jarak = 1</p></li>
+</ul>
+<p>Contoh:</p>
+<ul class="simple">
+<li><p>Debu → (1, 0, 0)</p></li>
+<li><p>Lempung → (0, 1, 0)</p></li>
+</ul>
+<p><img alt="Foto Saya" src="_images/one-to-many-lempeng.png" /></p>
+</section>
+<section id="perhitungan-jarak-euclidean">
+<h3>Perhitungan Jarak Euclidean<a class="headerlink" href="#perhitungan-jarak-euclidean" title="Link to this heading">#</a></h3>
+<p>Setelah semua data ditransformasi ke dalam bentuk numerik (0–1), jarak antar data dihitung menggunakan <strong>Euclidean Distance</strong>.</p>
+<section id="rumus-euclidean">
+<h4>Rumus Euclidean<a class="headerlink" href="#rumus-euclidean" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[
+d(i,j) = \sqrt{\sum_{f=1}^{n} (x_{if} - x_{jf})^2}
+\]</div>
+</section>
+<section id="contoh-tabel-hasil-normalisasi">
+<h4>Contoh Tabel Hasil Normalisasi<a class="headerlink" href="#contoh-tabel-hasil-normalisasi" title="Link to this heading">#</a></h4>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Data</p></th>
+<th class="head"><p>pH (Norm)</p></th>
+<th class="head"><p>N Total (Norm)</p></th>
+<th class="head"><p>Tekstur (Biner)</p></th>
+<th class="head"><p>…</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Data 1</p></td>
+<td><p>0.987</p></td>
+<td><p>0.150</p></td>
+<td><p>1 (Debu)</p></td>
+<td><p>…</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data 2</p></td>
+<td><p>0.498</p></td>
+<td><p>0.420</p></td>
+<td><p>0 (Lempung)</p></td>
+<td><p>…</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="perhitungan-jarak">
+<h4>Perhitungan Jarak<a class="headerlink" href="#perhitungan-jarak" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[
+d(1,2) = \sqrt{(0.987 - 0.498)^2 + (0.150 - 0.420)^2 + (1 - 0)^2 + \cdots}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+d(1,2) = \text{Hasil Akhir}
+\]</div>
+</section>
+</section>
+<section id="implementasi-knime">
+<h3>Implementasi Knime<a class="headerlink" href="#implementasi-knime" title="Link to this heading">#</a></h3>
+<p>Bagian ini menjelaskan rangkaian proses data mining yang dilakukan menggunakan KNIME. Setiap node memiliki peran spesifik dalam mentransformasi data mentah menjadi hasil klasifikasi yang akurat.</p>
+<p><img alt="Foto Saya" src="_images/knime-uts.png" /></p>
+<section id="alur-kerja-workflow-node">
+<h4>Alur Kerja (Workflow) Node<a class="headerlink" href="#alur-kerja-workflow-node" title="Link to this heading">#</a></h4>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Node</p></th>
+<th class="head"><p>Kegunaan</p></th>
+<th class="head"><p>Output / Hasil</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CSV Reader</p></td>
+<td><p>Membaca file dataset <em>uts-dataset-kesuburan.csv</em>.</p></td>
+<td><p>Data tabel mentah (Raw Data)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Missing Value</p></td>
+<td><p>Mengidentifikasi dan mengisi nilai kosong agar tidak mengganggu proses analisis.</p></td>
+<td><p>Dataset bersih tanpa nilai null</p></td>
+</tr>
+<tr class="row-even"><td><p>One to Many</p></td>
+<td><p>Melakukan One-Hot Encoding pada kolom <strong>Tekstur Tanah</strong>.</p></td>
+<td><p>Fitur kategorikal menjadi numerik (biner)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Normalizer</p></td>
+<td><p>Menerapkan Min-Max Normalization (0–1).</p></td>
+<td><p>Data dengan skala seragam</p></td>
+</tr>
+<tr class="row-even"><td><p>Partitioning</p></td>
+<td><p>Membagi data menjadi 80% training dan 20% testing.</p></td>
+<td><p>Data Train (1600) &amp; Data Test (400)</p></td>
+</tr>
+<tr class="row-odd"><td><p>K-Nearest Neighbor</p></td>
+<td><p>Menghitung jarak Euclidean dan klasifikasi dengan <span class="math notranslate nohighlight">\(k=5\)</span>.</p></td>
+<td><p>Tabel prediksi (Actual vs Predicted)</p></td>
+</tr>
+<tr class="row-even"><td><p>Scorer</p></td>
+<td><p>Mengevaluasi hasil prediksi model.</p></td>
+<td><p>Metrik evaluasi &amp; Confusion Matrix</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="detail-output-node-utama">
+<h4>Detail Output Node Utama<a class="headerlink" href="#detail-output-node-utama" title="Link to this heading">#</a></h4>
+<section id="a-node-normalizer-min-max">
+<h5>A. Node Normalizer (Min-Max)<a class="headerlink" href="#a-node-normalizer-min-max" title="Link to this heading">#</a></h5>
+<p>Node ini penting agar atribut dengan skala besar (misalnya <strong>P Tersedia</strong>) tidak mendominasi atribut kecil (seperti <strong>pH</strong>).</p>
+<section id="id1">
+<h6>Rumus Min-Max<a class="headerlink" href="#id1" title="Link to this heading">#</a></h6>
+<div class="math notranslate nohighlight">
+\[
+x_{new} = \frac{x - x_{min}}{x_{max} - x_{min}}
+\]</div>
+<p><strong>Hasil:</strong><br />
+Seluruh fitur numerik berada pada rentang 0–1 sehingga memiliki bobot yang setara dalam perhitungan jarak.</p>
+<p><img alt="Foto Saya" src="_images/min-max-tanah.png" /></p>
+</section>
+</section>
+<section id="b-node-knn">
+<h5>B. Node KNN<a class="headerlink" href="#b-node-knn" title="Link to this heading">#</a></h5>
+<p>Pada node ini mengatur Number of neighbors to consider sebanyak 5</p>
+<p>Berikut hasil dari consider 5</p>
+<p><img alt="Foto Saya" src="_images/knn-1.png" /></p>
+<p><img alt="Foto Saya" src="_images/knn-2.png" /></p>
+</section>
+<section id="c-node-scorer-metrik-evaluasi">
+<h5>C. Node Scorer (Metrik Evaluasi)<a class="headerlink" href="#c-node-scorer-metrik-evaluasi" title="Link to this heading">#</a></h5>
+<p>Node ini menghasilkan metrik evaluasi untuk mengukur performa model KNN.</p>
+<p>Metrik evaluasi pada node Scorer diperoleh berdasarkan konsep Confusion Matrix dalam machine learning. Nilai <strong>Accuracy, Precision, Recall, dan F1-Score</strong> dihitung menggunakan rumus standar yang berasal dari kombinasi True Positive (TP), True Negative (TN), False Positive (FP), dan False Negative (FN).</p>
+<p>Mendapatkan hasil 100% dan akurat</p>
+<p><img alt="Foto Saya" src="_images/confusion.png" /></p>
+<p>Dari semua implementasi yang telah dijalankann, di dapatkan Score dari label <strong>Subur</strong> dan <strong>Tidak Subur</strong> dengan partisi 90% data Training dan 10% Data Testing</p>
+<p><img alt="Foto Saya" src="_images/akhir.png" /></p>
+</section>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="missing-value-normalisasi.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Normalisasi Data</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-kesuburan-tanah">Dataset Kesuburan Tanah</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atribut-yang-digunakan">Atribut Yang Digunakan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformasi-data-numerik-min-max">Transformasi Data Numerik (Min-Max)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-min-max">Rumus Min-Max</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-perhitungan-manual-data-1-vs-data-2">Contoh Perhitungan Manual (Data 1 vs Data 2)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformasi-data-kategorikal">Transformasi Data Kategorikal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-jarak-euclidean">Perhitungan Jarak Euclidean</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-euclidean">Rumus Euclidean</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-tabel-hasil-normalisasi">Contoh Tabel Hasil Normalisasi</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-jarak">Perhitungan Jarak</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-knime">Implementasi Knime</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#alur-kerja-workflow-node">Alur Kerja (Workflow) Node</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#detail-output-node-utama">Detail Output Node Utama</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#a-node-normalizer-min-max">A. Node Normalizer (Min-Max)</a><ul class="nav section-nav flex-column">
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Rumus Min-Max</a></li>
+</ul>
+</li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#b-node-knn">B. Node KNN</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#c-node-scorer-metrik-evaluasi">C. Node Scorer (Metrik Evaluasi)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Nurhabibatul Umah
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
