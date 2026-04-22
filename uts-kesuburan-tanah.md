@@ -104,7 +104,7 @@ Bagian ini menjelaskan rangkaian proses data mining yang dilakukan menggunakan K
 | Missing Value       | Mengidentifikasi dan mengisi nilai kosong agar tidak mengganggu proses analisis.   | Dataset bersih tanpa nilai null                    |
 | One to Many         | Melakukan One-Hot Encoding pada kolom **Tekstur Tanah**.                           | Fitur kategorikal menjadi numerik (biner)          |
 | Normalizer          | Menerapkan Min-Max Normalization (0–1).                                            | Data dengan skala seragam                          |
-| Partitioning        | Membagi data menjadi 80% training dan 20% testing.                                 | Data Train (1600) & Data Test (400)                |
+| Partitioning        | Membagi data menjadi 90% training dan 10% testing.                                 | Data Train (1800) & Data Test (200)                |
 | K-Nearest Neighbor  | Menghitung jarak Euclidean dan klasifikasi dengan $k=5$.                           | Tabel prediksi (Actual vs Predicted)               |
 | Scorer              | Mengevaluasi hasil prediksi model.                                                 | Metrik evaluasi & Confusion Matrix                 |
 
