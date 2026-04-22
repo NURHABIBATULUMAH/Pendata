@@ -611,8 +611,8 @@ d(1,2) = \text{Hasil Akhir}
 <td><p>Data dengan skala seragam</p></td>
 </tr>
 <tr class="row-even"><td><p>Partitioning</p></td>
-<td><p>Membagi data menjadi 80% training dan 20% testing.</p></td>
-<td><p>Data Train (1600) &amp; Data Test (400)</p></td>
+<td><p>Membagi data menjadi 90% training dan 10% testing.</p></td>
+<td><p>Data Train (1800) &amp; Data Test (200)</p></td>
 </tr>
 <tr class="row-odd"><td><p>K-Nearest Neighbor</p></td>
 <td><p>Menghitung jarak Euclidean dan klasifikasi dengan <span class="math notranslate nohighlight">\(k=5\)</span>.</p></td>
@@ -653,7 +653,7 @@ Seluruh fitur numerik berada pada rentang 0–1 sehingga memiliki bobot yang set
 <h5>C. Node Scorer (Metrik Evaluasi)<a class="headerlink" href="#c-node-scorer-metrik-evaluasi" title="Link to this heading">#</a></h5>
 <p>Node ini menghasilkan metrik evaluasi untuk mengukur performa model KNN.</p>
 <p>Metrik evaluasi pada node Scorer diperoleh berdasarkan konsep Confusion Matrix dalam machine learning. Nilai <strong>Accuracy, Precision, Recall, dan F1-Score</strong> dihitung menggunakan rumus standar yang berasal dari kombinasi True Positive (TP), True Negative (TN), False Positive (FP), dan False Negative (FN).</p>
-<p>Mendapatkan hasil 100% dan akurat</p>
+<p>Mendapatkan hasil 100% dan akurat, berikut Metrik Confusionnya:</p>
 <p><img alt="Foto Saya" src="_images/confusion.png" /></p>
 <p>Dari semua implementasi yang telah dijalankann, di dapatkan Score dari label <strong>Subur</strong> dan <strong>Tidak Subur</strong> dengan partisi 90% data Training dan 10% Data Testing</p>
 <p><img alt="Foto Saya" src="_images/akhir.png" /></p>
