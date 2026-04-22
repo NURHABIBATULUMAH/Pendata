@@ -142,7 +142,7 @@ Node ini menghasilkan metrik evaluasi untuk mengukur performa model KNN.
 
 Metrik evaluasi pada node Scorer diperoleh berdasarkan konsep Confusion Matrix dalam machine learning. Nilai **Accuracy, Precision, Recall, dan F1-Score** dihitung menggunakan rumus standar yang berasal dari kombinasi True Positive (TP), True Negative (TN), False Positive (FP), dan False Negative (FN).
 
-Mendapatkan hasil 100% dan akurat
+Mendapatkan hasil 100% dan akurat, berikut Metrik Confusionnya:
 
 ![Foto Saya](img/confusion.png)
 
