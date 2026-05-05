@@ -390,7 +390,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proses-partisi-data">Proses Partisi Data</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-knime-dan-menggunakan-library-scikit-learn">Implementasi Knime dan Menggunakan library scikit-learn</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-knime-dan-menggunakan-library-scikit-learn">Implementasi Knime dan Menggunakan library scikit-learn</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-script-python">Implementasi Script Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-prediksi-dan-evaluasi-model">Hasil Prediksi dan Evaluasi Model</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -549,41 +553,61 @@ document.write(`
 <section id="implementasi-knime-dan-menggunakan-library-scikit-learn">
 <h2>Implementasi Knime dan Menggunakan library scikit-learn<a class="headerlink" href="#implementasi-knime-dan-menggunakan-library-scikit-learn" title="Link to this heading">#</a></h2>
 <p>Implementasi dilakukan menggunakan tools KNIME dengan memanfaatkan library scikit-learn untuk perhitungan metode Naive Bayes.</p>
+<p>Berikut adalah implementasi alur kerja pada KNIME. Pada nodes Python Script dikonfigurasi dengan dua input port untuk memisahkan data training dan data testing:</p>
+<ul class="simple">
+<li><p>Port 1 (Atas): Menerima 80% data (5.332 baris) untuk proses Training.</p></li>
+<li><p>Port 2 (Bawah): Menerima 20% data (1.334 baris) untuk proses Testing.</p></li>
+</ul>
+<section id="implementasi-script-python">
+<h3>Implementasi Script Python<a class="headerlink" href="#implementasi-script-python" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">knime.scripting.io</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">knio</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.naive_bayes</span><span class="w"> </span><span class="kn">import</span> <span class="n">CategoricalNB</span>
 
-<span class="c1"># 1. Ambil data (sudah berupa angka dari node Category to Number)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">knio</span><span class="o">.</span><span class="n">input_tables</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+<span class="c1"># 1. Ambil data dari dua port yang berbeda</span>
+<span class="c1"># Port 0 (Atas) = Data Training (80%)</span>
+<span class="n">df_train</span> <span class="o">=</span> <span class="n">knio</span><span class="o">.</span><span class="n">input_tables</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+<span class="c1"># Port 1 (Bawah) = Data Testing (20%)</span>
+<span class="n">df_test</span> <span class="o">=</span> <span class="n">knio</span><span class="o">.</span><span class="n">input_tables</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
 
-<span class="c1"># 2. Pisahkan Fitur dan Target</span>
-<span class="c1"># (Hapus kolom &#39;Day&#39; jika belum di-drop di node sebelumnya)</span>
-<span class="k">if</span> <span class="s1">&#39;Day&#39;</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Day&#39;</span><span class="p">])</span>
+<span class="c1"># 2. Pembersihan Data (Hapus kolom &#39;Day&#39; jika ada)</span>
+<span class="k">for</span> <span class="n">df</span> <span class="ow">in</span> <span class="p">[</span><span class="n">df_train</span><span class="p">,</span> <span class="n">df_test</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="s1">&#39;Day&#39;</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Day&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="c1"># Fitur</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>  <span class="c1"># Target (&#39;Play&#39; yang sudah jadi angka)</span>
+<span class="c1"># 3. Pisahkan Fitur dan Target untuk Training</span>
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">df_train</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">y_train</span> <span class="o">=</span> <span class="n">df_train</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 
-<span class="c1"># 3. Training Model</span>
+<span class="c1"># 4. Pisahkan Fitur untuk Testing (Ujian)</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">df_test</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="c1"># 5. Training Model (Belajar dari data 80%)</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">CategoricalNB</span><span class="p">()</span>
-<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 
-<span class="c1"># 4. Prediksi</span>
-<span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Prediction&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">predictions</span>
+<span class="c1"># 6. Prediksi (Ujian menggunakan data 20% yang belum pernah dilihat)</span>
+<span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 
-<span class="c1"># 5. Output kembali ke KNIME</span>
-<span class="n">knio</span><span class="o">.</span><span class="n">output_tables</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">knio</span><span class="o">.</span><span class="n">Table</span><span class="o">.</span><span class="n">from_pandas</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="c1"># 7. Tempelkan hasil prediksi ke tabel testing agar bisa dicek Scorer</span>
+<span class="n">df_test</span><span class="p">[</span><span class="s1">&#39;Prediction&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">predictions</span>
+
+<span class="c1"># 8. Output hasil ujian ke KNIME</span>
+<span class="n">knio</span><span class="o">.</span><span class="n">output_tables</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">knio</span><span class="o">.</span><span class="n">Table</span><span class="o">.</span><span class="n">from_pandas</span><span class="p">(</span><span class="n">df_test</span><span class="p">)</span>
 </pre></div>
 </div>
+</section>
+<section id="hasil-prediksi-dan-evaluasi-model">
+<h3>Hasil Prediksi dan Evaluasi Model<a class="headerlink" href="#hasil-prediksi-dan-evaluasi-model" title="Link to this heading">#</a></h3>
 <p>Setelah script tersebut dijalankan, maka akan menghasilkan prediction sebagai berikut:</p>
 <p><img alt="Foto Saya" src="_images/tennis6.png" /></p>
-<p>Untuk Confusion Matriks dapat dilihat di bawah ini :</p>
+<p>Untuk Confusion Matrix dari hasil pengujian (data yang belum pernah dilihat model) dapat dilihat di bawah ini:</p>
 <p><img alt="Foto Saya" src="_images/tennis7.png" /></p>
 <p>Nilai akurasi dari prediction ini didapatkan :</p>
 <p><img alt="Foto Saya" src="_images/tennis8.png" /></p>
-<p>Data sebanyak <strong>5.332</strong> merupakan jumlah data yang digunakan pada partisi pertama (<strong>80% data training</strong>). Model yang dibangun menggunakan algoritma <strong>Naive Bayes</strong> berhasil mencapai tingkat akurasi sebesar <strong>0.89 atau 88,99%</strong>.</p>
+<p>Data sebanyak <strong>1.334</strong> merupakan jumlah data yang digunakan pada partisi kedua (<strong>20% data testing</strong>). Memiliki nilai akurasi <strong>0.888</strong></p>
 <p>Berikut merupakan implementasi pada knime beserta nodes yang digunakan:</p>
 <p><img alt="Foto Saya" src="_images/tennis9.png" /></p>
+</section>
 </section>
 </section>
 
@@ -648,7 +672,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proses-partisi-data">Proses Partisi Data</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-knime-dan-menggunakan-library-scikit-learn">Implementasi Knime dan Menggunakan library scikit-learn</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-knime-dan-menggunakan-library-scikit-learn">Implementasi Knime dan Menggunakan library scikit-learn</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-script-python">Implementasi Script Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-prediksi-dan-evaluasi-model">Hasil Prediksi dan Evaluasi Model</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
