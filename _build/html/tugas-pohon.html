@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>About Me &#8212; Profile Nurhabibatul Umah</title>
+    <title>Tugas Decission Tree &#8212; Profile Nurhabibatul Umah</title>
   
   
   
@@ -57,12 +57,10 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tugas-pohon';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Pengantar Data Mining" href="pengantar.html" />
+    <link rel="prev" title="Tugas Analisis Data Menggunakan Naive Bayes" href="naive-bayes-playtennis.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -125,8 +123,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -145,7 +141,7 @@
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -176,13 +172,13 @@
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     About Me
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="pengantar.html">Pengantar Data Mining</a></li>
 <li class="toctree-l1"><a class="reference internal" href="memahami-data.html">Memahami Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data_iris.html">Data Understanding</a></li>
@@ -193,7 +189,7 @@
 
 <li class="toctree-l1"><a class="reference internal" href="uts-kesuburan-tanah.html">UTS-DATASET KLASIFIKASI KESUBURAN TANAH</a></li>
 <li class="toctree-l1"><a class="reference internal" href="naive-bayes-playtennis.html">Tugas Analisis Data Menggunakan Naive Bayes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tugas-pohon.html">Tugas Decission Tree</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tugas Decission Tree</a></li>
 </ul>
 
     </div>
@@ -265,7 +261,7 @@
       
       
       
-      <li><a href="https://github.com/nurhabibatulumah/Pendata/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/nurhabibatulumah/Pendata/issues/new?title=Issue%20on%20page%20%2Ftugas-pohon.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -295,7 +291,7 @@
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="_sources/tugas-pohon.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -366,7 +362,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -377,11 +375,31 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>About Me</h1>
+    <h1>Tugas Decission Tree</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-dataset">Eksplorasi Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-pada-knime">Implementasi Pada Knime</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#excel-reader">1. Excel Reader</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tabel-partitioner">2. Tabel Partitioner</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#color-manager">3. Color Manager</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#color-appender">4. Color Appender</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decission-tree-learner">5. Decission Tree Learner</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decission-tree-predictor">6. Decission Tree Predictor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-writer">7. Model Writer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scorer">8. Scorer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decission-tree-view">9. Decission Tree View</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -391,48 +409,79 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="about-me">
-<h1>About Me<a class="headerlink" href="#about-me" title="Link to this heading">#</a></h1>
-<p><strong>_______________________________________________________________________________________________________________________</strong></p>
-<table align="left">
-    <tr>
-        <td><b>Nama</b></td>
-        <td> </td>
-        <td>:</td>
-        <td>Nurhabibatul Umah</td>
-    </tr>
-    <tr>
-        <td><b>NIM</b></td>
-        <td> </td>
-        <td>:</td>
-        <td>240411100169</td>
-    </tr>
-    <tr>
-        <td><b>Program Studi</b></td>
-        <td> </td>
-        <td>:</td>
-        <td>Teknik Informatika</td>
-    </tr>
-    <tr>
-        <td><b>Semester</b></td>
-        <td> </td>
-        <td>:</td>
-        <td>4</td>
-    </tr>
-    <tr>
-        <td><b>Mata Kuliah</b></td>
-        <td> </td>
-        <td>:</td>
-        <td>Penambangan Data</td>
-    </tr>
-</table>
-<br clear="left"/>
-<p><strong>_______________________________________________________________________________________________________________________</strong></p>
-<p><strong>Halo, saya Nurhabibatul Umah.</strong><br />
-Saya merupakan mahasiswa Program Studi Teknik Informatika semester 4 di Universitas Trunojoyo Madura yang sedang menempuh mata kuliah Penambangan Data.</p>
-<!-- Pada mata kuliah ini saya mempelajari konsep dasar data mining, teknik klasifikasi, clustering, serta analisis data untuk mendukung pengambilan keputusan berbasis data. -->
-<div class="toctree-wrapper compound">
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="tugas-decission-tree">
+<h1>Tugas Decission Tree<a class="headerlink" href="#tugas-decission-tree" title="Link to this heading">#</a></h1>
+<section id="eksplorasi-dataset">
+<h2>Eksplorasi Dataset<a class="headerlink" href="#eksplorasi-dataset" title="Link to this heading">#</a></h2>
+<p>Data yang digunakan pada tugas ini adalah Data Play Tennis. Dataset Play Tennis digunakan untuk memprediksi apakah suatu kondisi cuaca memungkinkan untuk bermain tenis atau tidak.</p>
+<p>Jumlah Data : 14</p>
+<p>Jumlah Atribut : 5 Atribut (4 identifier dan 1 class/target)</p>
+</section>
+<section id="implementasi-pada-knime">
+<h2>Implementasi Pada Knime<a class="headerlink" href="#implementasi-pada-knime" title="Link to this heading">#</a></h2>
+<p>Workflow ini dirancang menggunakan tools KNIME untuk membangun model klasifikasi Decision Tree. Tujuannya untuk memprediksi apakah seseorang akan bermain tenis atau tidak berdasarkan kondisi cuaca (Outlook, Temperature, Humidity, dan Windy).</p>
+<p>Berikut merupakan nodes yang diimplementasikan:</p>
+<p><img alt="Foto Saya" src="_images/pohon1.png" /></p>
+<section id="excel-reader">
+<h3>1. Excel Reader<a class="headerlink" href="#excel-reader" title="Link to this heading">#</a></h3>
+<p>Pada nodes ini digunakan untuk mengimpor file dataset <strong>“Play Tennis”</strong> yang berisi 14 data.</p>
+<p><img alt="Foto Saya" src="_images/pohon2.png" /></p>
+</section>
+<section id="tabel-partitioner">
+<h3>2. Tabel Partitioner<a class="headerlink" href="#tabel-partitioner" title="Link to this heading">#</a></h3>
+<p>Pada nodes partitioner ini digunakan untuk mempartisi berapa banyak data untuk training dan testing. Pada tugas ini, partisi dibuat 90% data training dan 10% untuk data testing. Jadi jumlah data yang di training ada 12 data dan untuk testing ada 2 data.</p>
+<p>Data Training (80%):</p>
+<p><img alt="Foto Saya" src="_images/pohon3.png" /></p>
+<p>Data Testing (20%):</p>
+<p><img alt="Foto Saya" src="_images/pohon4.png" /></p>
+</section>
+<section id="color-manager">
+<h3>3. Color Manager<a class="headerlink" href="#color-manager" title="Link to this heading">#</a></h3>
+<p>Pada nodes ini digunakan untuk memberikan pengaturan warna yang berbeda pada atribut kelas/target.  Bertujuan untuk mempermudah visualisasi pengelompokan data pada tahapan selanjutnya.</p>
+<p><img alt="Foto Saya" src="_images/pohon5.png" /></p>
+</section>
+<section id="color-appender">
+<h3>4. Color Appender<a class="headerlink" href="#color-appender" title="Link to this heading">#</a></h3>
+<p>Pada nodes ini digunakan untuk meneruskan dan menerapkan skema warna yang telah dibuat di Color Manager ke dalam sekumpulan data testing. Visualisasi ini supaya data tetap konsisten antara data training dan data testing.</p>
+<p><img alt="Foto Saya" src="_images/pohon6.png" /></p>
+</section>
+<section id="decission-tree-learner">
+<h3>5. Decission Tree Learner<a class="headerlink" href="#decission-tree-learner" title="Link to this heading">#</a></h3>
+<p>Pada nodes ini digunakan untuk membangun dan melatih (training) model pohon keputusan menggunakan 12 data training yang telah dipartisi. Model akan mempelajari pola dan aturan dari atribut kondisi cuaca untuk menentukan target klasifikasinya.</p>
+<p>Pada nodes ini diatur:</p>
+<ul class="simple">
+<li><p>quality measure : Gain ratio</p></li>
+<li><p>Prunning Method : No Prunning</p></li>
+<li><p>Mencentang Reduced error prunning supaya tidak di pangkas</p></li>
+<li><p>Minimum number of records per node  di berikan nilai 1 supaya node yang memiliki nilai lebih dari 1 ditampilkan</p></li>
+<li><p>Force root split column di atur kolom Outlook untuk dijadikan sebagai akar</p></li>
+</ul>
+<p><img alt="Foto Saya" src="_images/pohon7.png" /></p>
+</section>
+<section id="decission-tree-predictor">
+<h3>6. Decission Tree Predictor<a class="headerlink" href="#decission-tree-predictor" title="Link to this heading">#</a></h3>
+<p>Pada nodes ini digunakan untuk menguji kemampuan model tersebut. Node ini akan menerapkan aturan logika yang telah dipelajari ke dalam 2 data testing untuk memprediksi apakah hasilnya “Yes” atau “No”.</p>
+<p>Berikut merupakan hasil prediksinya:</p>
+<p><img alt="Foto Saya" src="_images/pohon8.png" /></p>
+</section>
+<section id="model-writer">
+<h3>7. Model Writer<a class="headerlink" href="#model-writer" title="Link to this heading">#</a></h3>
+<p>Pada nodes ini digunakan untuk menyimpan model klasifikasi Decision Tree yang sudah jadi ke dalam bentuk file. Tujuannya adalah agar model yang sudah pintar ini dapat langsung digunakan kembali di lain waktu tanpa harus memproses atau melatih ulang data dari awal.</p>
+<p><img alt="Foto Saya" src="_images/pohon9.png" /></p>
+</section>
+<section id="scorer">
+<h3>8. Scorer<a class="headerlink" href="#scorer" title="Link to this heading">#</a></h3>
+<p>Confusion Matriks</p>
+<p><img alt="Foto Saya" src="_images/pohon10.png" /></p>
+<p>Acuracy</p>
+<p><img alt="Foto Saya" src="_images/pohon11.png" /></p>
+</section>
+<section id="decission-tree-view">
+<h3>9. Decission Tree View<a class="headerlink" href="#decission-tree-view" title="Link to this heading">#</a></h3>
+<p>Pada nodes ini digunakan untuk menampilkan hasil dari model secara visual dalam bentuk struktur pohon keputusan (tree diagram). Dari node ini, kita dapat melihat dengan jelas alur logika (aturan Jika-Maka) yang dibentuk oleh sistem berdasarkan dataset Play Tennis.</p>
+<p><img alt="Foto Saya" src="_images/pohon12.png" /></p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -465,14 +514,14 @@ Saya merupakan mahasiswa Program Studi Teknik Informatika semester 4 di Universi
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="right-next"
-       href="pengantar.html"
-       title="next page">
+    <a class="left-prev"
+       href="naive-bayes-playtennis.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Pengantar Data Mining</p>
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Tugas Analisis Data Menggunakan Naive Bayes</p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -480,6 +529,33 @@ Saya merupakan mahasiswa Program Studi Teknik Informatika semester 4 di Universi
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-dataset">Eksplorasi Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-pada-knime">Implementasi Pada Knime</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#excel-reader">1. Excel Reader</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tabel-partitioner">2. Tabel Partitioner</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#color-manager">3. Color Manager</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#color-appender">4. Color Appender</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decission-tree-learner">5. Decission Tree Learner</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decission-tree-predictor">6. Decission Tree Predictor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-writer">7. Model Writer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scorer">8. Scorer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decission-tree-view">9. Decission Tree View</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
