@@ -399,7 +399,11 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-program-python">3. Implementasi Program Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-ke-geogebra">4. Implementasi ke Geogebra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-ke-geogebra">4. Implementasi ke Geogebra</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-data-scatter-plot">Distribusi Data (Scatter Plot)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluasi-model">Evaluasi Model</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -413,8 +417,6 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="tugas-linier-regression">
 <h1>Tugas Linier Regression<a class="headerlink" href="#tugas-linier-regression" title="Link to this heading">#</a></h1>
-<p>Data yang digunakan:</p>
-<p><img alt="Foto Saya" src="_images/lin1.png" /></p>
 <section id="dataset">
 <h2>1. Dataset<a class="headerlink" href="#dataset" title="Link to this heading">#</a></h2>
 <p>Berdasarkan data titik koordinat <span class="math notranslate nohighlight">\((x, y)\)</span> yang diambil dari GeoGebra, didapatkan <span class="math notranslate nohighlight">\(n = 7\)</span> data sebagai berikut:</p>
@@ -427,6 +429,7 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(F(4,5)\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(G(5,6)\)</span></p></li>
 </ul>
+<p><img alt="Foto Saya" src="_images/lin1.png" /></p>
 </section>
 <section id="perhitungan-secara-analitik-manual">
 <h2>2. Perhitungan secara Analitik (Manual)<a class="headerlink" href="#perhitungan-secara-analitik-manual" title="Link to this heading">#</a></h2>
@@ -582,6 +585,21 @@ Koefisien (beta_1) : 1.0769
 <section id="implementasi-ke-geogebra">
 <h2>4. Implementasi ke Geogebra<a class="headerlink" href="#implementasi-ke-geogebra" title="Link to this heading">#</a></h2>
 <p><img alt="Foto Saya" src="_images/lin2.png" /></p>
+<p>Berdasarkan simulasi dan grafik yang dihasilkan melalui <em>GeoGebra Calculator Suite</em>, berikut adalah analisis mengenai sebaran data serta interpretasi dari garis regresi yang terbentuk.</p>
+<hr class="docutils" />
+<section id="distribusi-data-scatter-plot">
+<h3>Distribusi Data (Scatter Plot)<a class="headerlink" href="#distribusi-data-scatter-plot" title="Link to this heading">#</a></h3>
+<p>Data terdiri dari 7 titik koordinat pada bidang Kartesius:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A(2,2)\)</span>, <span class="math notranslate nohighlight">\(B(4,3)\)</span>, <span class="math notranslate nohighlight">\(C(5,5)\)</span>, <span class="math notranslate nohighlight">\(D(3,4)\)</span>, <span class="math notranslate nohighlight">\(E(3,3)\)</span>, <span class="math notranslate nohighlight">\(F(4,5)\)</span>, dan <span class="math notranslate nohighlight">\(G(5,6)\)</span>.</p></li>
+</ul>
+<p>Secara visual, pergerakan titik-titik data menunjukkan tren naik dari kiri bawah ke kanan atas. Hal ini mengindikasikan adanya <strong>korelasi positif</strong> yang kuat antara variabel bebas (<span class="math notranslate nohighlight">\(X\)</span>) dan variabel terikat (<span class="math notranslate nohighlight">\(Y\)</span>). Artinya, pertambahan nilai <span class="math notranslate nohighlight">\(X\)</span> cenderung diikuti dengan peningkatan nilai <span class="math notranslate nohighlight">\(Y\)</span>.</p>
+</section>
+<section id="evaluasi-model">
+<h3>Evaluasi Model<a class="headerlink" href="#evaluasi-model" title="Link to this heading">#</a></h3>
+<p>Jika dianalisis dari grafiknya, garis regresi memotong secara optimal di tengah-tengah sebaran data. Jarak vertikal (<em>residual</em>) antara titik-titik yang berada di atas garis (<span class="math notranslate nohighlight">\(D, F, G\)</span>) dan di bawah garis (<span class="math notranslate nohighlight">\(B, C\)</span>) berada dalam proporsi yang seimbang, sementara titik <span class="math notranslate nohighlight">\(A\)</span> dan <span class="math notranslate nohighlight">\(E\)</span> berada tepat pada lintasan garis.</p>
+<p><strong>Kesimpulan:</strong> Hasil pemodelan otomatis oleh GeoGebra menunjukkan hasil yang <strong>identik (konsisten)</strong> dengan perhitungan analitik menggunakan matriks OLS maupun hasil komputasi menggunakan library <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> pada Python. Hal ini membuktikan validitas dari perhitungan parameter yang telah dilakukan.</p>
+</section>
 </section>
 </section>
 
@@ -650,7 +668,11 @@ Koefisien (beta_1) : 1.0769
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-program-python">3. Implementasi Program Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-ke-geogebra">4. Implementasi ke Geogebra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-ke-geogebra">4. Implementasi ke Geogebra</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-data-scatter-plot">Distribusi Data (Scatter Plot)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluasi-model">Evaluasi Model</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
