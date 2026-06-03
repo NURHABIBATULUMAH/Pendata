@@ -404,8 +404,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling-menggunakan-knn-regression">3. Modeling menggunakan KNN Regression</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-normalisasi-data">a. Normalisasi Data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-mengubah-data">b. Mengubah Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling-dan-evaluation">Modeling dan Evaluation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">Plotting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-modeling-dan-evaluation">c. Modeling dan Evaluation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-plotting">d. Plotting</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
@@ -440,15 +440,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: Ignoring invalid distribution ~andas (C:\Users\LENOVO\.pyenv\pyenv-win\versions\3.12.10\Lib\site-packages)
-WARNING: Ignoring invalid distribution ~andas (C:\Users\LENOVO\.pyenv\pyenv-win\versions\3.12.10\Lib\site-packages)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
-Collecting openeo
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting openeo
   Using cached openeo-0.50.0-py3-none-any.whl.metadata (8.9 kB)
 Requirement already satisfied: requests&gt;=2.26.0 in c:\users\lenovo\.pyenv\pyenv-win\versions\3.12.10\lib\site-packages (from openeo) (2.32.5)
 Requirement already satisfied: urllib3&gt;=1.9.0 in c:\users\lenovo\.pyenv\pyenv-win\versions\3.12.10\lib\site-packages (from openeo) (2.6.3)
@@ -456,11 +448,9 @@ Requirement already satisfied: shapely&gt;=1.6.4 in c:\users\lenovo\.pyenv\pyenv
 Requirement already satisfied: numpy&gt;=1.17.0 in c:\users\lenovo\.pyenv\pyenv-win\versions\3.12.10\lib\site-packages (from openeo) (2.4.2)
 Collecting xarray&lt;2025.01.2,&gt;=0.12.3 (from openeo)
   Using cached xarray-2025.1.1-py3-none-any.whl.metadata (11 kB)
-Collecting pandas&lt;3.0.0,&gt;0.20.0 (from openeo)
-  Using cached pandas-2.3.3-cp312-cp312-win_amd64.whl.metadata (19 kB)
+Requirement already satisfied: pandas&lt;3.0.0,&gt;0.20.0 in c:\users\lenovo\.pyenv\pyenv-win\versions\3.12.10\lib\site-packages (from openeo) (2.3.3)
 Requirement already satisfied: pystac&gt;=1.5.0 in c:\users\lenovo\.pyenv\pyenv-win\versions\3.12.10\lib\site-packages (from openeo) (1.14.3)
-Collecting deprecated&gt;=1.2.12 (from openeo)
-  Using cached deprecated-1.3.1-py2.py3-none-any.whl.metadata (5.9 kB)
+Requirement already satisfied: deprecated&gt;=1.2.12 in c:\users\lenovo\.pyenv\pyenv-win\versions\3.12.10\lib\site-packages (from openeo) (1.3.1)
 Requirement already satisfied: oschmod&gt;=0.3.12 in c:\users\lenovo\.pyenv\pyenv-win\versions\3.12.10\lib\site-packages (from openeo) (0.3.12)
 Collecting geopandas&gt;=0.14 (from openeo)
   Using cached geopandas-1.1.3-py3-none-any.whl.metadata (2.3 kB)
@@ -477,11 +467,19 @@ Requirement already satisfied: idna&lt;4,&gt;=2.5 in c:\users\lenovo\.pyenv\pyen
 Requirement already satisfied: certifi&gt;=2017.4.17 in c:\users\lenovo\.pyenv\pyenv-win\versions\3.12.10\lib\site-packages (from requests&gt;=2.26.0-&gt;openeo) (2026.1.4)
 Requirement already satisfied: six&gt;=1.5 in c:\users\lenovo\.pyenv\pyenv-win\versions\3.12.10\lib\site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas&lt;3.0.0,&gt;0.20.0-&gt;openeo) (1.17.0)
 Using cached openeo-0.50.0-py3-none-any.whl (345 kB)
-Using cached deprecated-1.3.1-py2.py3-none-any.whl (11 kB)
 Using cached geopandas-1.1.3-py3-none-any.whl (342 kB)
-Using cached pandas-2.3.3-cp312-cp312-win_amd64.whl (11.0 MB)
 Using cached xarray-2025.1.1-py3-none-any.whl (1.2 MB)
-Installing collected packages: deprecated, pandas, xarray, geopandas, openeo
+Installing collected packages: xarray, geopandas, openeo
+Successfully installed geopandas-1.1.3 openeo-0.50.0 xarray-2025.1.1
+Note: you may need to restart the kernel to use updated packages.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: Ignoring invalid distribution ~andas (C:\Users\LENOVO\.pyenv\pyenv-win\versions\3.12.10\Lib\site-packages)
+WARNING: Ignoring invalid distribution ~andas (C:\Users\LENOVO\.pyenv\pyenv-win\versions\3.12.10\Lib\site-packages)
+WARNING: Ignoring invalid distribution ~andas (C:\Users\LENOVO\.pyenv\pyenv-win\versions\3.12.10\Lib\site-packages)
+
+[notice] A new release of pip is available: 25.0.1 -&gt; 26.1.2
+[notice] To update, run: python.exe -m pip install --upgrade pip
 </pre></div>
 </div>
 </div>
@@ -504,10 +502,7 @@ Installing collected packages: deprecated, pandas, xarray, geopandas, openeo
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">Visit <a href="https://identity.dataspace.copernicus.eu/auth/realms/CDSE/device?user_code=SSFF-QDJZ" title="Authenticate at https://identity.dataspace.copernicus.eu/auth/realms/CDSE/device?user_code=SSFF-QDJZ" target="_blank" rel="noopener noreferrer">https://identity.dataspace.copernicus.eu/auth/realms/CDSE/device?user_code=SSFF-QDJZ</a> <a href="#" onclick="navigator.clipboard.writeText('https://identity.dataspace.copernicus.eu/auth/realms/CDSE/device?user_code=SSFF-QDJZ');return false;" title="Copy authentication URL to clipboard">&#128203;</a> to authenticate.</div><div class="output text_html">✅ Authorized successfully</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Authenticated using device code flow.
-</pre></div>
-</div>
-</div>
+<div class="output text_html">Visit <a href="https://identity.dataspace.copernicus.eu/auth/realms/CDSE/device?user_code=HSYH-OMOP" title="Authenticate at https://identity.dataspace.copernicus.eu/auth/realms/CDSE/device?user_code=HSYH-OMOP" target="_blank" rel="noopener noreferrer">https://identity.dataspace.copernicus.eu/auth/realms/CDSE/device?user_code=HSYH-OMOP</a> <a href="#" onclick="navigator.clipboard.writeText('https://identity.dataspace.copernicus.eu/auth/realms/CDSE/device?user_code=HSYH-OMOP');return false;" title="Copy authentication URL to clipboard">&#128203;</a> to authenticate.</div><div class="output text_html"><code>[##################################---]</code> ⌛ Authorization pending</div></div>
 </div>
 <p><strong>4. Menentukan Area of Interest (AOI) dan Eksekusi Pengambilan Data</strong></p>
 <p>Pada tahap ini, kita mendefinisikan koordinat polygon batas wilayah (Pamekasan &amp; Sumenep). Selanjutnya, kita memuat koleksi data <code class="docutils literal notranslate"><span class="pre">SENTINEL_5P_L2</span></code> untuk rentang waktu Oktober 2023 hingga Juni 2026.</p>
@@ -951,8 +946,8 @@ dtype: object
 </div>
 </div>
 </section>
-<section id="modeling-dan-evaluation">
-<h3>Modeling dan Evaluation<a class="headerlink" href="#modeling-dan-evaluation" title="Link to this heading">#</a></h3>
+<section id="c-modeling-dan-evaluation">
+<h3>c. Modeling dan Evaluation<a class="headerlink" href="#c-modeling-dan-evaluation" title="Link to this heading">#</a></h3>
 <p>Model <strong>KNN Regression</strong> dilatih menggunakan pembagian data <strong>80% training</strong> dan <strong>20% testing</strong> tanpa pengacakan (<code class="docutils literal notranslate"><span class="pre">shuffle=False</span></code>) untuk menjaga urutan waktu pada data time series.</p>
 <p>Parameter model:</p>
 <ul class="simple">
@@ -1020,8 +1015,8 @@ R² Score   : -0.0289
 </div>
 </div>
 </section>
-<section id="plotting">
-<h3>Plotting<a class="headerlink" href="#plotting" title="Link to this heading">#</a></h3>
+<section id="d-plotting">
+<h3>d. Plotting<a class="headerlink" href="#d-plotting" title="Link to this heading">#</a></h3>
 <p>Visualisasi grafik antara label dan prediksi dari kedua data diatas. Visualisasi dari 4 hari sebelumnya dan 10 hari sebelumnya.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1143,8 +1138,8 @@ R² Score   : -0.0289
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling-menggunakan-knn-regression">3. Modeling menggunakan KNN Regression</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-normalisasi-data">a. Normalisasi Data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-mengubah-data">b. Mengubah Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling-dan-evaluation">Modeling dan Evaluation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">Plotting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-modeling-dan-evaluation">c. Modeling dan Evaluation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-plotting">d. Plotting</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
